@@ -1,7 +1,7 @@
 Waste-Food-Project
 ==================
 
-This is our final two-week challenge at Makers Academy.  We will create a web application that will connect individuals with surplus to those local charities and organisations in need.  This is a [team challenge](#team) drawing on an initial idea from [Claudia Beresford.](https://github.com/Callisto13)
+This is our final two-week challenge at Makers Academy.  We are aiming to create a web application that will connect individuals with surplus food to those local charities and organisations in need.  This is a [team challenge](#team) drawing on an initial idea from [Claudia Beresford.](https://github.com/Callisto13)
 
 
 ###Team : Weekend To-Do List
@@ -15,7 +15,7 @@ This is a temporary element to the README.  By Monday, it would be good if we co
 
 
 ###The Cause
-Here are some links that Claudia found that give further background on this topic.
+Here are some links that Claudia found that give further background on the topic:
 * [FareShare](http://www.fareshare.org.uk/)
 * [FareShare Food Guidelines](http://www.fareshare.org.uk/wp-content/uploads/2014/12/Food-offers-Guidelines-2014-15.pdf)
 * [FoodCycle](http://foodcycle.org.uk/)
@@ -29,20 +29,20 @@ TBC.
 
 
 ###Minimum Viable Product
-An individual consumer with food to donate should be able to enter their post-code and be presented with a list of local charities that would accept their good, and the applicable charity's location.
+An individual consumer who has spare food to donate should be able to visit our site, enter a post-code, and then be presented with a list of local charities that would accept their food.  The applicable charities' locations should be clearly presented and sorted according to their proximity.
 
 
 ###Key Considerations
-We want charities to be able to engage with this platform.  We must consider the technology they may use to access our app and hence accessibility will be one of the central challenges of our design.  We will aim to support IE6 gracefully.  We think [Modernizr](http://modernizr.com/) may be useful in dynamically checking browser support and hence conditionally including CSS and Javascript features.  We would like our site to present nicely on mobiles, and may choose to design from a mobile-first perspective.  We may choose to employ the responsive functionality that the [Foundation](http://foundation.zurb.com/) framework offers. 
+We want charities to be able to engage with this platform.  We must consider the technology they may use to access our app and hence accessibility will be one of the central challenges of our design.  We will aim to gracefully support IE6.  We think [Modernizr](http://modernizr.com/) may be useful in dynamically checking browser support and hence conditionally including CSS and Javascript features.  We would like our site to present nicely on mobiles, and may choose to design from a mobile-first perspective.  We may choose to employ the responsive functionality that the [Foundation](http://foundation.zurb.com/) framework offers. 
 
 ###Stretch Goal Ideas
-- [Tesco have a Food Collection Programme](http://foodcollection.tesco.com/#donate-now) that is well-integrated with their nationwide store network.  Provided consumers buy items from those lists copied below, it's "really easy to donate in store" by buying them and then leaving them at Tesco's "Permanent collection points" in their stores.  The Tesco web-site does not offer an easily-accessible list of stores with collection points, but the [Trussell Trust](http://www.trusselltrust.org/resources/documents/Store-List-2014-November-National-Tesco-Collection.pdf) does and Tesco's CEO Office also provided us with a list of their stores to help us identify stores that qualify.  Generally these are the Tesco Extra & Tesco Superstore stores.  We think we should be able to integrate this so that consumers could find more convenient locations near to their home or work to donate food.
-- Can we brand this cause effectively to raise greater awareness of both individual responsibility and the easy practical actions that individuals can take?  Can we add a more impressive visual, video, or splash page that beautifully elaborates on the cause that is available to the most advanced browsers?  Outside the functionality, can we tell the story?
-- This site should be easily shared hence we should integrate with Twitter, Facebook, etc
+- [Tesco have a Food Collection Programme](http://foodcollection.tesco.com/#donate-now) that is well-integrated with their nationwide store network.  Provided consumers buy items from those lists copied below, it is "really easy to donate in store" by leaving those products at Tesco's "permanent collection points" in their stores.  The Tesco web-site does not offer an easily-accessible list of stores with collection points, but the [Trussell Trust does](http://www.trusselltrust.org/resources/documents/Store-List-2014-November-National-Tesco-Collection.pdf) and Tesco's CEO Office also provided us with a list of their stores to help us identify stores that qualify.  Generally, these are the Tesco "Extra" & "Superstore" stores.  We think we should be able to integrate this so that consumers could find more convenient locations near to their home or work making it easier for them to donate spare food.
+- This site should be easily shared hence we should integrate with Twitter, Facebook, etc.
 - Users should be able to register since e-mail marketing could be a useful way of keeping the initiative top-of-mind and updating consumers on progress.
+- Could we brand this cause effectively to raise greater awareness of both individual responsibility and the easy practical actions that individuals can take?  Can we add more impressive visual, video, or splash pages that beautifully elaborate on the cause to the most advanced browsers?  i.e. outside the core functionality, can we tell the story more deeply?
 - Our system at the outset does not track the actual donations and hence it is hard to proxy the effectiveness of our campaign, the incremental donations it engenders, and incremental foot-fall that Tesco would receive.
 - If we could track individual donations more tightly, potentially we could integrate merchandise, rewards, stickers, badges, etc.
-- Could our system be designed such that it is more closely integrated into a transportation service?  For example, Boris-Bike or Uber-type infrastructure to more effectively integrate donors, their donations, and destinations?
+- Could our system be designed such that it is more closely integrated into a transportation service such as a Boris-Bike or Uber-type infrastructure?  Could we go further to integrate donors, their donations, the destinations and the prevailing transport network?
 - [Crisis](http://www.crisis.org.uk/) on Commercial Street work with FairShare and maintain Daily rather than static menus, partly to reflect some of the diversity in the donations they receive.  This could offer inspiration for a cook-book since it requires them to be consistently inventive in using up whatever produce they have to hand.
 - Hotel & Corporate Waste could be another future donor-base to target.
 
@@ -61,8 +61,6 @@ We like the idea of almost gamifying this topic, or branding through an animal c
 ###Team Policies
 We are aiming to be in around 9, starting the day with a 'stand-up' meeting and taking lunch as a proper break around 12.30.  We are very keen to have a well-tested product and want to follow a test-driven-development process.  We want to celebrate little victories and milestones and have some fun.
 
-
-###Current Resources & Findings
 
 [](#team)<a name="team"></a>
 ###Team Members
