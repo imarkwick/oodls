@@ -33,8 +33,8 @@ An individual consumer with food to donate should be able to enter their post-co
 
 ###The Products That Tesco Can Receive
 
-<img src="images/tesco_fare_share.png">
-<img src="images/tesco_trussell_trust.png">
+<img src="https://raw.githubusercontent.com/Callisto13/Waste-Food-Project/master/public/images/tesco_fare_share.png">
+<img src="https://raw.githubusercontent.com/Callisto13/Waste-Food-Project/master/public/images/tesco_trussell_trust.png">
 
 
 ###Name, Branding & Promotion Ideas
