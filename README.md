@@ -13,6 +13,9 @@ This is a temporary element to the README.  By Monday, it would be good if we co
 - have any ideas of web-sites that you think could be useful for design inspiration
 - not so necessary yet, but does anyone want to take a look at Foundation/Modernizr and look into any interesting accessibility technologies?
 
+####More Notes & Ideas
+Depending on our progress, we could invite one or two applicable charities to our end-presentation.  If we integrate Tesco's store list, we can send it to them too.
+
 
 ###The Cause
 Here are some links that Claudia found that give further background on the topic:
@@ -21,12 +24,11 @@ Here are some links that Claudia found that give further background on the topic
 * [FoodCycle](http://foodcycle.org.uk/)
 * [2010-2012 Food Waste Bill](http://services.parliament.uk/bills/2010-12/foodwaste.html)
 * [Love Food Hate Waste](http://england.lovefoodhatewaste.com/node/2472)
-* [Tesco Food Collection:](http://foodcollection.tesco.com/#donate-in-store)Tesco have over 350 permanent food collection points across many of their stores in the UK, at which consumers can donate food items from a pre-approved list below.  Tesco themselves divert all surplus fresh food from their distribution centres and online grocery centres to FareShare, adding more fresh produce such as chicken, peppers, apples and other fresh fruit and vegetables.  Tesco also top up consumer donations with money and state that their alliance with FareShare has helped provide the equivalent of seven million meals a year of surplus food.  Tesco also run national collections.  November 2014 was their fifth collection and raised 4.7 million meals vs the first in December 2012 which raised 2.4 million meals.
-
+* [Tesco Food Collection:](http://foodcollection.tesco.com/#donate-in-store)
 
 
 ###Some Killer Stats
-TBC.
+FareShare provided 13.2m meals last year and state that over 82,000 people benefit from FareShare food per day.  They believe the beneficiary charities that they serve saved costs of around £13k as a result.  Despite this, they believe that they are currently handling just 1.5% of surplus food available in the UK.  They believe that c800m meals could be provided having assessed food wasted and a proportion that is fit for consumption.
 
 
 ###Minimum Viable Product
@@ -49,6 +51,8 @@ We want charities to be able to engage with this platform.  We must consider the
 
 
 ###The Products That Tesco Can Receive
+
+Tesco have over 350 permanent food collection points across many of their stores in the UK, at which consumers can donate food items from a pre-approved list below.  Tesco themselves divert all surplus fresh food from their distribution centres and online grocery centres to FareShare, adding more fresh produce such as chicken, peppers, apples and other fresh fruit and vegetables.  Tesco also top up consumer donations with money and state that their alliance with FareShare has helped provide the equivalent of seven million meals a year of surplus food.  Tesco also run national collections.  November 2014 was their fifth collection and raised 4.7 million meals vs the first in December 2012 which raised 2.4 million meals.
 
 <img src="https://raw.githubusercontent.com/Callisto13/Waste-Food-Project/master/public/images/tesco_fare_share.png">
 <p>
