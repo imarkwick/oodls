@@ -24,7 +24,7 @@ Here are some links that Claudia found that give further background on the topic
 * [FoodCycle](http://foodcycle.org.uk/)
 * [2010-2012 Food Waste Bill](http://services.parliament.uk/bills/2010-12/foodwaste.html)
 * [Love Food Hate Waste](http://england.lovefoodhatewaste.com/node/2472)
-* [Tesco Food Collection:](http://foodcollection.tesco.com/#donate-in-store)
+* [Tesco Food Collection](http://foodcollection.tesco.com/#donate-in-store)
 
 
 ###Some Killer Stats
