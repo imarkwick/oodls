@@ -38,6 +38,29 @@ Here are some links that Claudia found that give further background on the topic
 ###Minimum Viable Product
 An individual consumer who has spare food to donate should be able to visit our site, enter a post-code, and then be presented with a list of local charities that would accept their food.  The applicable charities' locations should be clearly presented and sorted according to their proximity.
 
+###Sites With Similar Functionality
+
+####Freeycle: https://www.freecycle.org/
+* Users sign up for an account on the site
+* Users search for, and join, local groups
+* Users make OFFERED or WANTED posts to the group, describing an item and giving their postcode
+* Other users reply to the post to request the item, or to offer an item that they have & to arrange collection etc.
+* Once an item has been taken, users make another post to the site
+* Users receive emails about the posts made on the site - either for every post, or a digest
+
+####Freegle: https://ilovefreegle.org/
+* Based on Freecycle
+* Users join a local Freegle group
+* Users make OFFERED posts to the group, describing an item and providing pictures
+* Other users reply to the post to request the item, or to offer an item that they have & to arrange collection etc.
+* Once an item has been taken, the user marks their post as TAKEN so that other users no longer request the item
+
+####Gumtree: http://www.gumtree.com
+* Users can post adverts to the site in pre-defined cataegories, with a location, images or video, and external links
+* Adverts can be marked as Urgent, Featured or Spotlight (at an extra cost)
+* Users can be contacted via email or phone
+* Users can reply to ads by writing messages through the site or phoning (if avaialble)
+* Users can search by keyword, category and postcode/location within given distances
 
 ###Key Considerations
 We want charities to be able to engage with this platform.  We must consider the technology they may use to access our app and hence accessibility will be one of the central challenges of our design.  We will aim to gracefully support IE6.  We think [Modernizr](http://modernizr.com/) may be useful in dynamically checking browser support and hence conditionally including CSS and Javascript features.  We would like our site to present nicely on mobiles, and may choose to design from a mobile-first perspective.  We may choose to employ the responsive functionality that the [Foundation](http://foundation.zurb.com/) framework offers. 
