@@ -73,6 +73,9 @@ First I will outline the base version I had in mind and then give a sort of wish
 	* a one off large supply of food
 	* a regular supply of large quantities
 * see a map / list of Tesco stores within x miles of their postcode which accept donations
+* receive text alerts when their donations have been requested
+* see how much money they have saved charities and how much food they have prevented going to landfill
 
 #### Charities / organisations could also eventually:
 * have to wait for verification on sign up
+* provide visual represntations of how much food they have used/prevented from going to landfill, and how much money they have saved, for campaigning purposes
