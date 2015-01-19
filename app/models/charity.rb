@@ -4,6 +4,11 @@ class Charity < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessor :organisation, :contact_name, :postcode, :full_address
+  attr_accessor :organisation, :description, :contact_name, :postcode, :full_address
+
+  has_attached_file :logo, 
+	:styles => { :thumb => "200x200" }, 
+	:default_url => "/images/:style/missing.png" 
+	validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
 
 end

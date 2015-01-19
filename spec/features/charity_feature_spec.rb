@@ -25,6 +25,7 @@ feature 'charity wants to sign-up/in' do
 			visit '/charity'
 			click_link 'Sign Up'
 			fill_in 'Organisation', with: 'Crisis'
+			fill_in 'Description', with: 'We are crisis and we help the homeless'
 			fill_in 'Contact name', with: 'contact'
 			fill_in 'Email', with: 'contact@email.com'
 			fill_in 'Full address', with: 'i live here'
@@ -40,7 +41,8 @@ feature 'charity wants to sign-up/in' do
 			expect(page).not_to have_link 'Sign In'
 			expect(page).not_to have_link 'Sign Up' 
 		end
-
 	end
+
+
 
 end
