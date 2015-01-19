@@ -3,7 +3,6 @@ Waste-Food-Project
 
 This is our final two-week challenge at Makers Academy.  We are aiming to create a web application that will connect individuals with surplus food to those local charities and organisations in need.  This is a [team challenge](#team) drawing on an initial idea from [Claudia Beresford.](https://github.com/Callisto13)
 
-
 ###Team : Weekend To-Do List
 This is a temporary element to the README.  By Monday, it would be good if we could have all:
 - read-up on the cause
