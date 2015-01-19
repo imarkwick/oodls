@@ -4,6 +4,6 @@ class Charity < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessor :organisation, :contact_name, :postcode
+  attr_accessor :organisation, :contact_name, :postcode, :full_address
 
 end
