@@ -23,3 +23,31 @@ Bike
 As a donor, I want to be able to share my donations on Facebook, so that I can look good to my friends and get them involved.
 
 As a donor, I want to be able to share my donations on Twitter, so that I can look good to the Twitterati and get them involved.
+
+As a donor, I would like to be able to see the site mission statement, so that I can be inspired to give away my food.
+
+As a donor, I would like to see a list of Tesco stores at which I can freely donate, so that I can expand my donation opportunities.
+
+Motorbike
+=========
+As a donor, I need to be able to flag charities to the site administrators, so that anyone abusing that site can be removed.
+
+As the developer, I want to sell the cause/market the site to prospective donors and charities, so that it gets used!
+
+Car
+===
+As a donor, I would like to be able to star or rate a charity that I've donated to, to provide useful feedback for other donors.
+
+As a charity, I want to be able to set up a food drive that sends out alerts to all donors in my area, to fill in gaps in my supply.
+
+As a charity, I want to be able to award points to successful donors on receipt of goods, so that I can encourage further donations/
+
+Limo
+====
+As a charity, I want to keep track of donors, so that I can contact them in future when supplies are running short.
+
+Miscellaneous
+=============
+Domain, Twitter, Logo, Etc
+
+GitHub : Excess Files, Tidy Up README
