@@ -34,15 +34,25 @@ feature 'charity wants to sign-up/in' do
 			expect(page).not_to have_link 'Sign In'
 			expect(page).not_to have_link 'Sign Up' 
 		end
+	end
 
+	context 'charities created but not logged in' do
+		
+		scenario 'should see list of all the charities' do
+			sign_up
+			visit '/charity'
+			click_link 'Sign Out'
+			visit '/charity'
+			expect(page).to have_content 'Crisis'
+			expect(page).to have_content 'We are crisis and we help the homeless'
+		end
 	end
 
 	context 'charity is signed in' do
 
 		scenario 'should see their stuff' do
-			sign_up
+		
 		end
-
 	end
 
 end

@@ -8,12 +8,16 @@ class CharityController < ApplicationController
 	end
 
 	def create
-		@charity = Charity.create(params[:charity])
+		@charity = Charity.create(charity_params)
 		redirect_to '/charity'
 	end
 
-	# def charity_params
-	# 	params.require(:charity).permit(:organisation)
-	# end
+	def charity_params
+		params.require(:charity).permit(:organisation, :description, :logo, :contact_name, :email, :full_address, :postcode)
+	end
+
+	def find_id
+		@charity = Charity.find(params[:id])
+	end
 
 end
