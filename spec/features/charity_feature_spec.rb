@@ -1,4 +1,7 @@
 require 'rails_helper'
+require_relative 'charity_helper'
+
+include CharityHelper
 
 feature 'charity wants to sign-up/in' do
 
@@ -22,17 +25,7 @@ feature 'charity wants to sign-up/in' do
 	context 'charity signs in' do 
 
 		before do
-			visit '/charity'
-			click_link 'Sign Up'
-			fill_in 'Organisation', with: 'Crisis'
-			fill_in 'Description', with: 'We are crisis and we help the homeless'
-			fill_in 'Contact name', with: 'contact'
-			fill_in 'Email', with: 'contact@email.com'
-			fill_in 'Full address', with: 'i live here'
-			fill_in 'Postcode', with: 'SW15 7HH'
-			fill_in 'Password', with: 'testtest'
-			fill_in 'Password confirmation', with: 'testtest'
-			click_button 'Sign Up'
+			sign_up
 		end
 
 		scenario 'should see sign out link' do
@@ -41,8 +34,15 @@ feature 'charity wants to sign-up/in' do
 			expect(page).not_to have_link 'Sign In'
 			expect(page).not_to have_link 'Sign Up' 
 		end
+
 	end
 
+	context 'charity is signed in' do
 
+		scenario 'should see their stuff' do
+			sign_up
+		end
+
+	end
 
 end
