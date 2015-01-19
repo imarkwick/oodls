@@ -19,4 +19,27 @@ feature 'charity wants to sign-up/in' do
 
 	end
 
+	context 'charity signs in' do 
+
+		before do
+			visit '/charity'
+			click_link 'Sign Up'
+			fill_in 'Organisation', with: 'Crisis'
+			fill_in 'Contact name', with: 'contact'
+			fill_in 'Email', with: 'contact@email.com'
+			fill_in 'Postcode', with: 'SW15 7HH'
+			fill_in 'Password', with: 'testtest'
+			fill_in 'Password confirmation', with: 'testtest'
+			click_button 'Sign Up'
+		end
+
+		scenario 'should see sign out link' do
+			visit '/charity'
+			expect(page).to have_link 'Sign Out'
+			expect(page).not_to have_link 'Sign In'
+			expect(page).not_to have_link 'Sign Up' 
+		end
+
+	end
+
 end
