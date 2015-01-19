@@ -2,13 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :charities
 
-  devise_for :donors
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#index'
+  root 'home#index'
 
   # root to: "homepage#index"
   
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    resources :charities
 
   # Example resource route with options:
   #   resources :products do
