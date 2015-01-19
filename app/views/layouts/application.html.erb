@@ -7,11 +7,22 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-	<%= yield %>
+  <nav>
+    <ul>
+      <% if donor_signed_in? %>
+      <li><%= link_to "Sign out", destroy_donor_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to "Sign in", new_donor_session_path %></li>
+      <li><%= link_to "Sign up", new_donor_registration_path %></li>
+      <% end %>
+    </ul>
+  </nav>
+
+
+  <%= yield %>
 
 </body>
 </html>

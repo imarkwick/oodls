@@ -9,6 +9,7 @@ We are keen to ensure our project is accessible.  This will involve supporting s
 ###Ideas For Testing
 * [The Internet Explorer web-site allows you to install local virtual machines](https://www.modern.ie/en-us/virtualization-tools#downloads) which appear to be able to emulate different browser and machine configurations.  This would allow us to test our site on old versions of IE and in old OS environments.
 * [BrowserStack](http://www.browserstack.com/test-in-internet-explorer) appears to have very quick, easy, and cross-IE testing environments for v6, 7, 8, 9, 10 and 11 in different OS environments.  Mobile and other browser testing is also possible though sadly this is not free beyond a 30 minute trial.
+* [CrossBrowserTesting](https://crossbrowsertesting.com/freetrial) and [Spoon](https://spoon.net/browsers) appear to be others.
 * [Can I Use](http://caniuse.com/#info_about) may help us in the testing phase, no matter what type of browsers we aim to cater for.
 
 
