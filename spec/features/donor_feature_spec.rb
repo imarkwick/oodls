@@ -31,4 +31,10 @@ context "user signed in" do
     expect(page).to have_link('Sign out')
   end
 
+  it "should not see 'sign in' or 'sign up' links" do
+    visit('/')
+    expect(page).not_to have_link('Sign in')
+    expect(page).not_to have_link('Sign up')
+  end
+
 end
