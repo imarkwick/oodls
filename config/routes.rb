@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root to: "homepage#index"
   
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get '/charity' => 'charity#index'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
