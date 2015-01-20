@@ -3,9 +3,9 @@ class CharityController < ApplicationController
 	def index
 		@charities = Charity.all
 		if charity_signed_in?	
-			@charity = current_charity
+			@current_charity = current_charity
 		else
-			@charity = nil
+			@current_charity = nil
 		end
 	end
 
@@ -13,12 +13,16 @@ class CharityController < ApplicationController
 	end
 
 	def create
-		@charity = Charity.create(charity_params)
-		redirect_to '/charity'
+		# @charity = Charity.create(charity_params)
+		# if @charity.save
+		# 	redirect_to '/charity'
+		# else
+		# 	render '/charities/sign_up'
+		# end
 	end
 
 	def edit
-		@charity = Charity.find(params[:id])
+		find_id
 	end
 
 	def charity_params
@@ -28,5 +32,10 @@ class CharityController < ApplicationController
 	def find_id
 		@charity = Charity.find(params[:id])
 	end
+
+  protected
+  def after_sign_up_path_for(charity)
+    super '/charity'
+  end
 
 end
