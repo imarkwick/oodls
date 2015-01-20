@@ -3,7 +3,7 @@ require_relative 'charity_helper'
 
 include CharityHelper
 
-feature 'charity wants to sign-up/in' do
+feature 'charities:' do
 
 	context 'charity not signed up/in on the homepage' do
 
@@ -22,7 +22,7 @@ feature 'charity wants to sign-up/in' do
 
 	end
 
-	context 'charity signs in' do 
+	context 'charity signs in and' do 
 
 		before do
 			sign_up
@@ -48,7 +48,7 @@ feature 'charity wants to sign-up/in' do
 		end
 	end
 
-	context 'charity is signed in' do
+	context 'charity is signed in and they' do
 
 		before do
 			sign_up
@@ -66,11 +66,23 @@ feature 'charity wants to sign-up/in' do
 			click_link 'Edit'
 			expect(page).to have_content 'Edit Charity'
 			expect(page).to have_button 'Remove Charity'
+			click_button 'Remove Charity'
+			expect(page).to have_content 'Bye! Your account has been successfully cancelled. We hope to see you again soon.'
 		end
 
-		# scenario 'should be able to edit their own profile' do
+		scenario 'should be able to edit their own profile' do
+			click_link 'Edit'
+			expect(page).to have_content 'Organisation'
+			expect(page).to have_content 'Description'
+			fill_in 'Organisation', with: 'ChocAid'
+			fill_in 'Description', with: 'We are ChocAid and we help the homeless with chocolate'
+			fill_in 'Current password', with: 'testtest'
+			click_button 'Update'
+			visit '/charity'
+			expect(page).to have_content 'ChocAid'
+			expect(page).not_to have_content 'Crisis'
+		end
 
-		# end
 	end
 
 end
