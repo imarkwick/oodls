@@ -50,16 +50,23 @@ feature 'charity wants to sign-up/in' do
 
 	context 'charity is signed in' do
 
-		scenario 'should see their own profile' do
+		before do
 			sign_up
+		end
+
+		scenario 'should see their own profile' do
 			expect(current_path).to eq '/charity'
 			expect(page).to have_content 'My Profile'
 			expect(page).to have_content 'Crisis'
 		end
 
-		# scenario 'should be able to delete their own profile' do
-
-		# end
+		scenario 'should be able to delete their own profile' do
+			expect(page).to have_content 'Crisis'
+			expect(page).to have_link 'Edit'
+			click_link 'Edit'
+			expect(page).to have_content 'Edit Charity'
+			expect(page).to have_button 'Remove Charity'
+		end
 
 		# scenario 'should be able to edit their own profile' do
 

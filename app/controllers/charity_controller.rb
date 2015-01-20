@@ -12,14 +12,14 @@ class CharityController < ApplicationController
 	def new
 	end
 
-	def create
+	# def create
 		# @charity = Charity.create(charity_params)
 		# if @charity.save
 		# 	redirect_to '/charity'
 		# else
 		# 	render '/charities/sign_up'
 		# end
-	end
+	# end
 
 	def edit
 		find_id
@@ -31,6 +31,12 @@ class CharityController < ApplicationController
 
 	def find_id
 		@charity = Charity.find(params[:id])
+	end
+
+	def destroy
+		@current_charity.delete
+		flash[:notice] = 'Charity successfully removed'
+		redirect_to '/charity'
 	end
 
 end
