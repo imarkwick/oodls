@@ -36,7 +36,33 @@
   <div class="field">
     <%= f.label :postcode %><br />
     <%= f.text_field :postcode %>
-  </div>  
+  </div>  <br />
+
+  <div id="requirements">
+    <%= f.label :requirements %><br />
+    <%= check_box_tag(:tins) %>
+    <%= label_tag(:tins, "Tins") %><br />
+    <%= check_box_tag(:dried_goods) %>
+    <%= label_tag(:dried_goods, "Dried goods") %><br />
+    <%= check_box_tag(:coffee_tea) %>
+    <%= label_tag(:coffee_tea, "Coffee/Tea") %><br />
+    <%= check_box_tag(:fresh_fruit_veg) %>
+    <%= label_tag(:fresh_fruit_veg, "Fresh Fruit & Veg") %><br />
+    <%= check_box_tag(:fresh_meat_fish) %>
+    <%= label_tag(:fresh_meat_fish, "Fresh Meat & Fish") %><br />
+    <%= check_box_tag(:snacks) %>
+    <%= label_tag(:snacks, "Snacks") %><br />
+    <%= check_box_tag(:jars_condiments) %>
+    <%= label_tag(:jars_condiments, "Jars & Condiments") %><br />
+    <%= check_box_tag(:cereals) %>
+    <%= label_tag(:cereals, "Cereals") %><br />
+    <%= check_box_tag(:cooking_ingredients) %>
+    <%= label_tag(:cooking_ingredients, "Cooking Ingredients") %><br />
+    <%= check_box_tag(:drinks) %>
+    <%= label_tag(:drinks, "Drinks") %><br />
+    <%= check_box_tag(:uht_milk) %>
+    <%= label_tag(:uht_milk, "UHT-Milk") %>
+  </div><br />
 
   <div class="field">
     <%= f.label :password %>

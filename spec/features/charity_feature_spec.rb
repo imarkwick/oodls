@@ -20,9 +20,31 @@ feature 'charities:' do
 			expect(page).not_to have_link 'Sign Out'
 		end
 
+		scenario 'can do that' do
+			visit '/charity'
+			sign_up
+			expect(current_path).to eq '/charity'
+			expect(page).to have_content 'Crisis'
+		end
+
+		scenario 'when signing up they add donor requirements' do
+			visit '/charity'
+			click_link 'Sign Up'
+			fill_in 'Organisation', with: 'Crisis'
+			fill_in 'Description', with: 'We are crisis and we help the homeless'
+			fill_in 'Contact name', with: 'contact'
+			fill_in 'Email', with: 'contact@email.com'
+			fill_in 'Full address', with: 'i live here'
+			fill_in 'Postcode', with: 'SW15 7HH'
+			fill_in 'Password', with: 'testtest'
+			fill_in 'Password confirmation', with: 'testtest'
+			check('Tins', options = {})
+			click_button 'Sign Up'
+		end
+
 	end
 
-	context 'charity signs in and' do 
+	context 'charity signed up/in and' do 
 
 		before do
 			sign_up
@@ -34,6 +56,7 @@ feature 'charities:' do
 			expect(page).not_to have_link 'Sign In'
 			expect(page).not_to have_link 'Sign Up' 
 		end
+
 	end
 
 	context 'charities created but not logged in' do
@@ -46,6 +69,7 @@ feature 'charities:' do
 			expect(page).to have_content 'Crisis'
 			expect(page).to have_content 'We are crisis and we help the homeless'
 		end
+
 	end
 
 	context 'charity is signed in and they' do

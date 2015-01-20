@@ -9,18 +9,6 @@ class CharityController < ApplicationController
 		end
 	end
 
-	def new
-	end
-
-	# def create
-		# @charity = Charity.create(charity_params)
-		# if @charity.save
-		# 	redirect_to '/charity'
-		# else
-		# 	render '/charities/sign_up'
-		# end
-	# end
-
 	def edit
 		find_id
 	end
