@@ -27,6 +27,11 @@ feature 'charities:' do
 			expect(page).to have_content 'Crisis'
 		end
 
+		scenario 'should be able to include their website url' do
+			sign_up_with_website
+			expect(page).to have_content 'http://www.crisis.org.uk/'
+		end
+
 		scenario 'when signing up they add donor requirements' do
 			sign_up_with_reqs
 			expect(page).to have_content 'Tins'

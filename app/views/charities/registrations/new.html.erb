@@ -5,13 +5,18 @@
 
   <div class="field">
     <%= f.label :organisation %><br />
-    <%= f.text_field :organisation %>
+    <%= f.text_field :organisation, autofocus: true %>
   </div> 
 
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
-  </div> 
+  </div>
+
+  <div class="field">
+    <%= f.label :website_url %><br />
+    <%= f.text_field :website_url %>
+  </div>
 
   <div class="field">
     <%= f.label :logo %><br />
@@ -25,7 +30,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">

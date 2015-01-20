@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(
                                                           :organisation,
                                                           :description,
+                                                          :website_url,
                                                           :logo,
                                                           :contact_name,
                                                           :full_address,

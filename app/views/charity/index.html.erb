@@ -7,7 +7,8 @@
 		<%= link_to "Edit profile", edit_charity_registration_path(@current_charity) %><br /><br />
 			<%= @current_charity.logo %><br>
 			<%= @current_charity.organisation %><br>
-			<%= @current_charity.description %><br><br>
+			<%= @current_charity.description %><br>
+			<%= link_to "Visit the website", @current_charity.website_url %><br><br>
 			Contact info:
 			<ul>
 				<li><%= @current_charity.contact_name %></li>
@@ -66,7 +67,8 @@
 			<%= charity.logo %><br>
 			<%= charity.organisation %><br>
 			<%= charity.description %><br><br>
-				Contact info:
+			<%= link_to "Visit the website", charity.website_url %><br><br>
+			Contact info:
 			<ul>
 				<li><%= charity.contact_name %></li>
 				<li><%= charity.email %></li>
@@ -108,7 +110,7 @@
 				UHT milk<br />
 			<% end %>
 		</div>
-	
+		<br />
 	<% end %>
 
 <% end %>

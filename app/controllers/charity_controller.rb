@@ -27,8 +27,10 @@ class CharityController < ApplicationController
 		redirect_to '/charity'
 	end
 
-	# def accepting 
-	# 	@requirements = Charity.find(params[:id])	
-	# end
+	def accepting_tins
+		@charities.each do |charity|
+			return "Tins" if charity.tins == 1
+		end
+	end
 
 end
