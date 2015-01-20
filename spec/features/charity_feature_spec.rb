@@ -38,7 +38,7 @@ feature 'charities:' do
 			fill_in 'Postcode', with: 'SW15 7HH'
 			fill_in 'Password', with: 'testtest'
 			fill_in 'Password confirmation', with: 'testtest'
-			check('Tins', options = {})
+			page.check('Tins')
 			click_button 'Sign Up'
 		end
 
