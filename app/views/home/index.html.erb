@@ -1,1 +1,13 @@
 <a href='/charity'>Charity</a>
+
+<form id="user-postcode">
+  <label>Please enter your postcode</label>
+  <input type="text" name="postcode" id="postcode">
+  <input type="submit">
+</form>
+
+<div id="map">
+
+</div>
+<%= javascript_include_tag 'gmaps', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'map_index_page', 'data-turbolinks-track' => true %>
