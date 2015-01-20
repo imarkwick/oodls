@@ -28,29 +28,16 @@ feature 'charities:' do
 		end
 
 		scenario 'when signing up they add donor requirements' do
-			visit '/charity'
-			click_link 'Sign Up'
-			fill_in 'Organisation', with: 'Crisis'
-			fill_in 'Description', with: 'We are crisis and we help the homeless'
-			fill_in 'Contact name', with: 'contact'
-			fill_in 'Email', with: 'contact@email.com'
-			fill_in 'Full address', with: 'i live here'
-			fill_in 'Postcode', with: 'SW15 7HH'
-			fill_in 'Password', with: 'testtest'
-			fill_in 'Password confirmation', with: 'testtest'
-			page.check('Tins')
-			click_button 'Sign Up'
+			sign_up_with_reqs
+			expect(page).to have_content 'Tins'
 		end
 
 	end
 
 	context 'charity signed up/in and' do 
 
-		before do
-			sign_up
-		end
-
 		scenario 'should see sign out link' do
+			sign_up
 			visit '/charity'
 			expect(page).to have_link 'Sign Out'
 			expect(page).not_to have_link 'Sign In'
@@ -62,12 +49,13 @@ feature 'charities:' do
 	context 'charities created but not logged in' do
 
 		scenario 'should see list of all the charities' do
-			sign_up
+			sign_up_with_reqs
 			click_link 'Sign Out'
 			visit '/charity'
 			expect(page).to have_content 'All Charities'
 			expect(page).to have_content 'Crisis'
 			expect(page).to have_content 'We are crisis and we help the homeless'
+			expect(page).to have_content 'Tins'
 		end
 
 	end
@@ -86,7 +74,7 @@ feature 'charities:' do
 
 		scenario 'should be able to delete their own profile' do
 			expect(page).to have_content 'Crisis'
-			expect(page).to have_link 'Edit'
+			expect(page).to have_link 'Edit profile'
 			click_link 'Edit'
 			expect(page).to have_content 'Edit Charity'
 			expect(page).to have_button 'Remove Charity'
