@@ -13,4 +13,12 @@ class ApplicationController < ActionController::Base
   	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:organisation, :description, :logo, :contact_name, :full_address, :postcode, :email, :password, :password_confirmation) }
   end
 
+  def after_sign_in_path_for(resource_or_scope)
+  	if resource_or_scope.is_a?(Charity)
+  		charity_path
+  	else
+  		super
+  	end
+  end
+
 end

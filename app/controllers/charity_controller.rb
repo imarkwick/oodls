@@ -33,9 +33,9 @@ class CharityController < ApplicationController
 		@charity = Charity.find(params[:id])
 	end
 
-  protected
-  def after_sign_up_path_for(charity)
-    super '/charity'
-  end
+  # protected
+  # def after_sign_up_path_for(charity)
+  #   super '/charity'
+  # end
 
 end

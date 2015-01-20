@@ -9,7 +9,7 @@ class Charities::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   # def create
-  #   super
+  #   after_sign_up_path_for(resource)
   # end
 
   # GET /resource/edit
@@ -50,7 +50,7 @@ class Charities::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
-  #   '/charity'
+  #   redirect_to charity_path
   # end
 
   # The path used after sign up for inactive accounts.
