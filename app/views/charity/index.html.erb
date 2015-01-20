@@ -1,6 +1,7 @@
 
 <% if charity_signed_in? %>
 	<%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
+	<h2>My Profile</h2>
 	<div class="charity_profile">
 
 	</div>
@@ -12,7 +13,9 @@
 		<%= link_to "Sign In", new_charity_session_path %>
 	</div>
 
+	<h2>All Charities</h2>
 	<% @charities.each do |charity| %>
+	
 		<div class="all_charities">
 			<%= charity.organisation %><br>
 			<%= charity.description %><br><br>
@@ -24,6 +27,7 @@
 				<li><%= charity.postcode %></li>
 			</ul>
 		</div>
+	
 	<% end %>
 
 <% end %>

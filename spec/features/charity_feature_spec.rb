@@ -37,12 +37,13 @@ feature 'charity wants to sign-up/in' do
 	end
 
 	context 'charities created but not logged in' do
-		
+
 		scenario 'should see list of all the charities' do
 			sign_up
 			visit '/charity'
 			click_link 'Sign Out'
 			visit '/charity'
+			expect(page).to have_content 'All Charities'
 			expect(page).to have_content 'Crisis'
 			expect(page).to have_content 'We are crisis and we help the homeless'
 		end
@@ -50,9 +51,20 @@ feature 'charity wants to sign-up/in' do
 
 	context 'charity is signed in' do
 
-		scenario 'should see their stuff' do
-		
+		scenario 'should see their own profile' do
+			sign_up
+			visit '/charity'
+			expect(page).to have_content 'My Profile'
+			expect(page).to have_content 'Crisis'
 		end
+
+		# scenario 'should be able to delete their own profile' do
+
+		# end
+
+		# scenario 'should be able to edit their own profile' do
+
+		# end
 	end
 
 end
