@@ -36,6 +36,40 @@
 				<li><%= charity.full_address %></li>
 				<li><%= charity.postcode %></li>
 			</ul>
+			Food accepted:<br /><br />
+			<% if charity.tins == '1' %>
+				Tins<br />
+			<% end %>
+			<% if charity.dried_goods == '1' %>
+				Dried goods<br />
+			<% end %>
+			<% if charity.coffee_tea == '1' %>
+				Coffee/Tea<br />
+			<% end %>
+			<% if charity.fresh_fruit_veg == '1' %>
+				Fresh fruit & veg<br />
+			<% end %>
+			<% if charity.fresh_meat_fish == '1' %>
+				Fresh meat & fish<br />
+			<% end %>
+			<% if charity.snacks == '1' %>
+				Snacks<br />
+			<% end %>
+			<% if charity.jars_condiments == '1' %>
+				Jars/Condiments<br />
+			<% end %>
+			<% if charity.cereals == '1' %>
+				Cereals<br />
+			<% end %>
+			<% if charity.cooking_ingredients == '1' %>
+				Cooking ingredients<br />
+			<% end %>
+			<% if charity.drinks == '1' %>
+				Drinks<br />
+			<% end %>
+			<% if charity.uht_milk == '1' %>
+				UHT milk<br />
+			<% end %>
 		</div>
 	
 	<% end %>
