@@ -29,9 +29,13 @@ gem 'devise'
 
 gem 'paperclip'
 
-group :test do 
+group :test do
 	gem 'rspec-rails'
 	gem 'capybara'
+end
+
+group :test, :development do
+	gem 'jasmine-rails'
 end
 
 gem 'rails_12factor', group: :production
