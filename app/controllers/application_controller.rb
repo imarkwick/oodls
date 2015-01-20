@@ -10,49 +10,38 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
   	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(
-                                              :organisation,
-                                              :description,
-                                              :logo,
-                                              :contact_name,
-                                              :full_address,
-                                              :postcode,
-                                              :email,
-                                              :password,
-                                              :password_confirmation,
-                                              :tins,
-                                              :dried_goods,
-                                              :coffee_tea,
-                                              :fresh_fruit_veg,
-                                              :fresh_meat_fish,
-                                              :snacks,
-                                              :jars_condiments,
-                                              :cereals,
-                                              :cooking_ingredients,
-                                              :drinks,
-                                              :uht_milk
-                                            ) }
+                                                          :organisation,
+                                                          :description,
+                                                          :logo,
+                                                          :contact_name,
+                                                          :full_address,
+                                                          :postcode,
+                                                          :email,
+                                                          :password,
+                                                          :password_confirmation,
+                                                          :tins,
+                                                          :dried_goods,
+                                                          :coffee_tea,
+                                                          :fresh_fruit_veg,
+                                                          :fresh_meat_fish,
+                                                          :snacks,
+                                                          :jars_condiments,
+                                                          :cereals,
+                                                          :cooking_ingredients,
+                                                          :drinks,
+                                                          :uht_milk
+                                                        ) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
-                                              :organisation,
-                                              :description,
-                                              :logo,
-                                              :contact_name,
-                                              :full_address,
-                                              :postcode,
-                                              :email,
-                                              :password,
-                                              :password_confirmation,
-                                              :tins,
-                                              :dried_goods,
-                                              :coffee_tea,
-                                              :fresh_fruit_veg,
-                                              :fresh_meat_fish,
-                                              :snacks,
-                                              :jars_condiments,
-                                              :cereals,
-                                              :cooking_ingredients,
-                                              :drinks,
-                                              :uht_milk
-                                            ) }
+                                                          :organisation,
+                                                          :description,
+                                                          :contact_name,
+                                                          :full_address,
+                                                          :postcode,
+                                                          :email,
+                                                          :password,
+                                                          :password_confirmation,
+                                                          :current_password
+                                                        ) }
   end
 
   def after_sign_in_path_for(resource_or_scope)
