@@ -38,29 +38,29 @@
     <%= f.text_field :postcode %>
   </div>  <br />
 
-  <div id="requirements">
+  <div class="field">
     <%= f.label :requirements %><br />
-    <%= check_box_tag(:tins) %>
+    <%= f.check_box(:tins) %>
     <%= label_tag(:tins, "Tins") %><br />
-    <%= check_box_tag(:dried_goods) %>
+    <%= f.check_box(:dried_goods) %>
     <%= label_tag(:dried_goods, "Dried goods") %><br />
-    <%= check_box_tag(:coffee_tea) %>
+    <%= f.check_box(:coffee_tea) %>
     <%= label_tag(:coffee_tea, "Coffee/Tea") %><br />
-    <%= check_box_tag(:fresh_fruit_veg) %>
+    <%= f.check_box(:fresh_fruit_veg) %>
     <%= label_tag(:fresh_fruit_veg, "Fresh Fruit & Veg") %><br />
-    <%= check_box_tag(:fresh_meat_fish) %>
+    <%= f.check_box(:fresh_meat_fish) %>
     <%= label_tag(:fresh_meat_fish, "Fresh Meat & Fish") %><br />
-    <%= check_box_tag(:snacks) %>
+    <%= f.check_box(:snacks) %>
     <%= label_tag(:snacks, "Snacks") %><br />
-    <%= check_box_tag(:jars_condiments) %>
+    <%= f.check_box(:jars_condiments) %>
     <%= label_tag(:jars_condiments, "Jars & Condiments") %><br />
-    <%= check_box_tag(:cereals) %>
+    <%= f.check_box(:cereals) %>
     <%= label_tag(:cereals, "Cereals") %><br />
-    <%= check_box_tag(:cooking_ingredients) %>
+    <%= f.check_box(:cooking_ingredients) %>
     <%= label_tag(:cooking_ingredients, "Cooking Ingredients") %><br />
-    <%= check_box_tag(:drinks) %>
+    <%= f.check_box(:drinks) %>
     <%= label_tag(:drinks, "Drinks") %><br />
-    <%= check_box_tag(:uht_milk) %>
+    <%= f.check_box(:uht_milk) %>
     <%= label_tag(:uht_milk, "UHT-Milk") %>
   </div><br />
 

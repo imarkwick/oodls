@@ -1,0 +1,2 @@
+      invoke  active_record
+    conflict    db/migrate/20150120174720_add_tins_to_charities.rb
