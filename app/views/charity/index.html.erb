@@ -2,9 +2,11 @@
 <% if charity_signed_in? %>
 	<%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
 	<h2>My Profile</h2>
+	<% if @charity != nil %>
 	<div class="charity_profile">
-
+		<%= @charity.organisation %>
 	</div>
+	<% end %>
 
 <% else %>
 	
