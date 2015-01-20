@@ -29,7 +29,7 @@ feature 'charities:' do
 
 		scenario 'should be able to include their website url' do
 			sign_up_with_website
-			expect(page).to have_content 'http://www.crisis.org.uk/'
+			expect(page).to have_link 'Visit the website'
 		end
 
 		scenario 'when signing up they add donor requirements' do
@@ -39,7 +39,7 @@ feature 'charities:' do
 
 	end
 
-	context 'charity signed up/in and' do 
+	context 'charity signing up/in' do 
 
 		scenario 'should see sign out link' do
 			sign_up
@@ -65,7 +65,7 @@ feature 'charities:' do
 
 	end
 
-	context 'charity is signed in and they' do
+	context 'charity signed in' do
 
 		before do
 			sign_up

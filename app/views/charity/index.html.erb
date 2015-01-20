@@ -67,7 +67,9 @@
 			<%= charity.logo %><br>
 			<%= charity.organisation %><br>
 			<%= charity.description %><br><br>
+			<% if charity.website_url %>
 			<%= link_to "Visit the website", charity.website_url %><br><br>
+			<% end %>
 			Contact info:
 			<ul>
 				<li><%= charity.contact_name %></li>
