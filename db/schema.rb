@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119154323) do
+ActiveRecord::Schema.define(version: 20150119181026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150119154323) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.text     "description"
+    t.float    "latitude"
+    t.float    "longitude"
   end
 
   add_index "charities", ["email"], name: "index_charities_on_email", unique: true, using: :btree

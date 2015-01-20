@@ -5,9 +5,9 @@
   <input type="text" name="postcode" id="postcode">
   <input type="submit">
 </form>
+<button type="button" id="user-geolocation">Use my location</button>
 
-<div id="map">
+<div id="map"></div>
 
-</div>
 <%= javascript_include_tag 'gmaps', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'map_index_page', 'data-turbolinks-track' => true %>

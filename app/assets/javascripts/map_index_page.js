@@ -1,11 +1,6 @@
-var centralUKLatitude = 54.559322;
-var centralUKLongitude = -4.174804;
-
-var defaultLatitude = centralUKLatitude;
-var defaultLongitude = centralUKLongitude;
-
-var screenWidth = $(window).width(); 
+var screenWidth = $(window).width();
 var defaultZoom;
+var userLatitude, userLongitude;
 
 if (screenWidth < 1280) {
   defaultZoom = 6;
@@ -13,50 +8,69 @@ if (screenWidth < 1280) {
   defaultZoom = 7;
 }
 
+// Need to test this method
+if (!navigator.geolocation) {
+  $("#user-geolocation").hide();
+};
+
 var map;
 
-generateMap = function() {
+generateMap = function(latitude, longitude) {
   map = new GMaps({
     div: '#map',
-    lat: defaultLatitude,
-    lng: defaultLongitude,
+    lat: latitude,
+    lng: longitude,
     zoom: defaultZoom
   });
 };
 
-generateMap();
-
-if ("geolocation" in navigator) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    defaultLatitude = position.coords.latitude;
-    defaultLongitude = position.coords.longitude;
-    focusMap(defaultLatitude, defaultLongitude);
+addMarkers = function(latitude, longitude) {
+  map.addMarker({
+    lat: latitude,
+    lng: longitude
   });
 };
 
-focusMap = function(latitude, longitude) {
-  map.setCenter(latitude, longitude);
-    map.setZoom(15);
-    map.addMarker({
-      lat: latitude,
-      lng: longitude
-  });
+setUserPosition = function(latitude, longitude) {
+  userLatitude = latitude;
+  userLongitude = longitude;
 };
 
-fetchMap = function(postcode) {
+assembleMap = function(postcode) {
   GMaps.geocode({
     address: postcode,
     callback: function(results, status) {
       if (status == 'OK') {
         var latlng = results[0].geometry.location;
-        focusMap(latlng.lat(), latlng.lng());
+        setUserPosition(latlng.lat(), latlng.lng())
+        generateMap(latlng.lat(), latlng.lng());
+        addMarkers(latlng.lat(), latlng.lng());
+        map.setZoom(15);
       }
     }
   });
 };
 
+fetchLocation = function() {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    setUserPosition(position.coords.latitude, position.coords.longitude)
+    var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude
+    assembleMap(browserCoordinates);
+  });
+};
+
 $("#user-postcode").submit(function(event) {
   event.preventDefault();
-  var postcode = $("#postcode").val();
-  fetchMap(postcode);
+  var userPostcode = $("#postcode").val();
+  assembleMap(userPostcode);
+});
+
+$("#user-geolocation").on("click", function() {
+  fetchLocation();
+});
+
+$(window).on('resize', function(){
+  if (map) {
+    map.setCenter(userLatitude, userLongitude);
+  };
 });
