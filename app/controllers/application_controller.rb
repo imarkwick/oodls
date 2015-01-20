@@ -40,7 +40,18 @@ class ApplicationController < ActionController::Base
                                                           :email,
                                                           :password,
                                                           :password_confirmation,
-                                                          :current_password
+                                                          :current_password,
+                                                          :tins,
+                                                          :dried_goods,
+                                                          :coffee_tea,
+                                                          :fresh_fruit_veg,
+                                                          :fresh_meat_fish,
+                                                          :snacks,
+                                                          :jars_condiments,
+                                                          :cereals,
+                                                          :cooking_ingredients,
+                                                          :drinks,
+                                                          :uht_milk
                                                         ) }
   end
 
