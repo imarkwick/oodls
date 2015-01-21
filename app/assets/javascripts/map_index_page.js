@@ -31,17 +31,10 @@ generateMap = function(latitude, longitude) {
     anchor: new google.maps.Point(55,55)
   };
 
-addMarkers = function(latitude, longitude) {
+addUserMarker = function(latitude, longitude) {
   map.addMarker({
     lat: latitude,
-    lng: longitude,
-    icon: image,
-    infoWindow:{
-        content: '<p><b>WE STOCK BANANAS</b><img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/64/Minion-Bananas-icon.png">'
-    },
-    mouseover: function(e){
-                this.infoWindow.open(this.map, this);
-            }                   
+    lng: longitude                 
   });
 };
 
@@ -50,9 +43,21 @@ setUserPosition = function(latitude, longitude) {
   userLongitude = longitude;
 };
 
-addAllMarkers = function(){
-  for(var i in data){
-    addMarkers(data[i][1], data[i][2]);
+addCharityMarkers = function(){
+  for(var i in charity_data){
+    var requirements = $.map(charity_data[i].requirements, function(req) { return req.label; }).join(", ");
+    var charity_info = "<p><b>" + charity_data[i].organisation + "</b><p>We are currently accepting </p>" + requirements;
+    map.addMarker({
+      lat: charity_data[i].lat, 
+      lng: charity_data[i].lon,
+      icon: image,
+      infoWindow:{
+        content: charity_info
+      },
+      mouseover: function(e){
+        this.infoWindow.open(this.map, this);
+      }    
+    });
   };
 };
 
@@ -64,9 +69,8 @@ assembleMap = function(postcode) {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
         generateMap(latlng.lat(), latlng.lng());
-        addMarkers(latlng.lat(), latlng.lng());
-        addAllMarkers();
-        // adding a second permanent marker
+        addUserMarker(latlng.lat(), latlng.lng());
+        addCharityMarkers();
         map.setZoom(15);
       }
     }
