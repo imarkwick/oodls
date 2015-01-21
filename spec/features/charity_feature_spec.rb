@@ -9,12 +9,12 @@ feature 'charities:' do
 
 		scenario 'should see a charity button' do
 			visit '/'
-			expect(page).to have_link 'Charity'
+			expect(page).to have_link 'Charities'
 		end
 
 		scenario 'should be able to sign-up/in' do
 			visit '/'
-			click_link 'Charity'
+			click_link 'I am a charity'
 			expect(page).to have_link 'Sign In'
 			expect(page).to have_link 'Sign Up'
 			expect(page).not_to have_link 'Sign Out'
@@ -39,14 +39,14 @@ feature 'charities:' do
 
 	end
 
-	context 'charity signing up/in' do 
+	context 'charity signing up/in' do
 
 		scenario 'should see sign out link' do
 			sign_up
 			visit '/charity'
 			expect(page).to have_link 'Sign Out'
 			expect(page).not_to have_link 'Sign In'
-			expect(page).not_to have_link 'Sign Up' 
+			expect(page).not_to have_link 'Sign Up'
 		end
 
 	end

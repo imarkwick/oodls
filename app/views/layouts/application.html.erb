@@ -3,9 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
-
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -14,7 +12,6 @@
   </head>
 
   <body>
-
   <div class="sticky">
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
@@ -23,21 +20,28 @@
         </li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
-
       <section class="top-bar-section">
         <ul class="right">
           <li class="has-dropdown">
             <a href="#">Charities</a>
             <ul class="dropdown">
-              <li><a href="/charity">I'm a charity</a></li>
-              <li class="active"><a href="/charity">See all charities</a></li>
+              <% if charity_signed_in? %>
+                <li><%= link_to "Sign Out", destroy_charity_session_path, method: :delete %></li>
+              <% else %>
+                <li><%= link_to "I am a charity", "/charity" %></li>
+                <li><%= link_to "See all charities", "/charity" %></li>
+              <% end %>
             </ul>
           </li>
         </ul>
       </section>
     </nav>
   </div>
-    <%= yield %>
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+  <%= yield %>
 
   </body>
 </html>
