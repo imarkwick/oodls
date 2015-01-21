@@ -13,7 +13,6 @@ if (!navigator.geolocation) {
   $("#user-geolocation").hide();
 };
 
-
 var map;
 
 generateMap = function(latitude, longitude) {
@@ -25,19 +24,12 @@ generateMap = function(latitude, longitude) {
   });
 };
 
-
   var image = {
     url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
     size: new google.maps.Size(110, 110),
     origin: new google.maps.Point(0,0),
     anchor: new google.maps.Point(55,55)
-
-    // note: this seems like it needs to be resized 
-    // prior to inclusion.  i.e. size the marker as you need
-    // in a graphics editor.
   };
-
-
 
 addMarkers = function(latitude, longitude) {
   map.addMarker({
@@ -53,19 +45,10 @@ addMarkers = function(latitude, longitude) {
   });
 };
 
-
-
 setUserPosition = function(latitude, longitude) {
   userLatitude = latitude;
   userLongitude = longitude;
 };
-
-// var charity_lon = data[21][0];
-// var charity_lat = data[21][1];
-
-// console.log(data[0][1], data[0][2]);
-
-// console.log(Object.keys(data).length);
 
 addAllMarkers = function(){
   for(var i = 0; i < data.length; i++){
@@ -83,10 +66,6 @@ assembleMap = function(postcode) {
         generateMap(latlng.lat(), latlng.lng());
         addMarkers(latlng.lat(), latlng.lng());
         addAllMarkers();
-        // console.log(charity_lon, charity_lat);
-        // for(var i=0;i<1000;i++){
-        //   addMarkers(51.521851+ 0.00001*i, -0.106896);
-        // }
         // adding a second permanent marker
         map.setZoom(15);
       }
