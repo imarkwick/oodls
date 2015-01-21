@@ -5,13 +5,18 @@
 
   <div class="field">
     <%= f.label :organisation %><br />
-    <%= f.text_field :organisation %>
+    <%= f.text_field :organisation, autofocus: true %>
   </div> 
 
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_field :description %>
-  </div> 
+  </div>
+
+  <div class="field">
+    <%= f.label :website_url %><br />
+    <%= f.text_field :website_url %>
+  </div>
 
   <div class="field">
     <%= f.label :logo %><br />
@@ -25,7 +30,7 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email %>
   </div>
 
   <div class="field">
@@ -36,7 +41,33 @@
   <div class="field">
     <%= f.label :postcode %><br />
     <%= f.text_field :postcode %>
-  </div>  
+  </div>  <br />
+
+  <div class="field">
+    <%= f.label :requirements %><br />
+    <%= f.check_box(:tins) %>
+    <%= f.label(:tins, "Tins") %><br />
+    <%= f.check_box(:dried_goods) %>
+    <%= f.label(:dried_goods, "Dried goods") %><br />
+    <%= f.check_box(:coffee_tea) %>
+    <%= f.label(:coffee_tea, "Coffee/Tea") %><br />
+    <%= f.check_box(:fresh_fruit_veg) %>
+    <%= f.label(:fresh_fruit_veg, "Fresh Fruit & Veg") %><br />
+    <%= f.check_box(:fresh_meat_fish) %>
+    <%= f.label(:fresh_meat_fish, "Fresh Meat & Fish") %><br />
+    <%= f.check_box(:snacks) %>
+    <%= f.label(:snacks, "Snacks") %><br />
+    <%= f.check_box(:jars_condiments) %>
+    <%= f.label(:jars_condiments, "Jars & Condiments") %><br />
+    <%= f.check_box(:cereals) %>
+    <%= f.label(:cereals, "Cereals") %><br />
+    <%= f.check_box(:cooking_ingredients) %>
+    <%= f.label(:cooking_ingredients, "Cooking Ingredients") %><br />
+    <%= f.check_box(:drinks) %>
+    <%= f.label(:drinks, "Drinks") %><br />
+    <%= f.check_box(:uht_milk) %>
+    <%= f.label(:uht_milk, "UHT-Milk") %>
+  </div><br />
 
   <div class="field">
     <%= f.label :password %>

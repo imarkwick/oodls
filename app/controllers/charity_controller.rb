@@ -2,22 +2,35 @@ class CharityController < ApplicationController
 
 	def index
 		@charities = Charity.all
+		if charity_signed_in?	
+			@current_charity = current_charity
+		else
+			@current_charity = nil
+		end
 	end
 
-	def new
-	end
-
-	def create
-		@charity = Charity.create(charity_params)
-		redirect_to '/charity'
+	def edit
+		find_id
 	end
 
 	def charity_params
-		params.require(:charity).permit(:organisation, :description, :logo, :contact_name, :email, :full_address, :postcode)
+		params.require(:charity).permit(:organisation, :description, :logo, :contact_name, :email, :full_address, :postcode, :tins)
 	end
 
 	def find_id
 		@charity = Charity.find(params[:id])
+	end
+
+	def destroy
+		@current_charity.delete
+		flash[:notice] = 'Charity successfully removed'
+		redirect_to '/charity'
+	end
+
+	def accepting_tins
+		@charities.each do |charity|
+			return "Tins" if charity.tins == 1
+		end
 	end
 
 end

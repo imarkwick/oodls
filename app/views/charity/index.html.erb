@@ -2,9 +2,56 @@
 <% if charity_signed_in? %>
 	<%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %>
 	<h2>My Profile</h2>
+	<% if @current_charity != nil %>
 	<div class="charity_profile">
-
+		<%= link_to "Edit profile", edit_charity_registration_path(@current_charity) %><br /><br />
+			<%= @current_charity.logo %><br>
+			<%= @current_charity.organisation %><br>
+			<%= @current_charity.description %><br>
+			<%= link_to "Visit the website", @current_charity.website_url %><br><br>
+			Contact info:
+			<ul>
+				<li><%= @current_charity.contact_name %></li>
+				<li><%= @current_charity.email %></li>
+				<li><%= @current_charity.full_address %></li>
+				<li><%= @current_charity.postcode %></li>
+			</ul>
+		Food accepted:<br /><br />
+			<% if @current_charity.tins == '1' %>
+				Tins<br />
+			<% end %>
+			<% if @current_charity.dried_goods == '1' %>
+				Dried goods<br />
+			<% end %>
+			<% if @current_charity.coffee_tea == '1' %>
+				Coffee/Tea<br />
+			<% end %>
+			<% if @current_charity.fresh_fruit_veg == '1' %>
+				Fresh fruit & veg<br />
+			<% end %>
+			<% if @current_charity.fresh_meat_fish == '1' %>
+				Fresh meat & fish<br />
+			<% end %>
+			<% if @current_charity.snacks == '1' %>
+				Snacks<br />
+			<% end %>
+			<% if @current_charity.jars_condiments == '1' %>
+				Jars/Condiments<br />
+			<% end %>
+			<% if @current_charity.cereals == '1' %>
+				Cereals<br />
+			<% end %>
+			<% if @current_charity.cooking_ingredients == '1' %>
+				Cooking ingredients<br />
+			<% end %>
+			<% if @current_charity.drinks == '1' %>
+				Drinks<br />
+			<% end %>
+			<% if @current_charity.uht_milk == '1' %>
+				UHT milk<br />
+			<% end %>
 	</div>
+	<% end %>
 
 <% else %>
 	
@@ -17,17 +64,55 @@
 	<% @charities.each do |charity| %>
 	
 		<div class="all_charities">
+			<%= charity.logo %><br>
 			<%= charity.organisation %><br>
 			<%= charity.description %><br><br>
-				Contact info:
+			<% if charity.website_url %>
+			<%= link_to "Visit the website", charity.website_url %><br><br>
+			<% end %>
+			Contact info:
 			<ul>
 				<li><%= charity.contact_name %></li>
 				<li><%= charity.email %></li>
 				<li><%= charity.full_address %></li>
 				<li><%= charity.postcode %></li>
 			</ul>
+			Food accepted:<br /><br />
+			<% if charity.tins == '1' %>
+				Tins<br />
+			<% end %>
+			<% if charity.dried_goods == '1' %>
+				Dried goods<br />
+			<% end %>
+			<% if charity.coffee_tea == '1' %>
+				Coffee/Tea<br />
+			<% end %>
+			<% if charity.fresh_fruit_veg == '1' %>
+				Fresh fruit & veg<br />
+			<% end %>
+			<% if charity.fresh_meat_fish == '1' %>
+				Fresh meat & fish<br />
+			<% end %>
+			<% if charity.snacks == '1' %>
+				Snacks<br />
+			<% end %>
+			<% if charity.jars_condiments == '1' %>
+				Jars/Condiments<br />
+			<% end %>
+			<% if charity.cereals == '1' %>
+				Cereals<br />
+			<% end %>
+			<% if charity.cooking_ingredients == '1' %>
+				Cooking ingredients<br />
+			<% end %>
+			<% if charity.drinks == '1' %>
+				Drinks<br />
+			<% end %>
+			<% if charity.uht_milk == '1' %>
+				UHT milk<br />
+			<% end %>
 		</div>
-	
+		<br />
 	<% end %>
 
 <% end %>
