@@ -97,6 +97,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
+  returnSearchBoxToTop();
 });
 
 $(window).on('resize', function(){
