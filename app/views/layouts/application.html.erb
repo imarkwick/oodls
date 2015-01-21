@@ -13,6 +13,21 @@
 
   <body>
 
+    <nav class="top-bar" data-topbar role="navigation">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">Oodls</a></h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="active"><a href='/charity'>Charity</a></li>
+          <li><%= link_to 'Sign Out', destroy_charity_session_path, method: :delete %></li>
+        </ul>
+      </section>
+    </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
