@@ -7,12 +7,9 @@
 </form>
 <button id="user-geolocation">Use my location</button>
 
-<%= @data %>
-
 <%= javascript_tag do %>
-	window.data = <%=raw @data %>;
+	window.data = <%=raw @charities_for_map %>;
 <% end %>
-
 
 <div id="map"></div>
 

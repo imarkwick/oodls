@@ -1,13 +1,7 @@
 class HomeController < ApplicationController
 
 	def index
-		@charities = Charity.all
-		@hash = {}
-		@array = []
-		@coords = @charities.each { |charity|
-			@array << [charity.id, charity.latitude, charity.longitude] 
-		}
-		@data = @array
+		@charities_for_map = Charity.format_for_map
 	end
 	
 end

@@ -51,7 +51,7 @@ setUserPosition = function(latitude, longitude) {
 };
 
 addAllMarkers = function(){
-  for(var i = 0; i < data.length; i++){
+  for(var i in data){
     addMarkers(data[i][1], data[i][2]);
   };
 };

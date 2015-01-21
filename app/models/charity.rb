@@ -16,4 +16,8 @@ class Charity < ActiveRecord::Base
     [full_address, postcode].compact.join(', ')
   end
 
+  def self.format_for_map
+    Charity.all.map{|c| [c.id,c.latitude,c.longitude] }
+  end
+
 end
