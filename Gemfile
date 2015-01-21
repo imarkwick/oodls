@@ -29,6 +29,8 @@ gem 'devise'
 
 gem 'paperclip'
 
+gem 'geocoder'
+
 group :test do
 	gem 'rspec-rails'
 	gem 'capybara'

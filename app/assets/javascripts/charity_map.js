@@ -24,12 +24,35 @@ generateMap = function(latitude, longitude) {
   });
 };
 
+
+  var image = {
+    url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
+    size: new google.maps.Size(110, 110),
+    origin: new google.maps.Point(0,0),
+    anchor: new google.maps.Point(55,55)
+
+    // note: this seems like it needs to be resized 
+    // prior to inclusion.  i.e. size the marker as you need
+    // in a graphics editor.
+  };
+
+
+
 addMarkers = function(latitude, longitude) {
   map.addMarker({
     lat: latitude,
-    lng: longitude
+    lng: longitude,
+    icon: image,
+    infoWindow:{
+        content: '<p><b>WE STOCK BANANAS</b><img src="http://icons.iconarchive.com/icons/designbolts/despicable-me-2/64/Minion-Bananas-icon.png">'
+    },
+    mouseover: function(e){
+                this.infoWindow.open(this.map, this);
+            }                   
   });
 };
+
+
 
 setUserPosition = function(latitude, longitude) {
   userLatitude = latitude;
@@ -45,6 +68,8 @@ assembleMap = function(postcode) {
         setUserPosition(latlng.lat(), latlng.lng())
         generateMap(latlng.lat(), latlng.lng());
         addMarkers(latlng.lat(), latlng.lng());
+        addMarkers(51.521851, -0.106896)
+        // adding a second permanent marker
         map.setZoom(15);
       }
     }
