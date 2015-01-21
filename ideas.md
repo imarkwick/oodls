@@ -5,10 +5,10 @@ Here is a quick Markdown File for us to store ideas of all kinds.
 
 ### GUI : User Story
 
-<img src="https://rawgit.com/Callisto13/Oodls/master/ideas/images/userstory.jpg" align="center" style="display: block" width="500px" />
+<img src="https://rawgit.com/Callisto13/Oodls/master/ideas/images/userstory.jpg" align="center" style="display: block" width="650px" />
 <br />
 
-<img src="https://rawgit.com/Callisto13/Oodls/master/ideas/images/userstory2.jpg" align="center" style="display: block" width="500px" />
+<img src="https://rawgit.com/Callisto13/Oodls/master/ideas/images/userstory2.jpg" align="center" style="display: block" width="650px" />
 <br />
 
 ### Vector Graphics
