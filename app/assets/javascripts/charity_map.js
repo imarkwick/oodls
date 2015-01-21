@@ -85,7 +85,7 @@ fetchLocation = function() {
 };
 
 returnSearchBoxToTop = function () {
-  $("#search-box").css({"top":"5%"});
+  $("#search-box").css({"top":"3.2em"});
 };
 
 $("#user-postcode").submit(function(event) {

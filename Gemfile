@@ -31,6 +31,8 @@ gem 'paperclip'
 
 gem 'geocoder'
 
+gem 'foundation-rails', '~> 5.5.0'
+
 group :test do
 	gem 'rspec-rails'
 	gem 'capybara'
