@@ -3,10 +3,11 @@ class HomeController < ApplicationController
 	def index
 		@charities = Charity.all
 		@hash = {}
+		@array = []
 		@coords = @charities.each { |charity|
-			@hash[charity.id] = [charity.latitude, charity.longitude] 
+			@array << [charity.id, charity.latitude, charity.longitude] 
 		}
-		@data = @hash.to_json
+		@data = @array
 	end
 	
 end
