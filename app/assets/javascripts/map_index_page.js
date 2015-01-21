@@ -13,6 +13,11 @@ if (!navigator.geolocation) {
   $("#user-geolocation").hide();
 };
 
+var charity_lon = data[21][0];
+var charity_lat = data[21][1];
+
+console.log(typeof charity_lon);
+
 var map;
 
 generateMap = function(latitude, longitude) {
@@ -68,9 +73,11 @@ assembleMap = function(postcode) {
         setUserPosition(latlng.lat(), latlng.lng())
         generateMap(latlng.lat(), latlng.lng());
         addMarkers(latlng.lat(), latlng.lng());
-        for(var i=0;i<1000;i++){
-          addMarkers(51.521851+ 0.00001*i, -0.106896);
-        }
+        addMarkers(charity_lon, charity_lat);
+        console.log(charity_lon, charity_lat);
+        // for(var i=0;i<1000;i++){
+        //   addMarkers(51.521851+ 0.00001*i, -0.106896);
+        // }
         // adding a second permanent marker
         map.setZoom(15);
       }

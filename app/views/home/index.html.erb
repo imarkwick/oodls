@@ -9,8 +9,12 @@
 
 <%= @data %>
 
+<%= javascript_tag do %>
+	window.data = <%=raw @data %>;
+<% end %>
+
 
 <div id="map"></div>
 
 <%= javascript_include_tag 'gmaps', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'charity_map', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'map_index_page', 'data-turbolinks-track' => true %>
