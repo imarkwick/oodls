@@ -29,7 +29,7 @@ gem 'devise'
 
 gem 'paperclip'
 
-gem 'foundation-rails', '~> 5.5.0'
+gem 'geocoder'
 
 group :test do
 	gem 'rspec-rails'
