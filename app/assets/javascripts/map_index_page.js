@@ -85,14 +85,20 @@ fetchLocation = function() {
   });
 };
 
+returnSearchBoxToTop = function () {
+  $("#search-box").css({"top":"3.2em"});
+};
+
 $("#user-postcode").submit(function(event) {
   event.preventDefault();
   var userPostcode = $("#postcode").val();
   assembleMap(userPostcode);
+  returnSearchBoxToTop();
 });
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
+  returnSearchBoxToTop();
 });
 
 $(window).on('resize', function(){

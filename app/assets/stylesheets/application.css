@@ -10,8 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require foundation_and_overrides
+ *= require_tree .
+
  */
 
 html {
@@ -28,6 +30,15 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  top: 100px;
+  top: 2.8125em;
   left: 0;
+}
+
+#search-box {
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 30%;
+  z-index: 10;
+  transition: 1s all ease;
 }
