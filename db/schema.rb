@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150120205641) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.text     "description"
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "dried_goods"
     t.string   "coffee_tea"
     t.string   "fresh_fruit_veg"
