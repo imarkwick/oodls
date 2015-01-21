@@ -57,3 +57,8 @@ When it comes to illustrations, consistency is going to be key.  This said, here
 
 <img src="https://rawgit.com/Callisto13/Oodls/master/logo/drafts/oodls-logo-05.svg" align="center" style="display: block" width="300px" />
 <br />
+
+<img src="https://rawgit.com/Callisto13/Oodls/master/logo/drafts/oodls-logo-06.svg" align="center" style="display: block" width="300px" />
+<br />
+
+<img src="https://rawgit.com/Callisto13/Oodls/master/logo/drafts/oodls-logo-07.svg" align="center" style="display: block" width="300px" />
