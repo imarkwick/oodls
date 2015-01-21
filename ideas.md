@@ -9,5 +9,6 @@ Here is a quick Markdown File for us to store ideas of all kinds.
 
 ### Logo
 
-<img src="https://github.com/Callisto13/Oodls/blob/master/public/img/camera.png" align="center" style="display: block" width="300px" height="244px"/>
+
+<img src="https://github.com/Callisto13/Oodls/blob/master/logo/drafts/oodls-logo-01.svg" align="center" style="display: block" width="300px" />
 <br />
