@@ -3,6 +3,11 @@ Ideas : Work-In-Progress
 
 Here is a quick Markdown File for us to store ideas of all kinds.
 
+### Promotion
+These documents published 22nd January 2015 may enable us to effectively market the cause and capture a zeitgeist so to speak.
+* [House of Commons Environment, Food and Rural Affairs Committee Report: Food security: demand, consumption and waste](http://www.publications.parliament.uk/pa/cm201415/cmselect/cmenvfru/703/703.pdf)
+* [Daily Mail: Wasteful Brits Bin 6 Meals A Week](http://www.dailymail.co.uk/news/article-2920825/Wasteful-Brits-bin-6-meals-week-12bn-food-thrown-away-annually-MPs-reveal.html)
+
 ### GUI : User Story
 
 <img src="https://rawgit.com/Callisto13/Oodls/master/ideas/images/userstory.jpg" align="center" style="display: block" width="650px" />
