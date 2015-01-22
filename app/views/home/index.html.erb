@@ -1,29 +1,31 @@
-<div id="search-box">
-  <div class="row">
-    <form id="user-postcode">
-      <div class="small-12 columns">
-        <div class="row collapse">
-          <div class="small-10 columns">
-            <input type="text" name="postcode" id="postcode" placeholder="Please enter your postcode...">
-          </div>
-          <div class="small-2 columns">
-            <input type="submit" class="button postfix">
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="row">
-    <div class="small-6 small-centered columns">
-      <button id="user-geolocation" class="button expand">
-        Use my location
-      </button>
-    </div>
-  </div>
-</div>
-
 <div class="row">
   <div id="map"></div>
+</div>
+
+<div class="search-box row">
+  <div class="small-12 columns small-centered">
+    <div class="row">
+      <form id="user-postcode">
+        <div class="small-12 columns">
+          <div class="row collapse">
+            <div class="small-10 columns">
+              <input type="text" name="postcode" id="postcode" placeholder="Please enter your postcode...">
+            </div>
+            <div class="small-2 columns">
+              <input type="submit" class="button postfix">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="row">
+      <div class="small-6 small-centered columns">
+        <button id="user-geolocation" class="button expand">
+          Use my location
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <%= javascript_tag do %>

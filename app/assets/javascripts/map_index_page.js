@@ -79,7 +79,7 @@ fetchLocation = function() {
 };
 
 returnSearchBoxToTop = function () {
-  $("#search-box").css({"top":"3.2em"});
+  $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
 };
 
 $("#user-postcode").submit(function(event) {
