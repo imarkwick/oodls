@@ -1,4 +1,4 @@
-class AddLatitudeAndLongitudeToCharity < ActiveRecord::Migration
+class AddLongitudeAndLatitudeToCondimentsToCharities < ActiveRecord::Migration
   def change
     add_column :charities, :latitude, :float
     add_column :charities, :longitude, :float

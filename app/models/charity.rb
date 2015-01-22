@@ -17,7 +17,7 @@ class Charity < ActiveRecord::Base
   end
 
   def requirements_array
-    food_reqs = %w(tins dried_goods coffee_tea fresh_fruit_veg snacks jars_condiments cereals cooking_ingredients drinks uht_milk fresh_meat_fish)
+    food_reqs = %w(tins dried_goods coffee_and_tea fresh_fruit_and_veg snacks jars_and_condiments cereals cooking_ingredients drinks uht_milk fresh_meat_and_fish)
 
     food_reqs.inject([]) do |memo, col|
       if (self[col] == "1")
