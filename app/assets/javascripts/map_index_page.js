@@ -39,7 +39,7 @@ setUserPosition = function(latitude, longitude) {
 addCharityMarkers = function(){
   for(var i in charity_data){
     var requirements = $.map(charity_data[i].requirements, function(req) { return req.label; }).join(", ");
-    var charity_info = "<p><b>" + charity_data[i].organisation + "</b><p>We are currently accepting </p>" + requirements;
+    var charity_info = "<p><b>" + charity_data[i].organisation + "</b>" + "<br />" + "<b>We are currently accepting:</b>" + "<br />" + requirements + "<br />" + "<b>Weekday opening hours:</b>" + "<br />" + charity_data[i].weekday_hours + "<br />" + "<b>Weekend opening hours:</b>" + "<br />" + charity_data[i].weekend_hours;
     map.addMarker({
       lat: charity_data[i].lat, 
       lng: charity_data[i].lon,

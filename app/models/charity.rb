@@ -33,7 +33,9 @@ class Charity < ActiveRecord::Base
         :lat => charity.latitude,
         :lon => charity.longitude,
         :organisation => charity.organisation,
-        :requirements => charity.requirements_array
+        :requirements => charity.requirements_array,
+        :weekday_hours => charity.weekday_opening_hours,
+        :weekend_hours => charity.weekend_opening_hours,
       }
     end.to_json
   end

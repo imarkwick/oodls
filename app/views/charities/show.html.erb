@@ -22,4 +22,8 @@
   <% @charity.requirements_array.each do |k, v| %>
   <li><%= k[:label] %></li>
   <% end %>
+  <br />
+  Opening hours:<br />
+  Weekdays: <%= @charity.weekday_opening_hours %><br />
+  Weekends: <%= @charity.weekend_opening_hours %>
 </div>

@@ -59,6 +59,16 @@
     <%= f.label(:uht_milk, "UHT-Milk") %>
   </div><br />
 
+  <div class="field">
+    <%= f.label :weekday_opening_hours %><br />
+    <%= f.text_field :weekday_opening_hours %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weekend_opening_hours %><br />
+    <%= f.text_field :weekend_opening_hours %>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
