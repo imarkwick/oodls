@@ -1,8 +1,8 @@
 module CharityHelper
 
 	def sign_up
-		visit '/charity'
-		click_link 'Sign Up'
+		visit '/'
+		click_link 'Get Involved'
 		fill_in 'Organisation', with: 'Crisis'
 		fill_in 'Description', with: 'We are crisis and we help the homeless'
 		fill_in 'Contact name', with: 'contact'
@@ -15,8 +15,8 @@ module CharityHelper
 	end
 
 	def sign_up_with_reqs
-		visit '/charity'
-		click_link 'Sign Up'
+		visit '/'
+		click_link 'Get Involved'
 		fill_in 'Organisation', with: 'Crisis'
 		fill_in 'Description', with: 'We are crisis and we help the homeless'
 		fill_in 'Contact name', with: 'contact'
@@ -30,8 +30,8 @@ module CharityHelper
 	end
 
 	def sign_up_with_website
-		visit '/charity'
-		click_link 'Sign Up'
+		visit '/'
+		click_link 'Get Involved'
 		fill_in 'Organisation', with: 'Crisis'
 		fill_in 'Description', with: 'We are crisis and we help the homeless'
 		fill_in 'Website url', with: 'http://www.crisis.org.uk/'
