@@ -37,6 +37,15 @@ feature 'charities:' do
 			expect(page).to have_content 'Tins'
 		end
 
+		scenario 'when signing up they add opening hours' do
+			sign_up_with_opening_hours
+			expect(page).to have_content 'Opening hours:'
+			expect(page).to have_content 'Weekday: 9-6'
+			expect(page).to have_content 'Weekend: 11-5'
+			expect(page).to have_content 'Weekday opening hours: 9-6'
+			expect(page).to have_content 'Weekend: opening hours: 11-5'
+		end
+
 	end
 
 	context 'charity signing up/in' do

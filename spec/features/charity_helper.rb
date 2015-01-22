@@ -41,4 +41,17 @@ module CharityHelper
 		click_button 'Sign Up'
 	end
 
+	def sign_up_with_opening_hours
+		visit '/charity'
+		click_link 'Sign Up'
+		fill_in 'Organisation', with: 'Crisis'
+		fill_in 'Description', with: 'We are crisis and we help the homeless'
+		fill_in 'Weekday opening hours', with: '9-6'
+		fill_in 'Weekend opening hours', with: '11-5'
+		fill_in 'Email', with: 'contact@email.com'
+		fill_in 'Password', with: 'testtest'
+		fill_in 'Password confirmation', with: 'testtest'
+		click_button 'Sign Up'
+	end
+
 end
