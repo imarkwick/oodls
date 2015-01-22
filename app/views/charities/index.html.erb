@@ -1,26 +1,54 @@
-<h2>All Charities</h2>
+<div class="row">
+  <h2>All Charities</h2>
+</div>
   <% @charities.each do |charity| %>
-  <div class="all_charities">
-    <%= charity.logo %><br>
-    <%= charity.organisation %><br>
-    <%= charity.description %><br><br>
-    <% if charity.website_url %>
-    <%= link_to "Visit the website", charity.website_url %><br><br>
-    <% end %>
-    Contact info:
-    <ul>
-      <li><%= charity.contact_name %></li>
-      <li><%= charity.email %></li>
-      <li><%= charity.full_address %></li>
-      <li><%= charity.postcode %></li>
-    </ul>
-    Food accepted:<br />
-    <% charity.requirements_array.each do |k, v| %>
-      <li><%= k[:label] %></li>
-    <% end %>
-    <br />
-    Opening hours:<br />
-    Weekdays: <%= charity.weekday_opening_hours %><br />
-    Weekends: <%= charity.weekend_opening_hours %>
-  </div>
-<% end %>
+    <div class="charity-listing row">
+      <div class="small-12 medium-6 large-3 columns">
+        <div class="row">
+          <%= link_to charity.logo, "/charities/#{charity.id}" %>
+        </div>
+        <% if charity_signed_in? && @current_charity.id == charity.id %>
+          <%= link_to "Edit Profile", edit_charity_registration_path(@charity), class: "button small" %>
+        <% end %>
+      </div>
+      <div class="small-12 medium-6 large-3 columns">
+        <div class="row">
+          <h2><%= link_to charity.organisation, "/charities/#{charity.id}" %></h2>
+        </div>
+        <div class="row">
+          <%= charity.description %>
+        </div>
+        <% if charity.website_url %>
+        <div class="row">
+          <%= link_to "Visit the website", charity.website_url %>
+        </div>
+        <% end %>
+      </div>
+      <div class="small-12 medium-6 large-3 columns">
+        <div class="row">
+          <h3>Contact info:</h3>
+          <ul class="no-bullet">
+            <li><%= charity.contact_name %></li>
+            <li><a href="mailto:<%= charity.email %>">Email Us</a></li>
+            <li><%= charity.full_address %></li>
+            <li><%= charity.postcode %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="small-12 medium-6 large-3 columns">
+        <div class="row">
+          <h3>Food accepted:</h3>
+          <ul class="no-bullet">
+            <% charity.requirements_array.each do |k, v| %>
+            <li><%= k[:label] %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="row">
+          <h3>Opening hours:</h3>
+          <p><strong>Weekdays:</strong> <%= charity.weekday_opening_hours %></p>
+          <p><strong>Weekends:</strong> <%= charity.weekend_opening_hours %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>

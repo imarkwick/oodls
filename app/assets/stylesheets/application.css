@@ -25,6 +25,8 @@ body {
   height: 100%;
 }
 
+/*  MAP PAGE  */
+
 #map {
   position: absolute;
   width: 100%;
@@ -59,4 +61,22 @@ body {
 
 #map img {
   max-width: inherit;
+}
+
+
+/*  CHARITY LISITING  */
+
+.charity-listing {
+  border-bottom: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.charity-profile {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }

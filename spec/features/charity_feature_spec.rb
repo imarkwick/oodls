@@ -89,7 +89,7 @@ feature 'charities:' do
 			visit('/')
 			click_link 'My Profile'
 			expect(page).to have_content 'Crisis'
-			expect(page).to have_link 'Edit profile'
+			expect(page).to have_link 'Edit Profile'
 			click_link 'Edit'
 			expect(page).to have_content 'Edit Charity'
 			expect(page).to have_button 'Remove Charity'
