@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  before_filter :set_current_charity
+
+  def set_current_charity
+    if charity_signed_in?
+      @current_charity = current_charity
+    end
+  end
+
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

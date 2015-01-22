@@ -7,21 +7,20 @@ feature 'charities:' do
 
 	context 'charity not signed up/in on the homepage' do
 
-		scenario 'should see a charity button' do
+		scenario 'should see a "Who Else is Involved" button' do
 			visit '/'
-			expect(page).to have_link 'Charities'
+			expect(page).to have_link 'Who Else is Involved'
 		end
 
 		scenario 'should be able to sign-up/in' do
 			visit '/'
-			click_link 'I am a charity'
 			expect(page).to have_link 'Sign In'
-			expect(page).to have_link 'Sign Up'
+			expect(page).to have_link 'Get Involved'
 			expect(page).not_to have_link 'Sign Out'
 		end
 
 		scenario 'can do that' do
-			visit '/charity'
+			visit '/'
 			sign_up
 			expect(current_path).to eq '/charity'
 			expect(page).to have_content 'Crisis'
@@ -78,6 +77,8 @@ feature 'charities:' do
 		end
 
 		scenario 'should be able to delete their own profile' do
+			visit('/')
+			click_link 'My Profile'
 			expect(page).to have_content 'Crisis'
 			expect(page).to have_link 'Edit profile'
 			click_link 'Edit'
@@ -88,6 +89,8 @@ feature 'charities:' do
 		end
 
 		scenario 'should be able to edit their own profile' do
+			visit('/')
+			click_link 'My Profile'
 			click_link 'Edit'
 			expect(page).to have_content 'Organisation'
 			expect(page).to have_content 'Description'
