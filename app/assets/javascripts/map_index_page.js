@@ -1,12 +1,5 @@
-var screenWidth = $(window).width();
-var defaultZoom;
+// var screenWidth = $(window).width();
 var userLatitude, userLongitude;
-
-if (screenWidth < 1280) {
-  defaultZoom = 6;
-} else {
-  defaultZoom = 7;
-}
 
 // Need to test this method
 if (!navigator.geolocation) {
@@ -20,7 +13,7 @@ generateMap = function(latitude, longitude) {
     div: '#map',
     lat: latitude,
     lng: longitude,
-    zoom: defaultZoom
+    zoom: 15
   });
 };
 
@@ -71,7 +64,7 @@ assembleMap = function(postcode) {
         generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
         addCharityMarkers();
-        map.setZoom(15);
+        // map.setZoom(15);
       }
     }
   });
