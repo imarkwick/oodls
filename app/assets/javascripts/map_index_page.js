@@ -24,6 +24,7 @@ generateMap = function(latitude, longitude) {
     anchor: new google.maps.Point(55,55)
   };
 
+
 addUserMarker = function(latitude, longitude) {
   map.addMarker({
     lat: latitude,
@@ -37,6 +38,7 @@ setUserPosition = function(latitude, longitude) {
 };
 
 addCharityMarkers = function(){
+  var charity_data = $('.charity_data_class').data('charities-for-map');
   for(var i in charity_data){
     var requirements = $.map(charity_data[i].requirements, function(req) { return req.label; }).join(", ");
     var charity_info = "<p><b>" + charity_data[i].organisation + "</b>" + "<br />" + "<b>We are currently accepting:</b>" + "<br />" + requirements + "<br />" + "<b>Weekday opening hours:</b>" + "<br />" + charity_data[i].weekday_hours + "<br />" + "<b>Weekend opening hours:</b>" + "<br />" + charity_data[i].weekend_hours;

@@ -26,8 +26,8 @@
   <div id="map"></div>
 </div>
 
-<%= javascript_tag do %>
-	window.charity_data = <%=raw @charities_for_map %>;
+
+<%= content_tag :div, class: "charity_data_class", data: {charities_for_map: @charities_for_map} do %>
 <% end %>
 
 
