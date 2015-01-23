@@ -17,10 +17,10 @@ generateMap = function(latitude, longitude) {
 };
 
 var image = {
-  url: 'images/oodls-pin-white.svg',
-  size: new google.maps.Size(110, 110),
+  url: 'images/oodls-pin-white.png',
+  size: new google.maps.Size(20, 33),
   origin: new google.maps.Point(0,0),
-  anchor: new google.maps.Point(55,55)
+  anchor: new google.maps.Point(0,0)
 };
 
 addUserMarker = function(latitude, longitude) {
