@@ -47,6 +47,7 @@ addCharityMarkers = function(){
       lat: charity_data[i].lat, 
       lng: charity_data[i].lon,
       icon: image,
+      animation: google.maps.Animation.DROP,
       infoWindow:{
         content: charity_info
       },
