@@ -1,100 +1,193 @@
-<h2>Sign Up</h2>
-
+<div class="row">
+  <div class="small-12 columns">
+    <h2>Sign Up</h2>
+  </div>
+</div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :organisation %><br />
-    <%= f.text_field :organisation, autofocus: true %>
-  </div> 
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
+<div class ="row">
+  <div class="small-12 columns">
+    <%= f.text_field :organisation, autofocus: true, placeholder: "Organisation Name" %>
   </div>
-
-  <div class="field">
-    <%= f.label :website_url %><br />
-    <%= f.text_field :website_url %>
+</div>
+<div class ="row">
+  <div class="small-12 columns">
+    <%= f.text_field :description, placeholder: "Organisation Description (max 140 characters)" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :logo %><br />
-    <%= f.file_field :logo %><br />
+  <div class ="row">
+    <div class="small-12 columns">
+      <%= f.text_field :website_url, placeholder: "Website Address" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :contact_name %><br />
-    <%= f.text_field :contact_name %>
-  </div> 
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email %>
+  <div class ="row">
+    <div class="small-2 columns">
+      <h4>Charity Logo</h4>
+    </div>
+    <div class="small-10 columns">
+      <%= f.file_field :logo %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :full_address %><br />
-    <%= f.text_field :full_address %>
+  <div class ="row">
+    <div class="small-12 columns">
+      <h4>Contact Details</h4>
+    </div>
+    <div class="small-12 columns">
+      <%= f.text_field :contact_name, placeholder: "Contact Name" %>
+    </div>
+    <div class="small-12 columns">
+      <%= f.email_field :email, placeholder: "Contact\'s Email Address" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :postcode %><br />
-    <%= f.text_field :postcode %>
-  </div>  <br />
-
-  <div class="field">
-    <%= f.label :requirements %><br />
-    <%= f.check_box(:tins) %>
-    <%= f.label(:tins, "Tins") %><br />
-    <%= f.check_box(:dried_goods) %>
-    <%= f.label(:dried_goods, "Dried goods") %><br />
-    <%= f.check_box(:coffee_and_tea) %>
-    <%= f.label(:coffee_and_tea, "Coffee/Tea") %><br />
-    <%= f.check_box(:fresh_fruit_and_veg) %>
-    <%= f.label(:fresh_fruit_and_veg, "Fresh Fruit & Veg") %><br />
-    <%= f.check_box(:fresh_meat_and_fish) %>
-    <%= f.label(:fresh_meat_and_fish, "Fresh Meat & Fish") %><br />
-    <%= f.check_box(:snacks) %>
-    <%= f.label(:snacks, "Snacks") %><br />
-    <%= f.check_box(:jars_and_condiments) %>
-    <%= f.label(:jars_and_condiments, "Jars & Condiments") %><br />
-    <%= f.check_box(:cereals) %>
-    <%= f.label(:cereals, "Cereals") %><br />
-    <%= f.check_box(:cooking_ingredients) %>
-    <%= f.label(:cooking_ingredients, "Cooking Ingredients") %><br />
-    <%= f.check_box(:drinks) %>
-    <%= f.label(:drinks, "Drinks") %><br />
-    <%= f.check_box(:uht_milk) %>
-    <%= f.label(:uht_milk, "UHT-Milk") %>
-  </div><br />
-
-  <div class="field">
-    <%= f.label :weekday_opening_hours %><br />
-    <%= f.text_field :weekday_opening_hours %>
+  <div class ="row">
+    <div class="small-12 columns">
+      <%= f.text_field :full_address, placeholder: "Organisation Address" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :weekend_opening_hours %><br />
-    <%= f.text_field :weekend_opening_hours %>
+  <div class ="row">
+    <div class="small-12 columns">
+      <%= f.text_field :postcode, placeholder: "Postcode" %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+  <div class ="row">
+    <div class="small-12 columns">
+      <h4>What Food You Accept</h4>
+    </div>
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:tins) %>
+          <%= f.label(:tins, "Tins") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Tins</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:dried_goods) %>
+          <%= f.label(:dried_goods, "Dried Goods") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Dried Goods</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:coffee_and_tea) %>
+          <%= f.label(:coffee_and_tea, "Cofee & Tea") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Coffee &amp; Tea</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:fresh_fruit_and_veg) %>
+          <%= f.label(:fresh_fruit_and_veg, "Fruit & Veg") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Fresh Fruit &amp; Vegetables</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:fresh_meat_and_fish) %>
+          <%= f.label(:fresh_meat_and_fish, "Meat & Fish") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Fresh Meat &amp; Fish</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:snacks) %>
+          <%= f.label(:snacks, "Snacks") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Snacks</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:jars_and_condiments) %>
+          <%= f.label(:jars_and_condiments, "Condiments") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Jars &amp; Condiments</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:cereals) %>
+          <%= f.label(:cereals, "Cereals") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Cereals</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:cooking_ingredients) %>
+          <%= f.label(:cooking_ingredients, "Cooking Ingredients") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Cooking Ingredients</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:drinks) %>
+          <%= f.label(:drinks, "Drinks") %>
+        </div>
+        <div class="small-11 columns">
+          <p>Drinks</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-1 columns">
+          <%= f.check_box(:uht_milk) %>
+          <%= f.label(:uht_milk, "UHT Milk") %>
+        </div>
+        <div class="small-11 columns">
+          <p>UHT Milk</p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  <div class ="row">
+    <div class="small-12 columns">
+      <h4>Opening Hours</h4>
+    </div>
+    <div class="small-12 columns">
+      <%= f.text_field :weekday_opening_hours, placeholder: "Weekdays" %>
+    </div>
+    <div class="small-12 columns">
+      <%= f.text_field :weekend_opening_hours, placeholder: "Weekends" %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign Up" %>
+  <div class ="row">
+    <div class="small-12 columns">
+      <h4>Password</h4>
+    </div>
+    <div class="small-12 columns">
+      <% if @validatable %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+        <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+    </div>
+    <div class="small-12 columns">
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
+    </div>
+  </div>
+  <div class ="row">
+    <div class="small-12 columns">
+      <%= f.submit "Sign Up", class: "button small" %>
+    </div>
   </div>
 <% end %>
-
-<%= render "charities/shared/links" %>
+<div class ="row">
+  <div class="small-12 columns">
+    <%= render "charities/shared/links" %>
+  </div>
+</div>
