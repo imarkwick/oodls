@@ -52,7 +52,10 @@ addCharityMarkers = function(){
       },
       mouseover: function(e){
         this.infoWindow.open(this.map, this);
-      }    
+      },
+      mouseout: function(event){
+        this.infoWindow.close(this.map, this);
+      } 
     });
   };
 };
