@@ -1,7 +1,5 @@
-// var screenWidth = $(window).width();
 var userLatitude, userLongitude;
 
-// Need to test this method
 if (!navigator.geolocation) {
   $("#user-geolocation").hide();
 };
@@ -18,13 +16,12 @@ generateMap = function(latitude, longitude) {
   });
 };
 
-  var image = {
-    url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
-    size: new google.maps.Size(110, 110),
-    origin: new google.maps.Point(0,0),
-    anchor: new google.maps.Point(55,55)
-  };
-
+var image = {
+  url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
+  size: new google.maps.Size(110, 110),
+  origin: new google.maps.Point(0,0),
+  anchor: new google.maps.Point(55,55)
+};
 
 addUserMarker = function(latitude, longitude) {
   map.addMarker({
@@ -51,12 +48,12 @@ addCharityMarkers = function(){
       infoWindow:{
         content: charity_info
       },
-      mouseover: function(e){
+      mouseover: function(event){
         this.infoWindow.open(this.map, this);
       },
       mouseout: function(event){
         this.infoWindow.close(this.map, this);
-      } 
+      }
     });
   };
 };
@@ -69,9 +66,12 @@ assembleMap = function(postcode) {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
         generateMap(latlng.lat(), latlng.lng());
+        returnSearchBoxToTop();
         addUserMarker(latlng.lat(), latlng.lng());
         addCharityMarkers();
-        // map.setZoom(15);
+      }
+      else {
+        alert('Sorry, only charities on this planet are registered');
       }
     }
   });
@@ -93,7 +93,6 @@ $("#user-postcode").submit(function(event) {
   event.preventDefault();
   var userPostcode = $("#postcode").val();
   assembleMap(userPostcode);
-  returnSearchBoxToTop();
 });
 
 $("#user-geolocation").on("click", function() {
