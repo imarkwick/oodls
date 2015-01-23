@@ -50,7 +50,7 @@ When it comes to illustrations, consistency is going to be key.  This said, here
 <br />
 
 
-<a href="http://www.freepik.com/free-vector/food-freezer-supermarket-vector_724053.htm"><img src="http://cdn.vectorstock.com/i/composite/24,98/supermarket-food-selection-icons-vector-2022498.jpg" align="center" style="display: block" width="450px" /></a>
+<a href="http://www.freepik.com/free-vector/food-freezer-supermarket-vector_724053.htm"><img src="http://thumb1.shutterstock.com/photos/display_pic_with_logo/339688/111063800.jpg" align="center" style="display: block" width="450px" /></a>
 <br />
 
 
