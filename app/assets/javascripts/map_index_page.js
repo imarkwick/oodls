@@ -1,7 +1,5 @@
-// var screenWidth = $(window).width();
 var userLatitude, userLongitude;
 
-// Need to test this method
 if (!navigator.geolocation) {
   $("#user-geolocation").hide();
 };
@@ -18,13 +16,12 @@ generateMap = function(latitude, longitude) {
   });
 };
 
-  var image = {
-    url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
-    size: new google.maps.Size(110, 110),
-    origin: new google.maps.Point(0,0),
-    anchor: new google.maps.Point(55,55)
-  };
-
+var image = {
+  url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
+  size: new google.maps.Size(110, 110),
+  origin: new google.maps.Point(0,0),
+  anchor: new google.maps.Point(55,55)
+};
 
 addUserMarker = function(latitude, longitude) {
   map.addMarker({
@@ -47,12 +44,16 @@ addCharityMarkers = function(){
       lat: charity_data[i].lat, 
       lng: charity_data[i].lon,
       icon: image,
+      animation: google.maps.Animation.DROP,
       infoWindow:{
         content: charity_info
       },
-      mouseover: function(e){
+      mouseover: function(event){
         this.infoWindow.open(this.map, this);
-      }    
+      },
+      mouseout: function(event){
+        this.infoWindow.close(this.map, this);
+      }
     });
   };
 };
@@ -64,10 +65,15 @@ assembleMap = function(postcode) {
       if (status == 'OK') {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
+        returnSearchBoxToTop();
         generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
         addCharityMarkers();
-        // map.setZoom(15);
+        $("#postcode").css("border", "1px solid #cccccc");
+      }
+      else {
+        $("#postcode").css("border", "1px solid red");
+        $("#postcode").val('Please enter a valid address...');
       }
     }
   });
@@ -89,7 +95,6 @@ $("#user-postcode").submit(function(event) {
   event.preventDefault();
   var userPostcode = $("#postcode").val();
   assembleMap(userPostcode);
-  returnSearchBoxToTop();
 });
 
 $("#user-geolocation").on("click", function() {
