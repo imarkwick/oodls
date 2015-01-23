@@ -5,7 +5,7 @@
     <div class="charity-listing row">
       <div class="small-12 medium-6 large-3 columns">
         <div class="row">
-          <%= link_to charity.logo, "/charities/#{charity.id}" %>
+          <%= link_to (image_tag charity.logo.url(:thumb)), "/charities/#{charity.id}" %>
         </div>
         <% if charity_signed_in? && @current_charity.id == charity.id %>
           <%= link_to "Edit Profile", edit_charity_registration_path(@charity), class: "button small" %>
