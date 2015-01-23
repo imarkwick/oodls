@@ -9,7 +9,7 @@
   <% @charities.each do |charity| %>
     <div class="charity-listing row">
       <div class="small-12 medium-6 large-3 columns">
-        <div class="row">
+        <div class="row charity-image">
           <%= link_to (image_tag charity.logo.url(:thumb)), "/charities/#{charity.id}" %>
         </div>
         <% if charity_signed_in? && @current_charity.id == charity.id %>
