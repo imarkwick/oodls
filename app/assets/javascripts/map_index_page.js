@@ -13,7 +13,8 @@ generateMap = function(latitude, longitude) {
     div: '#map',
     lat: latitude,
     lng: longitude,
-    zoom: 15
+    zoom: 15,
+    disableDefaultUI: true
   });
 };
 

@@ -27,15 +27,15 @@
             <a href="#">I have food to give</a>
             <ul class="dropdown">
               <li><%= link_to "Where to give?", charities_path %></li>
-              <li><%= link_to "What can I give?", "#" %></li>
+              <li><%= link_to "How to give?", "#" %></li>
               <li><%= link_to "What more can I do?", "#" %></li>
             </ul>
           </li>
           <li class="has-dropdown">
-            <a href="#">I am a Charity</a>
+            <a href="#">I'm a Charity</a>
             <ul class="dropdown">
               <li><%= link_to "All Charities Involved", charities_path %></li>
-              <li><%= link_to "Get My Charity Involved", new_charity_registration_path %></li>
+              <li><%= link_to "Add a Charity", new_charity_registration_path %></li>
               <% if charity_signed_in? %>
                 <li><%= link_to "My Profile", "/charities/#{@current_charity.id}" %></li>
               <% else %>
