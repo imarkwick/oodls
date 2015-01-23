@@ -17,7 +17,7 @@ generateMap = function(latitude, longitude) {
 };
 
 var image = {
-  url: 'http://upload.wikimedia.org/wikipedia/en/thumb/9/99/LeedsUnitedB.png/110px-LeedsUnitedB.png',
+  url: 'images/oodles-pin-white.svg',
   size: new google.maps.Size(110, 110),
   origin: new google.maps.Point(0,0),
   anchor: new google.maps.Point(55,55)
