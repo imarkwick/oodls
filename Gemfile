@@ -28,6 +28,7 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'devise'
 
 gem 'paperclip'
+gem 'aws-sdk'
 
 gem 'geocoder'
 
