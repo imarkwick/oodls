@@ -4,11 +4,17 @@
       <h2>My Profile</h2>
     </div>
     <div class="columns small-6 text-right">
+      <%= link_to "Back to all charities", charities_path, class: "button small" %>
       <%= link_to "Edit Profile", edit_charity_registration_path(@charity), class: "button small" %>
       <%= link_to "Remove Charity", cancel_charity_registration_path(@charity), data: { confirm: "Are you sure?" }, method: :delete, class: "button alert small" %>
     </div>
   <% else %>
-    <h2><%= @charity.organisation %></h2>
+    <div class="columns small-6">
+      <h2><%= @charity.organisation %></h2>
+    </div>
+    <div class="columns small-6 text-right">
+      <%= link_to "Back to all charities", charities_path, class: "button small" %>
+    </div>
   <% end %>
 </div>
 <div class="charity-profile row">

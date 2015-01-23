@@ -1,5 +1,10 @@
 <div class="row">
-  <h2>All Charities</h2>
+  <div class="small-6 columns">
+    <h2>All Charities</h2>
+  </div>
+  <div class="small-6 columns text-right">
+    <%= link_to "Back", root_path, class: "button small" %>
+  </div>
 </div>
   <% @charities.each do |charity| %>
     <div class="charity-listing row">
