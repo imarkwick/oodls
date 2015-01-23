@@ -71,7 +71,8 @@ assembleMap = function(postcode) {
         addCharityMarkers();
       }
       else {
-        alert('Sorry, only charities on this planet are registered');
+        $("#postcode").css("border", "1px solid red");
+        $("#postcode").val('Please enter a valid address...');
       }
     }
   });
