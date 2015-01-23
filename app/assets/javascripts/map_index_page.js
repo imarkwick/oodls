@@ -50,9 +50,6 @@ addCharityMarkers = function(){
       },
       mouseover: function(event){
         this.infoWindow.open(this.map, this);
-      },
-      mouseout: function(event){
-        this.infoWindow.close(this.map, this);
       }
     });
   };
