@@ -46,6 +46,10 @@ When it comes to illustrations, consistency is going to be key.  This said, here
 <a href="http://www.freepik.com/free-vector/food-freezer-supermarket-vector_724053.htm"><img src="http://cdns2.freepik.com/free-photo/food-freezer-supermarket-vector_23-2147495477.jpg" align="center" style="display: block" width="450px" /></a>
 <br />
 
+<a href="http://www.freepik.com/free-vector/food-freezer-supermarket-vector_724053.htm"><img src="http://cdn.vectorstock.com/i/composite/24,98/supermarket-food-selection-icons-vector-2022498.jpg" align="center" style="display: block" width="450px" /></a>
+<br />
+
+
 ### Logo Iterations
 
 <img src="https://rawgit.com/Callisto13/Oodls/master/logo/drafts/oodls-logo-01.svg" align="center" style="display: block" width="300px" />
