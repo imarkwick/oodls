@@ -45,6 +45,7 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
                                                           :organisation,
                                                           :description,
+                                                          :logo,
                                                           :contact_name,
                                                           :full_address,
                                                           :postcode,
