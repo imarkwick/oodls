@@ -7,8 +7,11 @@
   </div>
 </div>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
+  <div class="row">
+    <div class="small-12 columns alert-box alert">
+      <%= devise_error_messages! %>
+    </div>
+  </div>
   <div class ="row">
     <div class="small-12 columns">
       <%= f.text_field :organisation, autofocus: true, placeholder: "Organisation Name" %>
@@ -174,14 +177,32 @@
     <div class="small-12 columns">
       <h4>Password</h4>
     </div>
+  </div>
+  
+  <div class="row">
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div class="small-12 columns">Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+  </div>
+  <div class="row">
     <div class="small-12 columns">
-      <% if @validatable %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-        <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "off", placeholder: "New password (leave blank if you don't want to change it)" %>
+      </div>
     </div>
+  </div>
+  <div class="row">
     <div class="small-12 columns">
-      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation" %>
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation" %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="field">
+        <%= f.password_field :current_password, autocomplete: "off", placeholder: "Current password (required to edit your profile)" %>
+      </div>
     </div>
   </div>
   <div class="row">

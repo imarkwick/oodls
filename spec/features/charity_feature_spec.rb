@@ -100,12 +100,10 @@ feature 'charities:' do
 		scenario 'should be able to edit their own profile' do
 			visit('/')
 			click_link 'My Profile'
-			click_link 'Edit'
-			expect(page).to have_content 'Organisation'
-			expect(page).to have_content 'Description'
-			fill_in 'Organisation', with: 'ChocAid'
-			fill_in 'Description', with: 'We are ChocAid and we help the homeless with chocolate'
-			fill_in 'Current password', with: 'testtest'
+			click_link 'Edit Profile'
+			expect(page).to have_content 'Edit Charity Profile'
+			fill_in 'Organisation Name', with: 'ChocAid'
+			fill_in 'Current password (required to edit your profile)', with: 'testtest'
 			click_button 'Update'
 			visit '/charity'
 			expect(page).to have_content 'ChocAid'
