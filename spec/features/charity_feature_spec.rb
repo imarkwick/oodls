@@ -7,15 +7,15 @@ feature 'charities:' do
 
 	context 'charity not signed up/in on the homepage' do
 
-		scenario 'should see a "Get My Charity Involved" button' do
+		scenario 'should see a "Add a Charity" button' do
 			visit '/'
-			expect(page).to have_link 'Get My Charity Involved'
+			expect(page).to have_link 'Add a Charity'
 		end
 
 		scenario 'should be able to sign-up/in' do
 			visit '/'
 			expect(page).to have_link 'Sign In'
-			expect(page).to have_link 'Get My Charity Involved'
+			expect(page).to have_link 'Add a Charity'
 			expect(page).not_to have_link 'Sign Out'
 		end
 

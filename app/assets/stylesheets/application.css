@@ -29,6 +29,10 @@ body {
   z-index: 20;
 }
 
+.row.messages {
+  margin-top: 20px;
+}
+
 /*  MAP PAGE  */
 
 #map {
