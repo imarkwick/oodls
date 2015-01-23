@@ -57,8 +57,6 @@ When it comes to illustrations, consistency is going to be key.  This said, here
 <a href="http://www.tekilaklub.com/inspyre/wp-content/uploads/2012/04/tekilaklub-food-icons-loulou-tummies-550x639.png" align="center" style="display: block" width="450px" /></a>
 <br />
 
-
-
 <a href="https://0.s3.envato.com/files/24077539/Food%20icon7590.jpg" align="center" style="display: block" width="450px" /></a>
 <br />
 
