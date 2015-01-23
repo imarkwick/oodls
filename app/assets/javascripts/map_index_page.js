@@ -65,10 +65,11 @@ assembleMap = function(postcode) {
       if (status == 'OK') {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
-        generateMap(latlng.lat(), latlng.lng());
         returnSearchBoxToTop();
+        generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
         addCharityMarkers();
+        $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
         $("#postcode").css("border", "1px solid red");
