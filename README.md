@@ -1,11 +1,9 @@
-Waste-Food-Project
-==================
-
-Current version on heroku [oodls.io](http://www.oodls.io/)
+[oodls : Waste Food Project](http://www.oodls.io/)
+==========================
 
 [![Code Climate](https://codeclimate.com/github/Callisto13/Oodls/badges/gpa.svg)](https://codeclimate.com/github/Callisto13/Oodls)
 
-This is our final two-week challenge at Makers Academy.  We are aiming to create a web application that will connect individuals with surplus food to those local charities and organisations in need.  This is a [team challenge](#team) drawing on an initial idea from [Claudia Beresford.](https://github.com/Callisto13)
+This is our final two-week challenge at Makers Academy.  We are aiming to create a web application that will connect individuals with surplus food to those local charities and organisations in need.  This is a [team challenge](#team) drawing on an initial idea from [Claudia Beresford](https://github.com/Callisto13) and is [hosted here on heroku and via the domain oodls.io](http://www.oodls.io)
 
 ###Team : Weekend To-Do List
 This is a temporary element to the README.  By Monday, it would be good if we could have all:
@@ -85,9 +83,9 @@ We want charities to be able to engage with this platform.  We must consider the
 
 Tesco have over 350 permanent food collection points across many of their stores in the UK, at which consumers can donate food items from a pre-approved list below.  Tesco themselves divert all surplus fresh food from their distribution centres and online grocery centres to FareShare, adding more fresh produce such as chicken, peppers, apples and other fresh fruit and vegetables.  Tesco also top up consumer donations with money and state that their alliance with FareShare has helped provide the equivalent of seven million meals a year of surplus food.  
 
-<img src="https://raw.githubusercontent.com/Callisto13/Waste-Food-Project/master/public/images/tesco_fare_share.png">
+<img src="https://raw.githubusercontent.com/Callisto13/Oodls/master/public/images/tesco_fare_share.png">
 <p>
-<img src="https://raw.githubusercontent.com/Callisto13/Waste-Food-Project/master/public/images/tesco_trussell_trust.png">
+<img src="https://raw.githubusercontent.com/Callisto13/Oodls/master/public/images/tesco_trussell_trust.png">
 
 
 ###Name, Branding & Promotion Ideas
