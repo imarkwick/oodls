@@ -55,16 +55,16 @@ body {
 }
 
 @media (max-width: 640px) {
-.align-search-box {
-  bottom: 5px;
-  top: inherit;
-}
+  .align-search-box {
+    bottom: 5px;
+    top: inherit;
+  }
 }
 
 @media (min-width: 641px) {
-.align-search-box {
-  top: 3.5em;
-}
+  .align-search-box {
+    top: 3.5em;
+  }
 }
 
 #map img {
@@ -78,6 +78,12 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .charity-listing {
+    padding-left: 4px;
+  }
 }
 
 .charity-profile {
