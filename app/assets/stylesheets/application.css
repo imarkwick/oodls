@@ -47,7 +47,7 @@ body {
 .search-box {
   z-index: 10;
   position: absolute;
-  top: 28%;
+  top: 30%;
   left: 0;
   right: 0;
   bottom: 0;
@@ -58,6 +58,8 @@ body {
   .align-search-box {
     bottom: 5px;
     top: inherit;
+    line-height: 2.3125rem;
+    display: block;
   }
 }
 
@@ -97,3 +99,19 @@ body {
 .charity-image img {
   margin-bottom: 20px;
 }
+
+/*  CHARITY SIGN UP */
+
+.required:after {
+  content: "*";
+  color: red;
+}
+
+
+
+
+
+
+
+
+

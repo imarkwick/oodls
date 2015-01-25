@@ -38,10 +38,16 @@
     <div class="small-12 columns">
       <h4>Contact Details</h4>
     </div>
-    <div class="small-12 columns">
+    <div class="small-2 columns">
+      <%= f.label :contact_name %>
+    </div>
+    <div class="small-10 columns">
       <%= f.text_field :contact_name, placeholder: "Contact Name" %>
     </div>
-    <div class="small-12 columns">
+    <div class="small-2 columns">
+      <%= f.label :email %>
+    </div>
+    <div class="small-10 columns">
       <%= f.email_field :email, placeholder: "Contact\'s Email Address" %>
     </div>
   </div>
@@ -157,6 +163,15 @@
         </div>
         <div class="small-9 columns">
           <p>UHT Milk</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="switch small small-3 columns">
+          <%= f.check_box(:none) %>
+          <%= f.label(:none, "None") %>
+        </div>
+        <div class="small-9 columns">
+          <p>None</p>
         </div>
       </div>
     </div>
