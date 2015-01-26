@@ -33,7 +33,7 @@ addTescoMarkers = function(){
         lng: json[i][1],
         icon: tescoImage(),
         infoWindow:{
-          content: 'Donation point'
+          content: '<p>Donation point</p>'
         },
         mouseover: function(event){
           this.infoWindow.open(this.map, this);
@@ -75,7 +75,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return req.label;
+    return req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'>";
   });
 };
 
