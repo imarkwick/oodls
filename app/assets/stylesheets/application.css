@@ -12,6 +12,8 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require owl.carousel
+ *= require owl.theme
  *= require_tree .
 
  */
@@ -71,6 +73,17 @@ body {
 
 #map img {
   max-width: inherit;
+}
+
+.owl-carousel .item {
+  z-index: 20;
+  background: #a4d4a4;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /*  CHARITY LISITING  */

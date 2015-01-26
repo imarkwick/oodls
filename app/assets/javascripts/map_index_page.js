@@ -88,6 +88,20 @@ returnSearchBoxToTop = function () {
   $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
 };
 
+$(document).ready(function() {
+  var carousel = $("#stats-carousel");
+
+  carousel.owlCarousel({
+    items:1,
+    loop:true,
+    margin:10,
+    autoplay:true,
+    autoplayTimeout:800,
+    autoplayHoverPause: true
+  });
+
+});
+
 $("#user-postcode").submit(function(event) {
   event.preventDefault();
   var userPostcode = $("#postcode").val();
