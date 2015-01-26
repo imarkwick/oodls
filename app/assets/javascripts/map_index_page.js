@@ -33,7 +33,7 @@ addTescoMarkers = function(){
         lng: json[i][1],
         icon: tescoImage(),
         infoWindow:{
-          content: 'Donation point'
+          content: '<p>Donation point</p>'
         },
         mouseover: function(event){
           this.infoWindow.open(this.map, this);
