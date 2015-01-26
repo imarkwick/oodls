@@ -16,17 +16,19 @@ generateMap = function(latitude, longitude) {
   });
 };
 
-var image = {
-  url: 'images/oodls-pin-white.png',
-  size: new google.maps.Size(20, 33),
-  origin: new google.maps.Point(0,0),
-  anchor: new google.maps.Point(10,33)
+markerImage = function(url){
+  return image = {
+    url: url,
+    size: new google.maps.Size(20, 33),
+    origin: new google.maps.Point(0,0),
+    anchor: new google.maps.Point(10,33)
+  };
 };
 
 addUserMarker = function(latitude, longitude) {
   map.addMarker({
     lat: latitude,
-    lng: longitude                 
+    lng: longitude
   });
 };
 
@@ -35,23 +37,48 @@ setUserPosition = function(latitude, longitude) {
   userLongitude = longitude;
 };
 
-addCharityMarkers = function(){
+getCharityData = function(){
   var charity_data = $('.charity_data_class').data('charities-for-map');
+  assembleCharityMarkers(charity_data);
+};
+
+processCharityRequirements = function(i, charity_data){
+  return $.map(charity_data[i].requirements, function(req){
+    return req.label;
+  });
+};
+
+renderInfoWindow = function(i, charity_data, requirements){
+  var html = $('#charity-info-window').html();
+  var data = {organisation: charity_data[i].organisation,
+              food_requirements: requirements,
+              weekday_hours: charity_data[i].weekday_hours,
+              weekend_hours: charity_data[i].weekend_hours,
+              id: charity_data[i].id
+            }
+  return Mustache.render(html,data);
+};
+
+addCharityMarkers = function(i, charity_data, charity_info){
+  map.addMarker({
+    lat: charity_data[i].lat, 
+    lng: charity_data[i].lon,
+    icon: markerImage('images/oodls-pin-white.png'),
+    animation: google.maps.Animation.DROP,
+    infoWindow:{
+      content: charity_info
+    },
+    mouseover: function(event){
+      this.infoWindow.open(this.map, this);
+    }
+  });
+};
+
+assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
-    var requirements = $.map(charity_data[i].requirements, function(req) { return req.label; }).join(", ");
-    var charity_info = "<p><b>" + charity_data[i].organisation + "</b>" + "<br />" + "<b>We are currently accepting:</b>" + "<br />" + requirements + "<br />" + "<b>Weekday opening hours:</b>" + "<br />" + charity_data[i].weekday_hours + "<br />" + "<b>Weekend opening hours:</b>" + "<br />" + charity_data[i].weekend_hours + '<p><a href="/charities/' + charity_data[i].id + '">Click here for more info</a></p>';
-    map.addMarker({
-      lat: charity_data[i].lat, 
-      lng: charity_data[i].lon,
-      icon: image,
-      animation: google.maps.Animation.DROP,
-      infoWindow:{
-        content: charity_info
-      },
-      mouseover: function(event){
-        this.infoWindow.open(this.map, this);
-      }
-    });
+    var requirements = processCharityRequirements(i, charity_data).join(", ");
+    var charity_info = renderInfoWindow(i, charity_data, requirements);
+    addCharityMarkers(i, charity_data, charity_info);
   };
 };
 
@@ -65,7 +92,7 @@ assembleMap = function(postcode) {
         returnSearchBoxToTop();
         generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
-        addCharityMarkers();
+        getCharityData();
         $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
@@ -87,20 +114,6 @@ fetchLocation = function() {
 returnSearchBoxToTop = function () {
   $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
 };
-
-$(document).ready(function() {
-  var carousel = $("#stats-carousel");
-
-  carousel.owlCarousel({
-    items:1,
-    loop:true,
-    margin:10,
-    autoplay:true,
-    autoplayTimeout:800,
-    autoplayHoverPause: true
-  });
-
-});
 
 $("#user-postcode").submit(function(event) {
   event.preventDefault();

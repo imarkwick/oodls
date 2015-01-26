@@ -1,27 +1,28 @@
-<div class="row stats">
-  <div id="stats-carousel" class="owl-carousel">
-    <div class="item">
-      Almost 50% of the total amount of food thrown away in the UK comes from our homes.
-    </div>
-    <div class="item">
-      We throw away 7 million tonnes of food and drink from our homes every year in the UK.
-    </div>
-    <div class="item">
-      We throw away more food from our homes than packaging in the UK every year.
-    </div>
-    <div class="item">
-      Between 2007 and 2012 avoidable food waste has been reduced by 21%, equivalent to over 1 million tonnes.
-    </div>
-    <div class="item">
+<div id="splash">
+  <div class="splash-slide item">
+    <%= image_tag "splash-images/splash-1.png" %>
+  </div>
+  <div class="splash-slide item">
+    We throw away 7 million tonnes of food and drink from our homes every year in the UK.
+    <%= image_tag "splash-images/splash-2.png" %>
+  </div>
+  <div class="splash-slide item">
+    We throw away more food from our homes than packaging in the UK every year.
+    <%= image_tag "splash-images/splash-2.png" %>
+  </div>
+  <div class="splash-slide item">
+    Between 2007 and 2012 avoidable food waste has been reduced by 21%, equivalent to over 1 million tonnes.
+    <%= image_tag "splash-images/splash-2.png" %>
+  </div>
+  <div class="splash-slide item">
     An area almost the size of Wales would be needed to grow all of the food we throw away each year.
-    </div>
+    <%= image_tag "splash-images/splash-2.png" %>
   </div>
 </div>
 
 <div class="row">
   <div id="map"></div>
 </div>
-
 <div class="search-box row">
   <div class="small-12 columns small-centered">
     <div class="row">
@@ -48,8 +49,22 @@
   </div>
 </div>
 
+<template id='charity-info-window'>
+  <p><b>{{ organisation }}</b><br />
+  <b>We are currently accepting:</b><br />
+  {{ food_requirements }}<br />
+  <b>Weekday opening hours:</b><br />
+  {{ weekday_hours }}<br />
+  <b>Weekend opening hours:</b><br />
+  {{ weekend_hours }}<br />
+  <a href="/charities/{{ id }}">Click here for more info</a>
+</template>
+
 <%= content_tag :div, class: "charity_data_class", data: {charities_for_map: @charities_for_map} do %>
 <% end %>
 
 <%= javascript_include_tag 'gmaps', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'map_index_page', 'data-turbolinks-track' => true %>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
