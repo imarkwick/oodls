@@ -48,6 +48,12 @@ processCharityRequirements = function(i, charity_data){
   });
 };
 
+var render = function(i, charity_data){
+  var html = $('#charity-info-window').html();
+  var data = {organisation: charity_data[i].organisation}
+  return Mustache.render(html,data);
+};
+
 addCharityMarkers = function(i, charity_data, charity_info){
   map.addMarker({
     lat: charity_data[i].lat, 
@@ -66,7 +72,8 @@ addCharityMarkers = function(i, charity_data, charity_info){
 assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
     var requirements = processCharityRequirements(i, charity_data).join(", ");
-    var charity_info = "<p><b>" + charity_data[i].organisation + "</b>" + "<br />" + "<b>We are currently accepting:</b>" + "<br />" + requirements + "<br />" + "<b>Weekday opening hours:</b>" + "<br />" + charity_data[i].weekday_hours + "<br />" + "<b>Weekend opening hours:</b>" + "<br />" + charity_data[i].weekend_hours + '<p><a href="/charities/' + charity_data[i].id + '">Click here for more info</a></p>';
+    // var charity_info = "<p><b>" + charity_data[i].organisation + "</b>" + "<br />" + "<b>We are currently accepting:</b>" + "<br />" + requirements + "<br />" + "<b>Weekday opening hours:</b>" + "<br />" + charity_data[i].weekday_hours + "<br />" + "<b>Weekend opening hours:</b>" + "<br />" + charity_data[i].weekend_hours + '<p><a href="/charities/' + charity_data[i].id + '">Click here for more info</a></p>';
+    var charity_info = render(i, charity_data);
     addCharityMarkers(i, charity_data, charity_info);
   };
 };

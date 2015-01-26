@@ -28,8 +28,15 @@
   </div>
 </div>
 
+ <template id='charity-info-window'>
+    {{ organisation }}
+  </template>
+
 <%= content_tag :div, class: "charity_data_class", data: {charities_for_map: @charities_for_map} do %>
 <% end %>
 
 <%= javascript_include_tag 'gmaps', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'map_index_page', 'data-turbolinks-track' => true %>
+
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js'></script>
