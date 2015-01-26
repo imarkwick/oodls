@@ -22,7 +22,7 @@ class Charity < ActiveRecord::Base
 
     food_reqs.inject([]) do |memo, col|
       if (self[col] == "1")
-        memo << { :label => col.humanize, :id => col }
+        memo << { :label => col.humanize, :heading => col }
       end
       memo
     end

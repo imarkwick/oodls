@@ -75,7 +75,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return req.label;
+    return req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'>";
   });
 };
 
