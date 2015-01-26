@@ -10,7 +10,10 @@
     </div>
   </div>
   <div class ="row">
-    <div class="small-12 columns">
+    <div class="small-3 columns">
+      <p>Organisation Name &#42;</p>
+    </div>
+    <div class="small-9 columns">
       <%= f.text_field :organisation, autofocus: true, placeholder: "Organisation Name" %>
     </div>
   </div>
@@ -38,22 +41,22 @@
     <div class="small-12 columns">
       <h4>Contact Details</h4>
     </div>
-    <div class="small-2 columns">
-      <%= f.label :contact_name %>
+    <div class="small-3 columns">
+      <p>Contact Name &#42;</p>
     </div>
-    <div class="small-10 columns">
+    <div class="small-9 columns">
       <%= f.text_field :contact_name, placeholder: "Contact Name" %>
     </div>
-    <div class="small-2 columns">
-      <%= f.label :email %>
+    <div class="small-3 columns">
+      <p>Email Address &#42;</p>
     </div>
-    <div class="small-10 columns">
+    <div class="small-9 columns">
       <%= f.email_field :email, placeholder: "Contact\'s Email Address" %>
     </div>
   </div>
   <div class ="row">
     <div class="small-12 columns">
-      <%= f.text_field :full_address, placeholder: "Organisation Address" %>
+      <%= f.text_field :full_address, placeholder: "Donation Center Address" %>
     </div>
   </div>
   <div class ="row">
@@ -171,7 +174,7 @@
           <%= f.label(:none, "None") %>
         </div>
         <div class="small-9 columns">
-          <p>None</p>
+          <p>We are not currently accepting</p>
         </div>
       </div>
     </div>
