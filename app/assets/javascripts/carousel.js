@@ -6,7 +6,9 @@ $(document).ready(function() {
     autoplay: true,
     autplayTimeout: 1000,
     items: 1,
-    margin: 0
+    margin: 0,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn'
   });
 
 });
