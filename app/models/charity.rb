@@ -9,7 +9,7 @@ class Charity < ActiveRecord::Base
     :default_url => "/images/:style/missing.png" 
 	validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
   validates_uniqueness_of :postcode
-  validates_presence_of :contact_name, :postcode
+  validates_presence_of :organisation, :postcode, :full_address
 
   geocoded_by :address
   after_validation :geocode

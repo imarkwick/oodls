@@ -10,10 +10,10 @@
     </div>
   </div>
   <div class ="row">
-    <div class="small-3 columns">
+    <div class="small-4 columns">
       <p>Organisation Name &#42;</p>
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= f.text_field :organisation, autofocus: true, placeholder: "Organisation Name" %>
     </div>
   </div>
@@ -41,26 +41,36 @@
     <div class="small-12 columns">
       <h4>Contact Details</h4>
     </div>
-    <div class="small-3 columns">
-      <p>Contact Name &#42;</p>
+  </div>
+  <div class ="row">
+    <div class="small-4 columns">
+      <p>Contact Name</p>
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= f.text_field :contact_name, placeholder: "Contact Name" %>
     </div>
-    <div class="small-3 columns">
-      <p>Email Address &#42;</p>
+  </div>
+  <div class ="row">
+    <div class="small-4 columns">
+      <p>Email &#42;</p>
     </div>
-    <div class="small-9 columns">
+    <div class="small-8 columns">
       <%= f.email_field :email, placeholder: "Contact\'s Email Address" %>
     </div>
   </div>
   <div class ="row">
-    <div class="small-12 columns">
+    <div class="small-4 columns">
+      <p>Adddress &#42;</p>
+    </div>
+    <div class="small-8 columns">
       <%= f.text_field :full_address, placeholder: "Donation Center Address" %>
     </div>
   </div>
   <div class ="row">
-    <div class="small-12 columns">
+    <div class="small-4 columns">
+      <p>Postcode &#42;</p>
+    </div>
+    <div class="small-8 columns">
       <%= f.text_field :postcode, placeholder: "Postcode" %>
     </div>
   </div>
@@ -74,8 +84,11 @@
           <%= f.check_box(:tins) %>
           <%= f.label(:tins, "Tins") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Tins</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/tins.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -83,8 +96,11 @@
           <%= f.check_box(:dried_goods) %>
           <%= f.label(:dried_goods, "Dried Goods") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Dried Goods</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/dried_goods.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -92,8 +108,11 @@
           <%= f.check_box(:coffee_and_tea) %>
           <%= f.label(:coffee_and_tea, "Cofee & Tea") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Coffee &amp; Tea</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/coffee_and_tea.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -101,8 +120,11 @@
           <%= f.check_box(:fresh_fruit_and_veg) %>
           <%= f.label(:fresh_fruit_and_veg, "Fruit & Veg") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Fresh Fruit &amp; Vegetables</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/fresh_fruit_and_veg.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -110,8 +132,11 @@
           <%= f.check_box(:fresh_meat_and_fish) %>
           <%= f.label(:fresh_meat_and_fish, "Meat & Fish") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Fresh Meat &amp; Fish</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/fresh_meat_and_fish.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -119,8 +144,11 @@
           <%= f.check_box(:snacks) %>
           <%= f.label(:snacks, "Snacks") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Snacks</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/snacks.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -128,8 +156,11 @@
           <%= f.check_box(:jars_and_condiments) %>
           <%= f.label(:jars_and_condiments, "Condiments") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Jars &amp; Condiments</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/jars_and_condiments.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -137,8 +168,11 @@
           <%= f.check_box(:cereals) %>
           <%= f.label(:cereals, "Cereals") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Cereals</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/cereals.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -146,8 +180,11 @@
           <%= f.check_box(:cooking_ingredients) %>
           <%= f.label(:cooking_ingredients, "Cooking Ingredients") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Cooking Ingredients</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/cooking_ingredients.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -155,8 +192,11 @@
           <%= f.check_box(:drinks) %>
           <%= f.label(:drinks, "Drinks") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>Drinks</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/drinks.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
@@ -164,8 +204,11 @@
           <%= f.check_box(:uht_milk) %>
           <%= f.label(:uht_milk, "UHT Milk") %>
         </div>
-        <div class="small-9 columns">
+        <div class="small-5 columns">
           <p>UHT Milk</p>
+        </div>
+        <div class="small-4 columns">
+          <%= image_tag "icons/uht_milk.svg", size: "30x30"%>
         </div>
       </div>
       <div class="row">
