@@ -20,7 +20,7 @@ var image = {
   url: 'images/oodls-pin-white.png',
   size: new google.maps.Size(20, 33),
   origin: new google.maps.Point(0,0),
-  anchor: new google.maps.Point(0,0)
+  anchor: new google.maps.Point(10,33)
 };
 
 addUserMarker = function(latitude, longitude) {

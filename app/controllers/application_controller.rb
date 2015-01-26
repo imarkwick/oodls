@@ -40,7 +40,8 @@ class ApplicationController < ActionController::Base
                                                           :cereals,
                                                           :cooking_ingredients,
                                                           :drinks,
-                                                          :uht_milk
+                                                          :uht_milk,
+                                                          :none
                                                         ) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
                                                           :organisation,
@@ -65,7 +66,8 @@ class ApplicationController < ActionController::Base
                                                           :cereals,
                                                           :cooking_ingredients,
                                                           :drinks,
-                                                          :uht_milk
+                                                          :uht_milk,
+                                                          :none
                                                         ) }
   end
 
