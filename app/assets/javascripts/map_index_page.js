@@ -61,7 +61,7 @@ renderInfoWindow = function(i, charity_data, requirements){
 
 addCharityMarkers = function(i, charity_data, charity_info){
   map.addMarker({
-    lat: charity_data[i].lat, 
+    lat: charity_data[i].lat,
     lng: charity_data[i].lon,
     icon: markerImage('images/oodls-pin-white.png'),
     animation: google.maps.Animation.DROP,
@@ -89,6 +89,7 @@ assembleMap = function(postcode) {
       if (status == 'OK') {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
+        hideSplashImages();
         returnSearchBoxToTop();
         generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
@@ -113,6 +114,10 @@ fetchLocation = function() {
 
 returnSearchBoxToTop = function () {
   $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
+};
+
+hideSplashImages = function () {
+  $("#splash").fadeOut();
 };
 
 $("#user-postcode").submit(function(event) {
