@@ -28,8 +28,16 @@
   </div>
 </div>
 
+
  <template id='charity-info-window'>
-    {{ organisation }}
+    <p><b>{{ organisation }}</b><br />
+    <b>We are currently accepting:</b><br />
+    {{ food_requirements }}<br />
+    <b>Weekday opening hours:</b><br />
+    {{ weekday_hours }}<br />
+    <b>Weekend opening hours:</b><br />
+    {{ weekend_hours }}<br />
+    <a href="/charities/{{ id }}">Click here for more info</a>
   </template>
 
 <%= content_tag :div, class: "charity_data_class", data: {charities_for_map: @charities_for_map} do %>
