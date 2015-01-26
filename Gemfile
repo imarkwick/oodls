@@ -36,6 +36,8 @@ gem 'geocoder'
 
 gem 'foundation-rails', '~> 5.5.0'
 
+gem 'owlcarousel-rails'
+
 group :test do
 	gem 'rspec-rails'
 	gem 'capybara'

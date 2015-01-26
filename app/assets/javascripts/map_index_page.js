@@ -59,7 +59,7 @@ markerImage = function(url){
 addUserMarker = function(latitude, longitude) {
   map.addMarker({
     lat: latitude,
-    lng: longitude                 
+    lng: longitude
   });
 };
 
