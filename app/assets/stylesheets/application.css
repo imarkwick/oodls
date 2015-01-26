@@ -49,26 +49,18 @@ body {
 .search-box {
   z-index: 10;
   position: absolute;
-  top: 60%;
+  bottom: 40%;
   left: 0;
   right: 0;
-  bottom: 0;
-  height: 100px;
 }
 
-@media (max-width: 640px) {
-  .align-search-box {
-    bottom: 5px;
-    top: inherit;
-    line-height: 2.3125rem;
-    display: block;
-  }
+.search-box input, .search-box .button {
+  margin-bottom: 0 !important;
 }
 
-@media (min-width: 641px) {
-  .align-search-box {
-    top: 3.5em;
-  }
+.align-search-box {
+  display: block;
+  bottom: 8%;
 }
 
 #map img {
@@ -84,6 +76,10 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.search-box {
+  padding: 0;
 }
 
 /*  CHARITY LISITING  */
