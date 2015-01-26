@@ -16,6 +16,37 @@ generateMap = function(latitude, longitude) {
   });
 };
 
+tescoImage = function(){
+  return image = {
+    url: 'images/tescomarker.png',
+    size: new google.maps.Size(27, 35),
+    origin: new google.maps.Point(0,0),
+    anchor: new google.maps.Point(14,35)
+  };
+};
+
+addTescoMarkers = function(){
+  $.getJSON('data/tescolonglat.json', function(json){
+    for(var i in json){
+      map.addMarker({
+        lat: json[i][0],
+        lng: json[i][1],
+        icon: tescoImage(),
+        infoWindow:{
+          content: 'Donation point'
+        },
+        mouseover: function(event){
+          this.infoWindow.open(this.map, this);
+        },
+        mouseout: function(event){
+          this.infoWindow.close(this.map, this);
+        }
+      });
+    };
+  });
+};
+
+
 markerImage = function(url){
   return image = {
     url: url,
@@ -92,6 +123,7 @@ assembleMap = function(postcode) {
         returnSearchBoxToTop();
         generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
+        addTescoMarkers();
         getCharityData();
         $("#postcode").css("border", "1px solid #cccccc");
       }
