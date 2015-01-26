@@ -35,14 +35,18 @@ setUserPosition = function(latitude, longitude) {
   userLongitude = longitude;
 };
 
-getData = function(){
+getCharityData = function(){
   var charity_data = $('.charity_data_class').data('charities-for-map');
   addCharityMarkers(charity_data);
 };
 
+processCharityRequirements = function(i, charity_data){
+  return $.map(charity_data[i].requirements, function(req) { return req.label; }).join(", ");
+};
+
 addCharityMarkers = function(charity_data){
   for(var i in charity_data){
-    var requirements = $.map(charity_data[i].requirements, function(req) { return req.label; }).join(", ");
+    var requirements = processCharityRequirements(i, charity_data);
     var charity_info = "<p><b>" + charity_data[i].organisation + "</b>" + "<br />" + "<b>We are currently accepting:</b>" + "<br />" + requirements + "<br />" + "<b>Weekday opening hours:</b>" + "<br />" + charity_data[i].weekday_hours + "<br />" + "<b>Weekend opening hours:</b>" + "<br />" + charity_data[i].weekend_hours + '<p><a href="/charities/' + charity_data[i].id + '">Click here for more info</a></p>';
     map.addMarker({
       lat: charity_data[i].lat, 
@@ -69,7 +73,7 @@ assembleMap = function(postcode) {
         returnSearchBoxToTop();
         generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
-        getData();
+        getCharityData();
         $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
