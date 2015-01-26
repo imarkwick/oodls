@@ -1,10 +1,10 @@
 var userLatitude, userLongitude;
 
+var map;
+
 if (!navigator.geolocation) {
   $("#user-geolocation").hide();
 };
-
-var map;
 
 returnSearchBoxToTop = function () {
   $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
@@ -70,6 +70,12 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
   };
 };
 
+mouseEvent = function(){
+  mouseover: function(event){
+    this.infoWindow.open(this.map, this);
+  },
+};
+
 addTescoMarkers = function(){
   $.getJSON('data/tescolonglat.json', function(json){
     for(var i in json){
@@ -77,12 +83,9 @@ addTescoMarkers = function(){
         lat: json[i][0],
         lng: json[i][1],
         icon: markerImage('images/tescomarker.png', 27, 35, 0, 0, 14, 35),
-        infoWindow:{
-          content: '<p>Donation point</p>'
-        },
-        mouseover: function(event){
-          this.infoWindow.open(this.map, this);
-        },
+        animation: google.maps.Animation.DROP;
+        renderInfoWindow('<p>Donation point</p>');
+        mouseEvent();
         mouseout: function(event){
           this.infoWindow.close(this.map, this);
         }
@@ -108,31 +111,33 @@ addCharityMarkers = function(i, charity_data, charity_info){
     lng: charity_data[i].lon,
     icon: markerImage('images/oodls-pin-white.png', 20, 33, 0, 0, 10, 33),
     animation: google.maps.Animation.DROP,
-    infoWindow:{
-      content: charity_info
-    },
-    mouseover: function(event){
-      this.infoWindow.open(this.map, this);
-    }
+    renderInfoWindow(charity_info);
+    mouseEvent();
   });
 };
 
 assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
     var requirements = processCharityRequirements(i, charity_data).join(", ");
-    var charity_info = renderInfoWindow(i, charity_data, requirements);
+    var charity_info = fillInfoWindow(i, charity_data, requirements);
     addCharityMarkers(i, charity_data, charity_info);
   };
 };
 
-renderInfoWindow = function(i, charity_data, requirements){
+renderInfoWindow = function(windowContent){
+  infoWindow:{
+    content: windowContent
+  };
+};
+
+fillInfoWindow = function(i, charity_data, requirements){
   var html = $('#charity-info-window').html();
   var data = {organisation: charity_data[i].organisation,
               food_requirements: requirements,
               weekday_hours: charity_data[i].weekday_hours,
               weekend_hours: charity_data[i].weekend_hours,
               id: charity_data[i].id
-            }
+            };
   return Mustache.render(html,data);
 };
 
