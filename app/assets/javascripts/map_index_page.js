@@ -108,7 +108,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return "<li style='margin-bottom: 2px;'><img src='/images/icons/" + req.heading + ".svg' width='25' height='25' style='margin-right:5px'>" + req.label + "</li>" ;
+    return "<li><img id='window-icons' src='/images/icons/" + req.heading + ".svg'>" + req.label + "</li>";
   });
 };
 
