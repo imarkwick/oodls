@@ -22,7 +22,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
-  // returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
+  returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
 });
 
 $(window).on('resize', function(){
