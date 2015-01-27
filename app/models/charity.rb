@@ -43,10 +43,8 @@ class Charity < ActiveRecord::Base
     end.to_json
   end
 
-  # def self.search
-  #   if search
-  #     find(:all, :conditions => ['organisation LIKE ? OR description LIKE ?', search_condition, search_condition])
-  #   end
-  # end
+  def self.search(query)
+    where("organisation like ?", "%#{query}%")
+  end
 
 end
