@@ -32,7 +32,7 @@
     </div>
     <% if @charity.website_url %>
     <div class="row">
-      Visit the website: <%= link_to "#{@charity.website_url}", @charity.website_url %>
+    <%= link_to "Visit the website", @charity.website_url %>
     </div>
     <% end %>
   </div>
@@ -52,7 +52,7 @@
       <h3>Food accepted:</h3>
       <ul class="no-bullet">
         <% @charity.requirements_array.each do |key, value| %>
-          <li><%= key[:label] %><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40"%></li>
+          <li><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40"%><%= key[:label] %></li>
         <% end %>
       </ul>
     </div>
