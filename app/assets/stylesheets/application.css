@@ -15,7 +15,6 @@
  *= require owl.carousel
  *= require owl.theme
  *= require_tree .
-
  */
 
 html {
@@ -101,6 +100,10 @@ li {
   #user-geolocation .text {
     display: none;
   }
+}
+
+#dialog {
+  z-index: 50;
 }
 
 /*  CHARITY LISITING  */
