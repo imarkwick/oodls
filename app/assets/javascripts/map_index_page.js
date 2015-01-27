@@ -91,10 +91,14 @@ addTescoMarkers = function(tesco_info){
         icon: markerImage('images/tesco-pin.svg', 30, 48, 0, 0, 15, 48),
         animation: google.maps.Animation.DROP,
         infoWindow:{
-          content: $('#tesco-info-window').html()
+          content: $('#tesco-info-window').html(),
+          closeclick: function(event){
+            $('.search-box').show();
+          }
         },
         click: function(event){
           this.infoWindow.open(this.map, this);
+            $('.search-box').hide();
         }
       });
     };
@@ -119,10 +123,14 @@ addCharityMarkers = function(i, charity_data, charity_info){
     icon: markerImage('images/oodls-pin.svg', 30, 48, 0, 0, 15, 48),
     animation: google.maps.Animation.DROP,
     infoWindow:{
-      content: charity_info
+      content: charity_info,
+      closeclick: function(event){
+        $('.search-box').show();
+      }
     },
     click: function(event){
       this.infoWindow.open(this.map, this);
+      $('.search-box').hide();
     }
   });
 };
