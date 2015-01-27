@@ -1,3 +1,304 @@
-// Place all the styles related to the application controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require foundation
+ *= require owl.carousel
+ *= require owl.theme
+ *= require_tree .
+
+ */
+
+@import "foundation_and_overrides";
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.top-bar {
+  z-index: 100;
+}
+
+.row.messages {
+  margin-top: 20px;
+}
+
+.title-area .logo {
+  display: inline-block;
+  height: 80px;
+  width: 140px;
+  padding: 10px;
+  margin-left: 20px;
+  background-color: #62a905;
+}
+
+.title-area .logo svg #left-eye, .title-area .logo svg #right-eye {
+  stroke: #fff;
+  transition: 1s ease;
+}
+
+.title-area .logo svg #head, .title-area .logo svg #beak, .title-area .logo svg .letter {
+  fill: #fff;
+}
+
+.title-area .logo svg #head, .title-area .logo svg #beak {
+  transition: 1s ease;
+}
+
+.title-area .logo svg #d {
+  transition: 1.25s ease;
+}
+
+.title-area .logo svg #l {
+  transition: 1.5s ease;
+}
+
+.title-area .logo svg #s {
+  transition: 1.75s ease;
+}
+
+.title-area .logo:hover svg #left-eye, .title-area .logo:hover svg #right-eye {
+  stroke: #362009;
+}
+
+.title-area .logo:hover svg #head, .title-area .logo:hover svg #beak {
+  fill: #362009;
+}
+
+.title-area .logo:hover svg .letter {
+  fill: #362009;
+}
+
+.title-area .name {
+  text-transform: lowercase;
+  display: inline-block;
+}
+
+/*  MAP PAGE  */
+
+#map {
+  position: absolute;
+  width: 100%;
+  height: calc(100% - 2.8125rem);
+  z-index: 0;
+  top: 2.8125em;
+  left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#charity-info-window {
+  width:200px;
+}
+
+.search-box {
+  z-index: 10;
+  position: absolute;
+  bottom: 40%;
+  left: 0;
+  right: 0;
+}
+
+.search-box input, .search-box .button {
+  margin-bottom: 0 !important;
+}
+
+.align-search-box {
+  display: block;
+  bottom: 8%;
+}
+
+#map img {
+  max-width: inherit;
+}
+
+.owl-carousel .item {
+  z-index: 20;
+  background: #a4d4a4;
+  padding: 30px 0px;
+  margin: 10px;
+  color: #FFF;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.search-box {
+  padding: 0;
+}
+
+@media all and (max-width: 64em) {
+  #user-geolocation {
+    background-image: url('/assets/location.png');
+    background-size: 28px 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  #user-geolocation .text {
+    display: none;
+  }
+}
+
+/*  CHARITY LISITING  */
+
+.charity-listing {
+  border-bottom: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .charity-listing {
+    padding-left: 4px;
+  }
+}
+
+.charity-profile {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.charity-image img {
+  margin-bottom: 20px;
+}
+
+/*  CHARITY SIGN UP */
+
+.required:after {
+  content: "*";
+  color: red;
+}
+
+/*  SPLASH IMAGES */
+
+#splash {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.splash-slide {
+  width: 100%;
+  height: 100%;
+}
+
+.owl-stage-outer, .owl-stage {
+  width: 100%;
+  height: 100%;
+}
+
+.owl-stage {
+  width: 100%;
+  height: 100%;
+}
+
+.owl-item {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.splash-slide img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto !important;
+}
+
+.owl-carousel .item {
+  background: none;
+}
+
+#blank-behind-splash {
+  background-color: #000;
+}
+
+@media only screen and (max-width: 40em) {
+  .splash-slide img {
+    left: -50%;
+    max-width: 300% !important;
+  }
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .splash-slide img {
+    left: -50%;
+    max-width: 200% !important;
+  }
+}
+
+.splash-slide .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 50%;
+  z-index: 20;
+}
+
+.splash-slide .text h1 {
+  width: 75%;
+  margin: 2em auto 0 auto;
+  color: #fff;
+  font-style: italic;
+  text-shadow: 0px 0px 4px #000;
+  text-align: center;
+  opacity: 1;
+}
+
+@media only screen and (max-width: 40em) {
+  .splash-slide .text h1 {
+    margin: 3em auto 0 auto;
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  .splash-slide .text h1 {
+    margin: 2em auto 0 auto;
+    font-size: 2.5em;
+  }
+}
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  .splash-slide .text h1 {
+    margin: 2em auto 0 auto;
+    font-size: 3em;
+    line-height: 1.5em;
+  }
+}
+
+@media only screen and (min-width: 90.063em) {
+  .splash-slide .text h1 {
+    margin: 2em auto 0 auto;
+    font-size: 3.5em;
+    line-height: 2em;
+  }
+}

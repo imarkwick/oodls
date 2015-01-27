@@ -22,7 +22,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
-  returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
+  returnSearchBoxToBottom();
 });
 
 $(window).on('resize', function(){
@@ -60,10 +60,6 @@ fetchLocation = function() {
     spinner2();
   });
 };
-
-
-
-
 
 setUserPosition = function(latitude, longitude) {
   userLatitude = latitude;
@@ -120,7 +116,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
   map.addMarker({
     lat: charity_data[i].lat,
     lng: charity_data[i].lon,
-    icon: markerImage('images/oodls-pin-white.png', 20, 33, 0, 0, 10, 33),
+    icon: markerImage('images/oodls-pin.svg', 30, 48, 0, 0, 15, 48),
     animation: google.maps.Animation.DROP,
     infoWindow:{
       content: charity_info
