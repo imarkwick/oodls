@@ -6,7 +6,7 @@ if (!navigator.geolocation) {
   $("#user-geolocation").hide();
 };
 
-returnSearchBoxToTop = function () {
+returnSearchBoxToBottom = function () {
   $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
 };
 
@@ -22,6 +22,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
+  // returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
 });
 
 $(window).on('resize', function(){
@@ -144,8 +145,8 @@ assembleMap = function(postcode) {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
         hideSplashImages();
-        returnSearchBoxToTop();
         generateMap(latlng.lat(), latlng.lng());
+        returnSearchBoxToBottom();
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
