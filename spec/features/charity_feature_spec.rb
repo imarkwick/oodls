@@ -27,7 +27,6 @@ feature 'charities:' do
 		end
 
 		scenario 'should be able to include their website url' do
-			save_and_open_page
 			sign_up_with_website
 			expect(page).to have_link 'Visit the website'
 		end
