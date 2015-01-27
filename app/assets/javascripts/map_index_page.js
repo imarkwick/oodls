@@ -232,7 +232,6 @@ applyMapStyle = function() {
   map.setStyle("map_style");
 };
 
-
 assembleMap = function(postcode) {
   GMaps.geocode({
     address: postcode,
