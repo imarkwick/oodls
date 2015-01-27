@@ -22,7 +22,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
-  // returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
+  returnSearchBoxToBottom();
 });
 
 $(window).on('resize', function(){
@@ -41,11 +41,23 @@ generateMap = function(latitude, longitude) {
   });
 };
 
+spinner = function() {
+  $('.spinner').css("opacity", "1");
+  $('body').css("background-color", "#E5E3DF");
+  $('#splash').hide();
+}
+
+spinner2 = function() {
+  $('.spinner').css("opacity", "0");
+}
+
 fetchLocation = function() {
+  spinner();
   navigator.geolocation.getCurrentPosition(function(position) {
     setUserPosition(position.coords.latitude, position.coords.longitude)
     var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude
     assembleMap(browserCoordinates);
+    spinner2();
   });
 };
 
@@ -70,7 +82,7 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
   };
 };
 
-addTescoMarkers = function(){
+addTescoMarkers = function(tesco_info){
   $.getJSON('data/tescolonglat.json', function(json){
     for(var i in json){
       map.addMarker({
@@ -79,13 +91,10 @@ addTescoMarkers = function(){
         icon: markerImage('images/tescomarker.png', 27, 35, 0, 0, 14, 35),
         animation: google.maps.Animation.DROP,
         infoWindow:{
-          content: '<p>Donation point</p>'
+          content: $('#tesco-info-window').html()
         },
-        mouseover: function(event){
+        click: function(event){
           this.infoWindow.open(this.map, this);
-        },
-        mouseout: function(event){
-          this.infoWindow.close(this.map, this);
         }
       });
     };
@@ -99,7 +108,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'>";
+    return "<li>" + req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'></li>";
   });
 };
 
@@ -107,12 +116,12 @@ addCharityMarkers = function(i, charity_data, charity_info){
   map.addMarker({
     lat: charity_data[i].lat,
     lng: charity_data[i].lon,
-    icon: markerImage('images/oodls-pin-white.png', 20, 33, 0, 0, 10, 33),
+    icon: markerImage('images/oodls-pin.svg', 30, 48, 0, 0, 15, 48),
     animation: google.maps.Animation.DROP,
     infoWindow:{
       content: charity_info
     },
-    mouseover: function(event){
+    click: function(event){
       this.infoWindow.open(this.map, this);
     }
   });
@@ -120,7 +129,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
 
 assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
-    var requirements = processCharityRequirements(i, charity_data).join(", ");
+    var requirements = processCharityRequirements(i, charity_data).join('');
     var charity_info = fillInfoWindow(i, charity_data, requirements);
     addCharityMarkers(i, charity_data, charity_info);
   };
@@ -145,12 +154,11 @@ assembleMap = function(postcode) {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
         hideSplashImages();
-        generateMap(latlng.lat(), latlng.lng());
         returnSearchBoxToBottom();
+        generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
-        $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
         $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
