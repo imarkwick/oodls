@@ -13,6 +13,7 @@
  *= require_self
  *= require foundation
  *= require owl.carousel
+ *= require animate
  *= require owl.theme
  *= require animate
  *= require_tree .
@@ -102,6 +103,13 @@ body {
 
 li {
   list-style: none;
+  margin-bottom: 2px;
+}
+
+#window-icons{  
+  margin-right: 5px;
+  width: 25px;
+  height: 25px;
 }
 
 #charity-info-window {
@@ -146,7 +154,7 @@ li {
 
 @media all and (max-width: 64em) {
   #user-geolocation {
-    background-image: url('/assets/location.png');
+    background-image: url('/images/location.png');
     background-size: 28px 28px;
     background-position: center center;
     background-repeat: no-repeat;
