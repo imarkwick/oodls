@@ -3,11 +3,12 @@ $(document).ready(function() {
 
   carousel.owlCarousel({
     loop: true,
-    autoplay: 20000,
-    autplayTimeout: 3000,
+    autoplay: true,
+    autplayTimeout: 1000,
     items: 1,
     margin: 0,
-    slideSpeed: 900
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn'
   });
 
 });

@@ -82,9 +82,15 @@ body {
   padding: 0;
 }
 
-@media all and (max-width: 40em) {
-  #user-geolocation:before {
-    content: '^';
+@media all and (max-width: 64em) {
+  #user-geolocation {
+    background-image: url('/assets/location.png');
+    background-size: 28px 28px;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  #user-geolocation .text {
+    display: none;
   }
 }
 
@@ -161,14 +167,10 @@ body {
   min-height: 100%;
   min-width: 100%;
   width: auto !important;
-  filter: opacity(.6);
-  -webkit-filter: opacity(.6);
 }
 
 .owl-carousel .item {
   background: none;
-  -webkit-filter: opacity(0.6);
-  filter: opacity(0.6);
 }
 
 #blank-behind-splash {
