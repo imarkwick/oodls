@@ -69,12 +69,6 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
   };
 };
 
-mouseEvent = function(){
-  mouseover: function(event){
-    this.infoWindow.open(this.map, this);
-  },
-};
-
 addTescoMarkers = function(){
   $.getJSON('data/tescolonglat.json', function(json){
     for(var i in json){
@@ -82,9 +76,11 @@ addTescoMarkers = function(){
         lat: json[i][0],
         lng: json[i][1],
         icon: markerImage('images/tescomarker.png', 27, 35, 0, 0, 14, 35),
-        animation: google.maps.Animation.DROP;
+        animation: google.maps.Animation.DROP,
         renderInfoWindow('<p>Donation point</p>');
-        mouseEvent();
+        mouseover: function(event){
+          this.infoWindow.open(this.map, this);
+        };
         mouseout: function(event){
           this.infoWindow.close(this.map, this);
         }
@@ -111,7 +107,9 @@ addCharityMarkers = function(i, charity_data, charity_info){
     icon: markerImage('images/oodls-pin-white.png', 20, 33, 0, 0, 10, 33),
     animation: google.maps.Animation.DROP,
     renderInfoWindow(charity_info);
-    mouseEvent();
+    mouseover: function(event){
+      this.infoWindow.open(this.map, this);
+    };
   });
 };
 
