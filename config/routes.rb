@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   # Example of regular route:
   get '/charity' => 'charities#index'
 
+  # match 'search', to: 'charities#search', via: :get
+  # match '/charities/search', to: 'charities#search', :via  => "search"
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 

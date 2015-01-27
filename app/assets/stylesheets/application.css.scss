@@ -99,6 +99,14 @@ body {
   left: 0;
 }
 
+li {
+  list-style: none;
+}
+
+#charity-info-window {
+  width:200px;
+}
+
 .search-box {
   z-index: 10;
   position: absolute;

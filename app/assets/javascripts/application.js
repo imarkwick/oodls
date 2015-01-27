@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require notify
 //= require foundation
 //= require owl.carousel
 //= require_tree .
