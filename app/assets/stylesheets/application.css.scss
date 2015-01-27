@@ -14,6 +14,7 @@
  *= require foundation
  *= require owl.carousel
  *= require owl.theme
+ *= require animate
  *= require_tree .
 
  */
@@ -104,7 +105,7 @@ li {
 }
 
 #charity-info-window {
-  width: 200px; 
+  width: 200px;
 }
 
 .search-box {
@@ -303,4 +304,7 @@ li {
   }
 }
 
-.button:focus {outline: 2px double #62a905}
+a:focus, .button:focus {
+  outline: 2px solid #62a905;
+  outline-offset: 1px;
+}
