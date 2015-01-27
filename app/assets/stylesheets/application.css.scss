@@ -308,3 +308,10 @@ a:focus, .button:focus {
   outline: 2px solid #62a905;
   outline-offset: 1px;
 }
+
+@media only screen and (max-width: 40em) {
+  .title-area .logo {
+    height: 4.0625rem;
+    padding: 5px 10px;
+  }
+}

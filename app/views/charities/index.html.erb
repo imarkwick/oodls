@@ -1,8 +1,17 @@
-<%= form_tag(charities_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Charities" %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
-
+<div class="row">
+  <div class="small-12 medium-8 right columns">
+    <%= form_tag(charities_path, :method => "get", id: "search-form") do %>
+      <div class="row collapse">
+        <div class="small-10 columns">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Charities" %>
+        </div>
+        <div class="small-2 columns">
+          <%= submit_tag "Search", :name => nil, class: "button postfix" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <div class="row">
   <div class="small-6 columns">
     <h2>Participating Charities</h2>
@@ -15,49 +24,65 @@
     <div class="charity-listing row">
       <div class="small-12 medium-6 large-3 columns">
         <div class="row charity-image">
-          <%= link_to (image_tag charity.logo.url(:thumb)), "/charities/#{charity.id}" %>
+          <div class="small-12 columns">
+            <%= link_to (image_tag charity.logo.url(:thumb)), "/charities/#{charity.id}" %>
+          </div>
         </div>
-        <% if charity_signed_in? && @current_charity.id == charity.id %>
-          <%= link_to "Edit Profile", edit_charity_registration_path(@charity), class: "button small" %>
-        <% end %>
+        <div class="small-12 columns">
+          <% if charity_signed_in? && @current_charity.id == charity.id %>
+            <%= link_to "Edit Profile", edit_charity_registration_path(@charity), class: "button small" %>
+          <% end %>
+        </div>
       </div>
       <div class="small-12 medium-6 large-3 columns">
         <div class="row">
-          <h2><%= link_to charity.organisation, "/charities/#{charity.id}" %></h2>
+          <div class="small-12 columns">
+            <h2><%= link_to charity.organisation, "/charities/#{charity.id}" %></h2>
+          </div>
         </div>
         <div class="row">
-          <%= charity.description %>
+          <div class="small-12 columns">
+            <%= charity.description %>
+          </div>
         </div>
         <% if charity.website_url %>
         <div class="row">
-          <%= link_to "Visit the website", charity.website_url %>
+          <div class="small-12 columns">
+            <%= link_to "Visit the website", charity.website_url %>
+          </div>
         </div>
         <% end %>
       </div>
       <div class="small-12 medium-6 large-3 columns">
         <div class="row">
-          <h3>Contact info:</h3>
-          <ul class="no-bullet">
-            <li><%= charity.contact_name %></li>
-            <li><a href="mailto:<%= charity.email %>">Email Us</a></li>
-            <li><%= charity.full_address %></li>
-            <li><%= charity.postcode %></li>
-          </ul>
+          <div class="small-12 columns">
+            <h3>Contact info:</h3>
+            <ul class="no-bullet">
+              <li><%= charity.contact_name %></li>
+              <li><a href="mailto:<%= charity.email %>">Email Us</a></li>
+              <li><%= charity.full_address %></li>
+              <li><%= charity.postcode %></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-12 columns">
+            <h3>Opening hours:</h3>
+            <p><strong>Weekdays:</strong> <%= charity.weekday_opening_hours %></p>
+            <p><strong>Weekends:</strong> <%= charity.weekend_opening_hours %></p>
+          </div>
         </div>
       </div>
       <div class="small-12 medium-6 large-3 columns">
         <div class="row">
-          <h3>Food accepted:</h3>
-          <ul class="no-bullet">
-            <% charity.requirements_array.each do |key, value| %>
-              <li><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40"%><%= key[:label] %></li>
-            <% end %>
-          </ul>
-        </div>
-        <div class="row">
-          <h3>Opening hours:</h3>
-          <p><strong>Weekdays:</strong> <%= charity.weekday_opening_hours %></p>
-          <p><strong>Weekends:</strong> <%= charity.weekend_opening_hours %></p>
+          <div class="small-12 columns">
+            <h3>Food accepted:</h3>
+            <ul class="no-bullet">
+              <% charity.requirements_array.each do |key, value| %>
+                <li><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40"%><%= key[:label] %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
