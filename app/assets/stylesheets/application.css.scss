@@ -15,6 +15,7 @@
  *= require owl.carousel
  *= require animate
  *= require owl.theme
+ *= require animate
  *= require_tree .
 
  */
@@ -105,7 +106,7 @@ li {
 }
 
 #charity-info-window {
-  width: 200px; 
+  width: 200px;
 }
 
 .search-box {
@@ -146,7 +147,7 @@ li {
 
 @media all and (max-width: 64em) {
   #user-geolocation {
-    background-image: url('/assets/location.png');
+    background-image: url('/images/location.png');
     background-size: 28px 28px;
     background-position: center center;
     background-repeat: no-repeat;
@@ -304,4 +305,14 @@ li {
   }
 }
 
-.button:focus {outline: 2px double #62a905}
+a:focus, .button:focus {
+  outline: 2px solid #62a905;
+  outline-offset: 1px;
+}
+
+@media only screen and (max-width: 40em) {
+  .title-area .logo {
+    height: 4.0625rem;
+    padding: 5px 10px;
+  }
+}

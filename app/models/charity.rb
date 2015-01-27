@@ -45,6 +45,7 @@ class Charity < ActiveRecord::Base
 
   def self.search(query)
     where("lower(organisation) like ?", "%#{query.downcase}%")
+    # where("soundex(organisation) like soundex(?)", "%#{query.downcase}%")
   end
 
 end
