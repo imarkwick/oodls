@@ -85,10 +85,10 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
 infoWindowDisplay = function(windowContent){
   return infoWindow = {
     content: windowContent,
-      closeclick: function(event){
-        $('.search-box').show();
-      }
+    closeclick: function(event){
+      $('.search-box').show();
     }
+  }
 };
 
 addTescoMarkers = function(tesco_info){
