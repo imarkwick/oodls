@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/claudiadonovan/Code/projects/oodls/config/environment.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/application.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/application.rb": [
         1,
         null,
         null,
@@ -42,13 +42,13 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/boot.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/environments/test.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/environments/test.rb": [
         1,
         null,
         null,
@@ -89,7 +89,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/assets.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -108,7 +108,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/backtrace_silencers.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -117,12 +117,12 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/cookies_serializer.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/devise.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -385,13 +385,13 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/filter_parameter_logging.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/inflections.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -409,21 +409,21 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/mime_types.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/paperclip.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/paperclip.rb": [
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/session_store.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/wrap_parameters.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -439,7 +439,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/routes.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/config/routes.rb": [
         1,
         null,
         1,
@@ -450,8 +450,8 @@
         null,
         null,
         1,
-        null,
-        null,
+        1,
+        1,
         null,
         null,
         1,
@@ -506,7 +506,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/models/charity.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/models/charity.rb": [
         1,
         null,
         null,
@@ -523,55 +523,55 @@
         1,
         1,
         null,
-        1,
-        12,
-        null,
-        null,
-        1,
-        18,
-        null,
-        18,
-        198,
-        4,
-        null,
-        198,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        4,
-        19,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/charities_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/devise_helper.rb": [
-        1,
         1,
         15,
+        null,
+        null,
+        1,
+        29,
+        null,
+        29,
+        319,
+        4,
+        null,
+        319,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        8,
+        26,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/helpers/charities_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/helpers/devise_helper.rb": [
+        1,
+        1,
+        18,
         null,
         5,
         2,
@@ -594,24 +594,30 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/home_helper.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/homepage_helper.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/helpers/homepage_helper.rb": [
         1,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/controllers/home_controller.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/controllers/home_controller.rb": [
         1,
         null,
         1,
-        19,
+        26,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
         null,
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/controllers/application_controller.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -621,46 +627,46 @@
         1,
         null,
         1,
-        60,
-        21,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        38,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
+        81,
         28,
         null,
         null,
         null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        48,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        35,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -686,8 +692,8 @@
         null,
         null,
         1,
-        9,
-        9,
+        12,
+        12,
         null,
         0,
         null,
@@ -695,11 +701,11 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/controllers/charities_controller.rb": [
+      "/Users/izzymarkwick/makers_code/rails/oodls/app/controllers/charities_controller.rb": [
         1,
         null,
         1,
-        12,
+        17,
         null,
         null,
         1,
@@ -714,6 +720,6 @@
         null
       ]
     },
-    "timestamp": 1422362237
+    "timestamp": 1422381406
   }
 }
