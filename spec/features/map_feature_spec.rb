@@ -1,12 +1,14 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-feature 'Maps' do
+# feature 'Maps:' do
 
-	context '' do
+# 	context 'when loaded' do
 
-		scenario '' do
-		end
+# 		scenario 'show infowindows' do
+# 			visit '/'
+# 			expect(page).to have_content 'Opening Hours:'
+# 		end
 
-	end
+# 	end
 
-end
+# end

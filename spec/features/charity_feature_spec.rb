@@ -3,7 +3,7 @@ require_relative 'charity_helper'
 
 include CharityHelper
 
-feature 'charities:' do
+feature 'Charities:' do
 
 	context 'charity not signed up/in on the homepage' do
 
