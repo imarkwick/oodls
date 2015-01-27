@@ -81,7 +81,7 @@ addTescoMarkers = function(tesco_info){
         infoWindow:{
           content: $('#tesco-info-window').html()
         },
-        mouseover: function(event){
+        click: function(event){
           this.infoWindow.open(this.map, this);
         }
       });
@@ -109,7 +109,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
     infoWindow:{
       content: charity_info
     },
-    mouseover: function(event){
+    click: function(event){
       this.infoWindow.open(this.map, this);
     }
   });
