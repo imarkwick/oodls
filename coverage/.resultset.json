@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/claudiadonovan/Code/projects/oodls/config/environment.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/application.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/application.rb": [
         1,
         null,
         null,
@@ -42,13 +42,13 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/boot.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/environments/test.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/environments/test.rb": [
         1,
         null,
         null,
@@ -89,7 +89,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/assets.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -108,7 +108,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/backtrace_silencers.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -117,12 +117,12 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/cookies_serializer.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/cookies_serializer.rb": [
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/devise.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -385,13 +385,13 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/filter_parameter_logging.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/inflections.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -409,21 +409,21 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/mime_types.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/paperclip.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/paperclip.rb": [
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/session_store.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/initializers/wrap_parameters.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -439,7 +439,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/config/routes.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/config/routes.rb": [
         1,
         null,
         1,
@@ -503,7 +503,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/models/charity.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/models/charity.rb": [
         1,
         null,
         null,
@@ -551,15 +551,15 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/application_helper.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/charities_helper.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/helpers/charities_helper.rb": [
         1,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/devise_helper.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/helpers/devise_helper.rb": [
         1,
         1,
         15,
@@ -585,15 +585,15 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/home_helper.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/helpers/home_helper.rb": [
         1,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/helpers/homepage_helper.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/helpers/homepage_helper.rb": [
         1,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/controllers/home_controller.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/controllers/home_controller.rb": [
         1,
         null,
         1,
@@ -602,7 +602,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/controllers/application_controller.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -686,7 +686,7 @@
         null,
         null
       ],
-      "/Users/claudiadonovan/Code/projects/oodls/app/controllers/charities_controller.rb": [
+      "/Users/BenHutch/Desktop/Makers/Lectures/Oodls/app/controllers/charities_controller.rb": [
         1,
         null,
         1,
@@ -700,6 +700,6 @@
         null
       ]
     },
-    "timestamp": 1422353489
+    "timestamp": 1422356425
   }
 }

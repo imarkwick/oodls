@@ -56,13 +56,37 @@
 
 <template id='charity-info-window'>
   <div class="row">
-    <div class="small-12 columns">
-      <p><b>{{ organisation }}</b></p>
+    <div class="small-12 columns" style="margin-bottom: -20px;">
+      <p><b>{{ organisation }}</b><br />
     </div>
   </div>
+
+  <% if Date.today.saturday? || Date.today.sunday? %>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <b>Weekend opening hours:</b>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 columns">
+        {{ weekend_hours }}
+      </div>
+    </div>
+
+  <% else %>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <b>Weekday Opening Hours:</b> {{ weekday_hours }}
+      </div>
+    </div>
+
+  <% end %>
+
   <div class="row">
     <div class="small-12 columns">
-      <b>We are currently accepting:</b>
+      <b>Foods We Accept:</b>
     </div>
   </div>
   <div class="row">
@@ -70,29 +94,20 @@
       {{{ food_requirements }}}
     </div>
   </div>
+
   <div class="row">
-    <div class="small-12 columns">
-      <b>Weekday opening hours:</b>
+    <div class="small-12 columns" style="margin-bottom: 5px;">
+      <a href="/charities/{{ id }}">Learn More About Donating Here</a></p>
     </div>
   </div>
+</template>
+
+<template id='tesco-info-window'>
   <div class="row">
-    <div class="small-12 columns">
-      {{ weekday_hours }}
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-      <b>Weekend opening hours:</b>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-      {{ weekend_hours }}
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
-      <a href="/charities/{{ id }}">Click here for more info</a>
+    <div class="small-12 columns" style="width: 200px; font-size: 13px;">
+    <p><img src="images/tesco.png"></p>
+    Tesco partner with Fareshare and The Trussell Trust.  You can donate produce of any brand at this store.
+    <p style="font-size: 13px; margin-bottom: -1px; margin-top: 4px;"><a href="http://foodcollection.tesco.com/#together"> Learn more about their programme here.</a>
     </div>
   </div>
 </template>

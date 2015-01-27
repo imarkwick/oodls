@@ -22,7 +22,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
-  // returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
+  returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
 });
 
 $(window).on('resize', function(){
@@ -70,7 +70,7 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
   };
 };
 
-addTescoMarkers = function(){
+addTescoMarkers = function(tesco_info){
   $.getJSON('data/tescolonglat.json', function(json){
     for(var i in json){
       map.addMarker({
@@ -79,13 +79,10 @@ addTescoMarkers = function(){
         icon: markerImage('images/tescomarker.png', 27, 35, 0, 0, 14, 35),
         animation: google.maps.Animation.DROP,
         infoWindow:{
-          content: '<p>Donation point</p>'
+          content: $('#tesco-info-window').html()
         },
-        mouseover: function(event){
+        click: function(event){
           this.infoWindow.open(this.map, this);
-        },
-        mouseout: function(event){
-          this.infoWindow.close(this.map, this);
         }
       });
     };
@@ -112,7 +109,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
     infoWindow:{
       content: charity_info
     },
-    mouseover: function(event){
+    click: function(event){
       this.infoWindow.open(this.map, this);
     }
   });
