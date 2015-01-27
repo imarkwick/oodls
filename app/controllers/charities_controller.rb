@@ -8,4 +8,9 @@ class CharitiesController < ApplicationController
     @charity = Charity.find(params[:id])
   end
 
+  # def search
+  #   @searched = Charity.find(params[:query])
+  #   respond_with @searched
+  # end
+
 end
