@@ -61,6 +61,16 @@
     </div>
   </div>
 
+  <hr style="margin-top: 10px; margin-bottom: 10px;">
+
+  <div class="row">
+    <div class="small-12 columns" style="margin-bottom: -20px;">
+      <a href="https://www.google.com/maps/dir/Current+Location/{{ lat }},{{ lon }}">Show me directions</a></p>
+    </div>
+  </div>
+
+  <hr style="margin-top: 10px; margin-bottom: 10px;">
+
   <% if Date.today.saturday? || Date.today.sunday? %>
 
     <div class="row">
@@ -77,7 +87,7 @@
   <% else %>
 
     <div class="row">
-      <div class="small-12 columns">
+      <div class="small-12 columns" style="margin-bottom: 3px;">
         <b>Weekday Opening Hours:</b>
       </div>
     </div>
@@ -89,7 +99,7 @@
 
   <% end %>
 
-  <div class="row">
+  <div class="row" style="margin-top: 10px; margin-bottom: 4px;">
     <div class="small-12 columns">
       <b>Foods We Accept:</b>
     </div>
@@ -99,6 +109,8 @@
       {{{ food_requirements }}}
     </div>
   </div>
+
+  <hr style="margin-top: 10px; margin-bottom: 10px;">
 
   <div class="row">
     <div class="small-12 columns" style="margin-bottom: -20px;">
