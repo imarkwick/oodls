@@ -27,6 +27,7 @@ feature 'charities:' do
 		end
 
 		scenario 'should be able to include their website url' do
+			save_and_open_page
 			sign_up_with_website
 			expect(page).to have_link 'Visit the website'
 		end
@@ -41,8 +42,6 @@ feature 'charities:' do
 			expect(page).to have_content 'Opening hours:'
 			expect(page).to have_content 'Weekdays: 9-6'
 			expect(page).to have_content 'Weekends: 11-5'
-			# expect(page).to have_content 'Weekday opening hours: 9-6'
-			# expect(page).to have_content 'Weekend: opening hours: 11-5'
 		end
 
 	end

@@ -55,14 +55,46 @@
 </div>
 
 <template id='charity-info-window'>
-  <p><b>{{ organisation }}</b><br />
-  <b>We are currently accepting:</b><br />
-  {{{ food_requirements }}}<br />
-  <b>Weekday opening hours:</b><br />
-  {{ weekday_hours }}<br />
-  <b>Weekend opening hours:</b><br />
-  {{ weekend_hours }}<br />
-  <a href="/charities/{{ id }}">Click here for more info</a>
+  <div class="row">
+    <div class="small-12 columns">
+      <p><b>{{ organisation }}</b></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <b>We are currently accepting:</b>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      {{{ food_requirements }}}
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <b>Weekday opening hours:</b>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      {{ weekday_hours }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <b>Weekend opening hours:</b>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      {{ weekend_hours }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <a href="/charities/{{ id }}">Click here for more info</a>
+    </div>
+  </div>
 </template>
 
 <%= content_tag :div, class: "charity_data_class", data: {charities_for_map: @charities_for_map} do %>
