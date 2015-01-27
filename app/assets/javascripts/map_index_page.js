@@ -22,7 +22,7 @@ $("#user-postcode").submit(function(event) {
 
 $("#user-geolocation").on("click", function() {
   fetchLocation();
-  // returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
+  returnSearchBoxToBottom(); //also being called on line 149 - uncomment if preferred here
 });
 
 $(window).on('resize', function(){
@@ -41,13 +41,29 @@ generateMap = function(latitude, longitude) {
   });
 };
 
+spinner = function() {
+  $('.spinner').css("opacity", "1");
+  $('body').css("background-color", "#E5E3DF");
+  $('#splash').hide();
+}
+
+spinner2 = function() {
+  $('.spinner').css("opacity", "0");
+}
+
 fetchLocation = function() {
+  spinner();
   navigator.geolocation.getCurrentPosition(function(position) {
     setUserPosition(position.coords.latitude, position.coords.longitude)
     var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude
     assembleMap(browserCoordinates);
+    spinner2();
   });
 };
+
+
+
+
 
 setUserPosition = function(latitude, longitude) {
   userLatitude = latitude;
