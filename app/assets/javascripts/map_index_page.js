@@ -148,6 +148,84 @@ fillInfoWindow = function(i, charity_data, requirements){
   return Mustache.render(html,data);
 };
 
+var styles = [
+  {
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#62a905" }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#F9F9F9" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "weight": 0.5 }
+    ]
+  },{
+    "featureType": "road.arterial",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "weight": 0.5 }
+    ]
+  },{
+    "featureType": "road.local",
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "weight": 0.2 }
+    ]
+  },{
+    "featureType": "road",
+    "elementType": "labels",
+    "stylers": [
+      { "weight": 0.1 },
+      { "color": "#362009" }
+    ]
+  },{
+    "featureType": "road.highway",
+    "elementType": "labels.icon",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "landscape",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "color": "#EEEEEE" }
+    ]
+  },{
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  },{
+    "featureType": "poi",
+    "elementType": "labels",
+    "stylers": [
+      { "visibility": "off" }
+    ]
+  }
+];
+
+styleMap = function() {
+  map.addStyle({
+      styledMapName:"Styled Map",
+      styles: styles,
+      mapTypeId: "map_style"
+  });
+};
+
+applyMapStyle = function() {
+  map.setStyle("map_style");
+};
+
+
 assembleMap = function(postcode) {
   GMaps.geocode({
     address: postcode,
@@ -161,6 +239,8 @@ assembleMap = function(postcode) {
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
+        styleMap();
+        applyMapStyle();
       }
       else {
         $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
