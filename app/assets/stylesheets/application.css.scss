@@ -104,7 +104,7 @@ li {
 }
 
 #charity-info-window {
-  width:200px;
+  width: 200px; 
 }
 
 .search-box {
@@ -302,3 +302,5 @@ li {
     line-height: 2em;
   }
 }
+
+.button:focus {outline: 2px double #62a905}

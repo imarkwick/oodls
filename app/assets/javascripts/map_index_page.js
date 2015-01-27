@@ -88,7 +88,7 @@ addTescoMarkers = function(tesco_info){
       map.addMarker({
         lat: json[i][0],
         lng: json[i][1],
-        icon: markerImage('images/tescomarker.png', 27, 35, 0, 0, 14, 35),
+        icon: markerImage('images/tesco-pin.svg', 30, 48, 0, 0, 15, 48),
         animation: google.maps.Animation.DROP,
         infoWindow:{
           content: $('#tesco-info-window').html()
@@ -108,7 +108,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return "<li>" + req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'></li>";
+    return "<li style='margin-bottom: 2px;'><img src='/images/icons/" + req.heading + ".svg' width='25' height='25' style='margin-right:5px'>" + req.label + "</li>" ;
   });
 };
 
@@ -141,7 +141,9 @@ fillInfoWindow = function(i, charity_data, requirements){
               food_requirements: requirements,
               weekday_hours: charity_data[i].weekday_hours,
               weekend_hours: charity_data[i].weekend_hours,
-              id: charity_data[i].id
+              id: charity_data[i].id,
+              lat: charity_data[i].lat,
+              lon: charity_data[i].lon
             };
   return Mustache.render(html,data);
 };
