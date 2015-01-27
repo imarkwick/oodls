@@ -1,6 +1,11 @@
+<%= form_tag(charities_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Search Charities" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <div class="row">
   <div class="small-6 columns">
-    <h2>All Charities</h2>
+    <h2>Participating Charities</h2>
   </div>
   <div class="small-6 columns text-right">
     <%= link_to "Back", root_path, class: "button small" %>
