@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'home#index'
-
-  # root to: "homepage#index"
+  get '/how_to' => 'home#how_to'
+  get '/what_else' => 'home#what_else'
 
   # Example of regular route:
   get '/charity' => 'charities#index'
