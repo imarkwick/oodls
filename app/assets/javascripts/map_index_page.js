@@ -118,7 +118,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
 assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
     var requirements = processCharityRequirements(i, charity_data).join('');
-    var charity_info = "<div id='map-info-window'>" + fillInfoWindow(i, charity_data, requirements) + "</div>";
+    var charity_info = fillInfoWindow(i, charity_data, requirements);
     addCharityMarkers(i, charity_data, charity_info);
   };
 };
