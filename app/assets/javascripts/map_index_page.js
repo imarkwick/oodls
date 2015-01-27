@@ -88,7 +88,7 @@ addTescoMarkers = function(tesco_info){
       map.addMarker({
         lat: json[i][0],
         lng: json[i][1],
-        icon: markerImage('images/tescomarker.png', 27, 35, 0, 0, 14, 35),
+        icon: markerImage('images/tesco-pin.svg', 30, 48, 0, 0, 15, 48),
         animation: google.maps.Animation.DROP,
         infoWindow:{
           content: $('#tesco-info-window').html()
