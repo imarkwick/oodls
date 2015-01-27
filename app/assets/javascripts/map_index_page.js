@@ -142,12 +142,11 @@ assembleMap = function(postcode) {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
         hideSplashImages();
-        generateMap(latlng.lat(), latlng.lng());
         returnSearchBoxToBottom();
+        generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
-        $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
         $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
