@@ -82,6 +82,12 @@ body {
   padding: 0;
 }
 
+@media all and (max-width: 40em) {
+  #user-geolocation:before {
+    content: '^';
+  }
+}
+
 /*  CHARITY LISITING  */
 
 .charity-listing {
@@ -155,6 +161,8 @@ body {
   min-height: 100%;
   min-width: 100%;
   width: auto !important;
+  filter: opacity(.6);
+  -webkit-filter: opacity(.6);
 }
 
 .owl-carousel .item {
