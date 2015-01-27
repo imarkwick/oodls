@@ -87,17 +87,17 @@ $include-html-global-classes: $include-html-classes;
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "brandon-grotesque", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
 // $font-family-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
 // $font-weight-normal: normal !default;
-// $font-weight-bold: bold !default;
+$font-weight-bold: bold !default;
 
-// $white       : #FFFFFF;
+$white       : #f3f2ec;
 // $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
+$snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
 // $silver      : #EFEFEF;
@@ -111,12 +111,12 @@ $include-html-global-classes: $include-html-classes;
 // $steel       : #666666;
 // $charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #362009;
 // $jet         : #222222;
 // $black       : #000000;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
+$primary-color: #62a905;
 // $secondary-color: #e7e7e7;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
@@ -124,7 +124,7 @@ $include-html-global-classes: $include-html-classes;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-// $body-bg: $white;
+$body-bg: $snow;
 // $body-font-color: $jet;
 // $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -1368,18 +1368,20 @@ $include-html-global-classes: $include-html-classes;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: rem-calc(45);
+$topbar-height: rem-calc(65);
 // $topbar-margin-bottom: 0;
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: $font-weight-normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-weight: $font-weight-bold;
+$topbar-title-font-size: rem-calc(25);
+$topbar-title-name-link-color-hover: $primary-color;
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: $oil;
-// $topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color: $white;
+$topbar-dropdown-link-color-hover: $white;
 // $topbar-dropdown-link-bg: $oil;
-// $topbar-dropdown-link-bg-hover: $oil;
+$topbar-dropdown-link-bg-hover: $primary-color;
 // $topbar-dropdown-link-weight: $font-weight-normal;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: $white;
@@ -1387,14 +1389,14 @@ $include-html-global-classes: $include-html-classes;
 
 // Set the link colors and styles for top-level nav
 // $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
+$topbar-link-color-hover: $primary-color;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
 // $topbar-link-weight: $font-weight-normal;
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg: $topbar-bg;
-// $topbar-link-bg-color-hover: $charcoal;
+$topbar-link-bg-color-hover: $primary-color;
 // $topbar-link-bg-hover: $oil;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
