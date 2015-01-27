@@ -147,11 +147,12 @@ assembleMap = function(postcode) {
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
-        $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
-        $("#postcode").css("border", "1px solid red");
-        $("#postcode").val('Please enter a valid address...');
+        $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
+        $('input:text').click(function() {
+          $(this).val('');
+        });
       }
     }
   });
