@@ -124,7 +124,7 @@ feature 'charities:' do
 			expect(page).to have_content "Organisation can't be blank"
 		end
 
-		scenario "charities must add thei 'Address and Postcode'" do
+		scenario "charities must add their 'Address and Postcode'" do
 			visit '/'
 			click_link 'Add a Charity'
 			fill_in 'Organisation Name', with: 'Crisis'

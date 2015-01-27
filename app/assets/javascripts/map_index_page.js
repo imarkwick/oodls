@@ -112,7 +112,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'>";
+    return "<li>" + req.label + "<img src='/images/icons/" + req.heading + ".svg' width='25' height='25'></li>";
   });
 };
 
@@ -133,7 +133,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
 
 assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
-    var requirements = processCharityRequirements(i, charity_data).join(", ");
+    var requirements = processCharityRequirements(i, charity_data).join('');
     var charity_info = fillInfoWindow(i, charity_data, requirements);
     addCharityMarkers(i, charity_data, charity_info);
   };
@@ -158,16 +158,17 @@ assembleMap = function(postcode) {
         var latlng = results[0].geometry.location;
         setUserPosition(latlng.lat(), latlng.lng())
         hideSplashImages();
-        generateMap(latlng.lat(), latlng.lng());
         returnSearchBoxToBottom();
+        generateMap(latlng.lat(), latlng.lng());
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
-        $("#postcode").css("border", "1px solid #cccccc");
       }
       else {
-        $("#postcode").css("border", "1px solid red");
-        $("#postcode").val('Please enter a valid address...');
+        $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
+        $('input:text').click(function() {
+          $(this).val('');
+        });
       }
     }
   });

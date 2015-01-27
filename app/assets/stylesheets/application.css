@@ -15,7 +15,6 @@
  *= require owl.carousel
  *= require owl.theme
  *= require_tree .
-
  */
 
 html {
@@ -44,6 +43,15 @@ body {
   z-index: 0;
   top: 2.8125em;
   left: 0;
+}
+
+li {
+  list-style: none;
+}
+
+#charity-info-window {
+  width:200px;
+  height:200px;
 }
 
 .search-box {
@@ -93,6 +101,10 @@ body {
     display: none;
   }
 }
+
+/*#dialog {
+  z-index: 50;
+}*/
 
 /*  CHARITY LISITING  */
 
