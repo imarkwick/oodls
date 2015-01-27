@@ -19,7 +19,7 @@ feature 'charities:' do
 			expect(page).not_to have_link 'Sign Out'
 		end
 
-		scenario 'can do that' do
+		scenario 'signs up and in' do
 			visit '/'
 			sign_up
 			expect(current_path).to eq '/charity'
@@ -106,6 +106,34 @@ feature 'charities:' do
 			visit '/charity'
 			expect(page).to have_content 'ChocAid'
 			expect(page).not_to have_content 'Crisis'
+		end
+
+	end
+
+	context 'adding validations' do
+
+		scenario "charities must add their 'Organisation Name'" do
+			visit '/'
+			click_link 'Add a Charity'
+			fill_in 'Contact\'s Email Address', with: 'contact@email.com'
+			fill_in 'Donation Center Address', with: 'i live here'
+			fill_in 'Postcode', with: 'SW15 7HH'
+			fill_in 'Password', with: 'testtest'
+			fill_in 'Password Confirmation', with: 'testtest'
+			click_button 'Sign Up'
+			expect(page).to have_content "Organisation can't be blank"
+		end
+
+		scenario "charities must add thei 'Address and Postcode'" do
+			visit '/'
+			click_link 'Add a Charity'
+			fill_in 'Organisation Name', with: 'Crisis'
+			fill_in 'Contact\'s Email Address', with: 'contact@email.com'
+			fill_in 'Password', with: 'testtest'
+			fill_in 'Password Confirmation', with: 'testtest'
+			click_button 'Sign Up'
+			expect(page).to have_content "Postcode can't be blank"
+			expect(page).to have_content "Full address can't be blank"
 		end
 
 	end
