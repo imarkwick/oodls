@@ -57,7 +57,9 @@
           <h3>Food accepted:</h3>
           <ul class="no-bullet">
             <% charity.requirements_array.each do |key, value| %>
-              <li><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40" %><%= key[:label] %></li>
+              <li>
+                <%= link_to image_tag("icons/#{key[:heading]}.svg", class: "large-icon"), controller: "charities", "#{key[:heading]}" => "1" %><%= link_to "#{key[:label]}", controller: "charities", "#{key[:heading]}" => "1" %>
+              </li>
             <% end %>
           </ul>
         </div>

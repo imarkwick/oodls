@@ -13,6 +13,18 @@ class Charity < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode
 
+  scope :cereals, -> value { where(cereals: value) }
+  scope :coffee_and_tea, -> value { where(coffee_and_tea: value) }
+  scope :cooking_ingredients, -> value { where(cooking_ingredients: value) }
+  scope :dried_goods, -> value { where(dried_goods: value) }
+  scope :drinks, -> value { where(drinks: value) }
+  scope :fruit_and_veg, -> value { where(fruit_and_veg: value) }
+  scope :jars_and_condiments, -> value { where(jars_and_condiments: value) }
+  scope :fresh_meat_and_fish, -> value { where(fresh_meat_and_fish: value) }
+  scope :snacks, -> value { where(snacks: value) }
+  scope :tins, -> value { where(tins: value) }
+  scope :uht_milk, -> value { where(uht_milk: value) }
+
   def address
     [full_address, postcode].compact.join(', ')
   end

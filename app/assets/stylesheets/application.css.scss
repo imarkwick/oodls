@@ -159,3 +159,29 @@ FOOTER
   padding-left: 10px;
   font-size: 0.7125rem;
 }
+
+/*----------------------------------------
+FOOD ICONS
+----------------------------------------*/
+
+@media only screen and (max-width: 40em) {
+  .small-icon {
+    width: 25px;
+    height: auto;
+    transition: 1s all ease;
+  }
+  .large-icon {
+    width: 35px;
+    height: auto;
+    transition: 1s all ease;
+  }
+}
+
+@media only screen and (min-width: 40.063em) {
+  .small-icon {
+    width: 35px;
+  }
+  .large-icon {
+    width: 45px;
+  }
+}

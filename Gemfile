@@ -39,6 +39,8 @@ gem 'foundation-rails', '~> 5.5.0'
 
 gem 'owlcarousel-rails'
 
+gem 'has_scope'
+
 group :test do
 	gem 'rspec-rails'
 	gem 'capybara'
