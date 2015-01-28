@@ -18,7 +18,7 @@ class Charity < ActiveRecord::Base
   scope :cooking_ingredients, -> value { where(cooking_ingredients: value) }
   scope :dried_goods, -> value { where(dried_goods: value) }
   scope :drinks, -> value { where(drinks: value) }
-  scope :fruit_and_veg, -> value { where(fruit_and_veg: value) }
+  scope :fresh_fruit_and_veg, -> value { where(fresh_fruit_and_veg: value) }
   scope :jars_and_condiments, -> value { where(jars_and_condiments: value) }
   scope :fresh_meat_and_fish, -> value { where(fresh_meat_and_fish: value) }
   scope :snacks, -> value { where(snacks: value) }

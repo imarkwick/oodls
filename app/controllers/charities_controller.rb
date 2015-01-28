@@ -5,7 +5,7 @@ class CharitiesController < ApplicationController
   has_scope :cooking_ingredients
   has_scope :dried_goods
   has_scope :drinks
-  has_scope :fruit_and_veg
+  has_scope :fresh_fruit_and_veg
   has_scope :jars_and_condiments
   has_scope :fresh_meat_and_fish
   has_scope :snacks
