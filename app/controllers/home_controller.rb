@@ -9,5 +9,8 @@ class HomeController < ApplicationController
 
   def what_else
   end
+
+  def contact
+  end
   
 end
