@@ -242,11 +242,11 @@ assembleMap = function(postcode) {
         hideSplashImages();
         returnSearchBoxToBottom();
         generateMap(latlng.lat(), latlng.lng());
+        styleMap();
+        applyMapStyle();
         addUserMarker(latlng.lat(), latlng.lng());
         addTescoMarkers();
         getCharityData();
-        styleMap();
-        applyMapStyle();
       }
       else {
         $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
