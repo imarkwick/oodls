@@ -1,0 +1,8 @@
+<div class="row messages">
+  <div data-alert class="notice small-12 columns">
+    <%= content_tag(:p, notice, class: 'notice alert-box success') if notice %>
+  </div>
+  <div data-alert class="alert small-12 columns">
+    <%= content_tag(:p, alert, class: 'notice alert-box alert') if alert %>
+  </div>
+</div>
