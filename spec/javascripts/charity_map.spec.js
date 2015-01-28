@@ -1,8 +1,8 @@
 // include http://maps.google.com/maps/api/js?sensor=true
 // include app/assets/javascripts/gmaps.js
-// include app/assets/javascripts/charity_map.js
+// include app/assets/javascripts/map_index_page.js
 //= require gmaps
-//= require charity_map
+//= require map_index_page
 
 describe("user latitude and longitude", function() {
 
