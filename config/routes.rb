@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/how_to' => 'home#how_to'
   get '/what_else' => 'home#what_else'
   get '/do_i_qualify' => 'home#do_i_qualify'
+  get '/contact' => 'home#contact'
 
   # Example of regular route:
   get '/charity' => 'charities#index'
