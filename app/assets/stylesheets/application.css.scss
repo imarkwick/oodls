@@ -80,30 +80,43 @@ LOGO FORMATTING
 TWEET BUTTON
 ----------------------------------------*/
 
+.twitter {
+  position: absolute;
+  top: calc(100% - 100px);
+  left: calc(100% - 80px);
+  z-index: 50;
+  background: #62a905;
+  border-radius: 100%;
+  width: 55px;
+  height: 55px;
+  transition: 1s all ease;
+}
+
+.twitter:hover {
+  background: #362009;
+}
+
 #tweet-image {
   width: 45px;
   height: 45px;
-  position: absolute;
-  top: calc(100% - 80px);
-  left: calc(100% - 80px);
-  z-index: 50;
+  margin: 5px;
   -webkit-filter: brightness(0%) invert(100%) grayscale(100%);
   -moz-filter: brightness(0%) invert(100%) grayscale(100%);
   filter: brightness(0%) invert(100%) grayscale(100%);
 }
 
-#tweet-image:hover {
-  -webkit-filter: brightness(100%) grayscale(0%);
-  -moz-filter: brightness(100%) grayscale(0%);
-  filter: brightness(0%) invert(100%) grayscale(100%);
-}
+@media only screen and (max-width: 72em) {
+  .twitter {
+    width: 35px;
+    height: 35px;
+    top: calc(100% - 40px);
+    left: calc(100% - 60px);
+  }
 
-@media only screen and (max-width: 40em) {
   #tweet-image {
     width: 25px;
     height: 25px;
-    top: calc(100% - 40px);
-    left: calc(100% - 40px);
+    margin: 5px;
   }
 }
 

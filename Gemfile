@@ -46,6 +46,7 @@ end
 
 group :test, :development do
 	gem 'jasmine-rails'
+	gem 'foreman'
 end
 
 gem 'rails_12factor', group: :production
