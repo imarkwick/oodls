@@ -3,7 +3,7 @@ require_relative 'charity_helper'
 
 include CharityHelper
 
-feature 'Donor' do
+feature 'Donors:' do
 
 	context 'looking to make a donation' do
 
@@ -40,6 +40,24 @@ feature 'Donor' do
 			visit '/'
 			click_link 'Contact us'
 			expect(page).to have_content 'Contact us'
+		end
+
+	end
+
+	context 'filtering search results' do
+
+		before do
+			multi_sign_up
+		end
+
+		scenario 'sould be able to search by case insensitive organisation' do
+			visit '/charities'
+			expect(page).to have_css '#search-form'
+			expect(page).to have_button 'Search'
+			fill_in :search, with: 'crisis'
+			click_button 'Search'
+			expect(page).to have_content 'Crisis'
+			expect(page).not_to have_content 'Second Charity'
 		end
 
 	end
