@@ -47,7 +47,7 @@ spinner = function() {
   $('#splash').hide();
 }
 
-spinner2 = function() {
+spinnerFadeOut = function() {
   $('.spinner').css("opacity", "0");
 }
 
@@ -57,7 +57,7 @@ fetchLocation = function() {
     setUserPosition(position.coords.latitude, position.coords.longitude)
     var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude
     assembleMap(browserCoordinates);
-    spinner2();
+    spinnerFadeOut();
   });
 };
 
@@ -82,6 +82,15 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
   };
 };
 
+infoWindowDisplay = function(windowContent){
+  return infoWindow = {
+    content: windowContent,
+    closeclick: function(event){
+      $('.search-box').show();
+    }
+  }
+};
+
 addTescoMarkers = function(tesco_info){
   $.getJSON('data/tescolonglat.json', function(json){
     for(var i in json){
@@ -90,11 +99,10 @@ addTescoMarkers = function(tesco_info){
         lng: json[i][1],
         icon: markerImage('images/tesco-pin.svg', 30, 48, 0, 0, 15, 48),
         animation: google.maps.Animation.DROP,
-        infoWindow:{
-          content: $('#tesco-info-window').html()
-        },
+        infoWindow: infoWindowDisplay($('#tesco-info-window').html()),
         click: function(event){
           this.infoWindow.open(this.map, this);
+          $('.search-box').hide();
         }
       });
     };
@@ -108,7 +116,7 @@ getCharityData = function(){
 
 processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
-    return "<li style='margin-bottom: 2px;'><img src='/images/icons/" + req.heading + ".svg' width='25' height='25' style='margin-right:5px'>" + req.label + "</li>" ;
+    return "<li><img id='window-icons' src='/images/icons/" + req.heading + ".svg'>" + req.label + "</li>";
   });
 };
 
@@ -118,11 +126,10 @@ addCharityMarkers = function(i, charity_data, charity_info){
     lng: charity_data[i].lon,
     icon: markerImage('images/oodls-pin.svg', 30, 48, 0, 0, 15, 48),
     animation: google.maps.Animation.DROP,
-    infoWindow:{
-      content: charity_info
-    },
+    infoWindow: infoWindowDisplay(charity_info),
     click: function(event){
       this.infoWindow.open(this.map, this);
+      $('.search-box').hide();
     }
   });
 };
@@ -224,7 +231,6 @@ styleMap = function() {
 applyMapStyle = function() {
   map.setStyle("map_style");
 };
-
 
 assembleMap = function(postcode) {
   GMaps.geocode({
