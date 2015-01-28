@@ -22,15 +22,6 @@
 
 @import "foundation_and_overrides";
 
-html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  height: 100%;
-}
-
 .top-bar {
   z-index: 100;
 }
@@ -38,6 +29,10 @@ body {
 .row.messages {
   margin-top: 20px;
 }
+
+/*----------------------------------------
+LOGO FORMATTING
+----------------------------------------*/
 
 .title-area .logo {
   display: inline-block;
@@ -77,99 +72,20 @@ body {
   stroke: #362009;
 }
 
-.title-area .logo:hover svg #head, .title-area .logo:hover svg #beak {
+.title-area .logo:hover svg #head, .title-area .logo:hover svg #beak, .title-area .logo:hover svg .letter {
   fill: #362009;
 }
 
-.title-area .logo:hover svg .letter {
-  fill: #362009;
-}
-
-.title-area .name {
-  text-transform: lowercase;
-  display: inline-block;
-}
-
-/*  MAP PAGE  */
-
-#map {
-  position: absolute;
-  width: 100%;
-  height: calc(100% - 2.8125rem);
-  z-index: 0;
-  top: 2.8125em;
-  left: 0;
-}
-
-li {
-  list-style: none;
-}
-
-#window-icons{  
-  margin-right: 5px;
-  margin-bottom: 5px;
-  width: 25px;
-  height: 25px;
-}
-
-#charity-info-window {
-  width: 200px;
-}
-
-.search-box {
-  z-index: 10;
-  position: absolute;
-  bottom: 40%;
-  left: 0;
-  right: 0;
-}
-
-.search-box input, .search-box .button {
-  margin-bottom: 0 !important;
-}
-
-.align-search-box {
-  display: block;
-  bottom: 8%;
-}
-
-#map img {
-  max-width: inherit;
-}
-
-.owl-carousel .item {
-  z-index: 20;
-  background: #a4d4a4;
-  padding: 30px 0px;
-  margin: 10px;
-  color: #FFF;
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.search-box {
-  padding: 0;
-}
-
-@media all and (max-width: 64em) {
-  #user-geolocation {
-    background-image: url('/images/location.png');
-    background-size: 28px 28px;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-  #user-geolocation .text {
-    display: none;
-  }
-}
+/*----------------------------------------
+TWEET BUTTON
+----------------------------------------*/
 
 #tweet-image {
-  width: 45px; 
-  height: 45px; 
-  position: absolute; 
-  top: calc(100% - 80px); 
-  left: calc(100% - 80px); 
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: calc(100% - 80px);
+  left: calc(100% - 80px);
   z-index: 50;
   -webkit-filter: brightness(0%) invert(100%) grayscale(100%);
   -moz-filter: brightness(0%) invert(100%) grayscale(100%);
@@ -186,164 +102,22 @@ li {
   #tweet-image {
     width: 25px;
     height: 25px;
-    top: calc(100% - 40px); 
-    left: calc(100% - 40px); 
+    top: calc(100% - 40px);
+    left: calc(100% - 40px);
   }
 }
 
-/*  CHARITY LISITING  */
-
-.charity-listing {
-  border-bottom: 1px solid #eee;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 640px) {
-  .charity-listing {
-    padding-left: 4px;
-  }
-}
-
-.charity-profile {
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-
-.charity-image img {
-  margin-bottom: 20px;
-}
-
-/*  CHARITY SIGN UP */
-
-.required:after {
-  content: "*";
-  color: red;
-}
-
-/*  SPLASH IMAGES */
-
-#splash {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.splash-slide {
-  width: 100%;
-  height: 100%;
-}
-
-.owl-stage-outer, .owl-stage {
-  width: 100%;
-  height: 100%;
-}
-
-.owl-stage {
-  width: 100%;
-  height: 100%;
-}
-
-.owl-item {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.splash-slide img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-height: 100%;
-  min-width: 100%;
-  width: auto !important;
-}
-
-.owl-carousel .item {
-  background: none;
-}
-
-#blank-behind-splash {
-  background-color: #000;
-}
-
-@media only screen and (max-width: 40em) {
-  .splash-slide img {
-    left: -50%;
-    max-width: 300% !important;
-  }
-}
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .splash-slide img {
-    left: -50%;
-    max-width: 200% !important;
-  }
-}
-
-.splash-slide .text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: auto;
-  width: 100%;
-  height: 50%;
-  z-index: 20;
-}
-
-.splash-slide .text h1 {
-  width: 75%;
-  margin: 2em auto 0 auto;
-  color: #fff;
-  font-style: italic;
-  text-shadow: 0px 0px 4px #000;
-  text-align: center;
-  opacity: 1;
-}
-
-@media only screen and (max-width: 40em) {
-  .splash-slide .text h1 {
-    margin: 3em auto 0 auto;
-    font-size: 1.5em;
-    line-height: 1.2em;
-  }
-}
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  .splash-slide .text h1 {
-    margin: 2em auto 0 auto;
-    font-size: 2.5em;
-  }
-}
-
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  .splash-slide .text h1 {
-    margin: 2em auto 0 auto;
-    font-size: 3em;
-    line-height: 1.5em;
-  }
-}
-
-@media only screen and (min-width: 90.063em) {
-  .splash-slide .text h1 {
-    margin: 2em auto 0 auto;
-    font-size: 3.5em;
-    line-height: 2em;
-  }
-}
-
+/*----------------------------------------
+LINKS AND BUTTONS
+----------------------------------------*/
 a:focus, .button:focus {
   outline: 2px solid #62a905;
   outline-offset: 1px;
 }
 
+/*----------------------------------------
+LOGO MOBILE
+----------------------------------------*/
 @media only screen and (max-width: 40em) {
   .title-area .logo {
     height: 4.0625rem;

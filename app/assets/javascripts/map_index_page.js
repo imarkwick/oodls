@@ -86,7 +86,7 @@ infoWindowDisplay = function(windowContent){
   return infoWindow = {
     content: windowContent,
     closeclick: function(event){
-      $('.search-box').show();
+      $('.search-box').fadeIn(1000);
     }
   }
 };
@@ -102,7 +102,7 @@ addTescoMarkers = function(tesco_info){
         infoWindow: infoWindowDisplay($('#tesco-info-window').html()),
         click: function(event){
           this.infoWindow.open(this.map, this);
-          $('.search-box').hide();
+          $('.search-box').fadeIn(1000);
         }
       });
     };
@@ -129,7 +129,7 @@ addCharityMarkers = function(i, charity_data, charity_info){
     infoWindow: infoWindowDisplay(charity_info),
     click: function(event){
       this.infoWindow.open(this.map, this);
-      $('.search-box').hide();
+      $('.search-box').fadeOut(1000);
     }
   });
 };
