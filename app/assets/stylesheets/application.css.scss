@@ -137,3 +137,23 @@ LOGO MOBILE
     padding: 5px 10px;
   }
 }
+
+/*----------------------------------------
+FOOTER
+----------------------------------------*/
+.footer {
+  z-index: 100;
+  margin-bottom: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 28px;
+  background-color: #362009;;
+  color: white;
+  opacity: 0.5;
+}
+
+.footer-items li {
+  list-style-type: none;
+}
+
