@@ -194,7 +194,7 @@ var styles = [
       { "color": "#362009" }
     ]
   },{
-    "featureType": "road.highway",
+    "featureType": "road",
     "elementType": "labels.icon",
     "stylers": [
       { "visibility": "off" }
