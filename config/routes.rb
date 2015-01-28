@@ -10,12 +10,11 @@ Rails.application.routes.draw do
   root 'home#index'
   get '/how_to' => 'home#how_to'
   get '/what_else' => 'home#what_else'
+  get '/do_i_qualify' => 'home#do_i_qualify'
 
   # Example of regular route:
   get '/charity' => 'charities#index'
 
-  # match 'search', to: 'charities#search', via: :get
-  # match '/charities/search', to: 'charities#search', :via  => "search"
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
