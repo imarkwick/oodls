@@ -140,9 +140,8 @@ feature 'Charities:' do
 
 		scenario 'should be able to contact site admin' do
 			visit '/'
+			click_link 'Contact'
 			expect(page).to have_content 'Contact us'
-			# click_link 'Contact us' uncomment when this goes somewhere
-			# expect(page).to have_content 'Contact Us' ditto above
 		end
 
 		scenario 'should be able to find out if they qualify' do
