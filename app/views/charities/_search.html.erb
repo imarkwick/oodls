@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="small-12 medium-8 right columns">
+    <%= form_tag(charities_path, :method => "get", id: "search-form") do %>
+      <div class="row collapse">
+        <div class="small-10 columns">
+          <%= text_field_tag :search, params[:search], placeholder: "Search Charities" %>
+        </div>
+        <div class="small-2 columns">
+          <%= submit_tag "Search", :name => nil, class: "button postfix" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
