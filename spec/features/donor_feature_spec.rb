@@ -36,6 +36,13 @@ feature 'Donor' do
 			expect(page).to have_content 'What else can I do?'
 		end
 
+		scenario 'should be able to contact site admin' do
+			visit '/'
+			expect(page).to have_content 'Contact Us'
+			# click_link 'Contact Us' uncomment when this goes somewhere
+			# expect(page).to have_content 'Contact Us' ditto above
+		end
+
 	end
 
 end

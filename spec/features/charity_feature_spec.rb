@@ -138,4 +138,21 @@ feature 'Charities:' do
 
 	end
 
+	context 'getting help and info' do
+
+		scenario 'should be able to contact site admin' do
+			visit '/'
+			expect(page).to have_content 'Contact Us'
+			# click_link 'Contact us' uncomment when this goes somewhere
+			# expect(page).to have_content 'Contact Us' ditto above
+		end
+
+		scenario 'should be able to find out if they qualify' do
+			visit '/'
+			click_link 'Do I Qualify?'
+			expect(page).to have_content 'Does my Charity or Organisation Qualify to Receive Donations?'
+		end
+
+	end
+
 end
