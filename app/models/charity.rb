@@ -8,7 +8,6 @@ class Charity < ActiveRecord::Base
     :styles => { :thumb => "200x200" },
     :default_url => "/images/oodls-placeholder.svg"
 	validates_attachment_content_type :logo, :content_type => /\Aimage\/.*\Z/
-  validates_uniqueness_of :postcode
   validates_presence_of :organisation, :postcode, :full_address
 
   geocoded_by :address
