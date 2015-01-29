@@ -30,9 +30,9 @@ class Charity < ActiveRecord::Base
   end
 
   def requirements_array
-    food_reqs = %w(tins dried_goods coffee_and_tea fresh_fruit_and_veg snacks jars_and_condiments cereals cooking_ingredients drinks uht_milk fresh_meat_and_fish)
+    @food_reqs = %w(tins dried_goods coffee_and_tea fresh_fruit_and_veg snacks jars_and_condiments cereals cooking_ingredients drinks uht_milk fresh_meat_and_fish)
 
-    food_reqs.inject([]) do |memo, col|
+    @food_reqs.inject([]) do |memo, col|
       if (self[col] == "1")
         memo << { :label => col.humanize, :heading => col }
       end
@@ -57,6 +57,15 @@ class Charity < ActiveRecord::Base
   def self.search(query)
     where("lower(organisation) like ?", "%#{query.downcase}%")
     # where("soundex(organisation) like soundex(?)", "%#{query.downcase}%")
+  end
+
+  def self.none
+    charity = Charity.new
+    if charity.none == 1
+      @food_reqs.inject do |none|
+        1
+      end
+    end
   end
 
 end
