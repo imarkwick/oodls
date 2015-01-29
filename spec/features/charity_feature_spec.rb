@@ -143,12 +143,12 @@ feature 'Charities:' do
 			expect(page).to have_link 'Contact Us'
 		end
 
-		scenario 'should be able to find out if they qualify' do
+		scenario 'should be able to find out if they qualify', :js => true do
 			visit '/'
 			expect(page).to have_link 'Do I Qualify?'
-			# accept_alert do
-			#   click_link('Do I Qualify?')
-			# end
+			accept_alert do
+			  click_link('Do I Qualify?')
+			end
 		end
 
 	end
