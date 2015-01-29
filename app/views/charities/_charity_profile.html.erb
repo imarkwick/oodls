@@ -32,8 +32,12 @@
     <div class="row">
       <h3>Food accepted:</h3>
       <ul class="no-bullet">
-        <% @charity.requirements_array.each do |key, value| %>
-          <li><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40"%><%= key[:label] %></li>
+        <% if @charity.requirements_array.empty? %>
+          <li>We are currently not accepting donations</li>
+        <% else %>
+          <% @charity.requirements_array.each do |key, value| %>
+            <li><%= image_tag "icons/#{key[:heading]}.svg", size: "40x40"%><%= key[:label] %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>
