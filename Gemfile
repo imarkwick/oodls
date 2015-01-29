@@ -44,6 +44,7 @@ gem 'has_scope'
 group :test do
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'selenium-webdriver'
 end
 
 group :test, :development do
