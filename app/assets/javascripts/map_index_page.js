@@ -7,7 +7,8 @@ if (!navigator.geolocation) {
 };
 
 returnSearchBoxToBottom = function () {
-  $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
+  $('.twitter').fadeOut(1000);
+  $(".search-box").delay(1000).addClass("align-search-box", 1000, "easeInOutCubic");
 };
 
 hideSplashImages = function () {
