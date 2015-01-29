@@ -87,12 +87,10 @@ feature 'Charities:' do
 			visit('/')
 			click_link 'My Profile'
 			expect(page).to have_content 'Crisis'
-			expect(page).to have_link 'Edit Profile'
-			click_link 'Edit'
-			expect(page).to have_content 'Edit Charity'
-			expect(page).to have_button 'Remove Charity'
-			click_button 'Remove Charity'
+			click_link 'Remove Charity'
 			expect(page).to have_content 'Bye! Your account has been successfully cancelled. We hope to see you again soon.'
+			visit('/charities')
+			expect(page).not_to have_content 'Crisis'
 		end
 
 		scenario 'should be able to edit their own profile' do
@@ -142,9 +140,8 @@ feature 'Charities:' do
 
 		scenario 'should be able to contact site admin' do
 			visit '/'
-			expect(page).to have_content 'Contact Us'
-			# click_link 'Contact us' uncomment when this goes somewhere
-			# expect(page).to have_content 'Contact Us' ditto above
+			click_link 'Contact'
+			expect(page).to have_content 'Contact us'
 		end
 
 		scenario 'should be able to find out if they qualify' do

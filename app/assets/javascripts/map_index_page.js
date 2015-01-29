@@ -4,14 +4,14 @@ var map;
 
 if (!navigator.geolocation) {
   $("#user-geolocation").hide();
-};
+}
 
 returnSearchBoxToBottom = function () {
-  $('.twitter').fadeOut(1000);
   $(".search-box").delay(1000).addClass("align-search-box", 1000, "easeInOutCubic");
+  $('.twitter').fadeOut(1000);
 };
 
-hideSplashImages = function () {
+var hideSplashImages = function () {
   $("#splash").fadeOut();
 };
 
@@ -29,10 +29,10 @@ $("#user-geolocation").on("click", function() {
 $(window).on('resize', function(){
   if (map) {
     map.setCenter(userLatitude, userLongitude);
-  };
+  }
 });
 
-generateMap = function(latitude, longitude) {
+var generateMap = function(latitude, longitude) {
   map = new GMaps({
     div: '#map',
     lat: latitude,
@@ -42,39 +42,39 @@ generateMap = function(latitude, longitude) {
   });
 };
 
-spinner = function() {
+var spinner = function() {
   $('.spinner').css("opacity", "1");
   $('body').css("background-color", "#E5E3DF");
   $('#splash').hide();
-}
+};
 
-spinnerFadeOut = function() {
+var spinnerFadeOut = function() {
   $('.spinner').css("opacity", "0");
-}
+};
 
-fetchLocation = function() {
+var fetchLocation = function() {
   spinner();
   navigator.geolocation.getCurrentPosition(function(position) {
-    setUserPosition(position.coords.latitude, position.coords.longitude)
-    var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude
+    setUserPosition(position.coords.latitude, position.coords.longitude);
+    var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude;
     assembleMap(browserCoordinates);
     spinnerFadeOut();
   });
 };
 
-setUserPosition = function(latitude, longitude) {
+var setUserPosition = function(latitude, longitude) {
   userLatitude = latitude;
   userLongitude = longitude;
 };
 
-addUserMarker = function(latitude, longitude) {
+var addUserMarker = function(latitude, longitude) {
   map.addMarker({
     lat: latitude,
     lng: longitude
   });
 };
 
-markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor_y){
+var markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor_y){
   return image = {
     url: url,
     size: new google.maps.Size(size_x, size_y),
@@ -83,16 +83,16 @@ markerImage = function(url, size_x, size_y, origin_x, origin_y, anchor_x, anchor
   };
 };
 
-infoWindowDisplay = function(windowContent){
+var infoWindowDisplay = function(windowContent){
   return infoWindow = {
     content: windowContent,
     closeclick: function(event){
       $('.search-box').fadeIn(1000);
     }
-  }
+  };
 };
 
-addTescoMarkers = function(tesco_info){
+var addTescoMarkers = function(tesco_info){
   $.getJSON('data/tescolonglat.json', function(json){
     for(var i in json){
       map.addMarker({
@@ -106,22 +106,22 @@ addTescoMarkers = function(tesco_info){
           $('.search-box').fadeIn(1000);
         }
       });
-    };
+    }
   });
 };
 
-getCharityData = function(){
+var getCharityData = function(){
   var charity_data = $('.charity_data_class').data('charities-for-map');
   assembleCharityMarkers(charity_data);
 };
 
-processCharityRequirements = function(i, charity_data){
+var processCharityRequirements = function(i, charity_data){
   return $.map(charity_data[i].requirements, function(req){
     return "<li><img id='window-icons' src='/images/icons/" + req.heading + ".svg'>" + req.label + "</li>";
   });
 };
 
-addCharityMarkers = function(i, charity_data, charity_info){
+var addCharityMarkers = function(i, charity_data, charity_info){
   map.addMarker({
     lat: charity_data[i].lat,
     lng: charity_data[i].lon,
@@ -135,15 +135,15 @@ addCharityMarkers = function(i, charity_data, charity_info){
   });
 };
 
-assembleCharityMarkers = function(charity_data){
+var assembleCharityMarkers = function(charity_data){
   for(var i in charity_data){
     var requirements = processCharityRequirements(i, charity_data).join('');
     var charity_info = fillInfoWindow(i, charity_data, requirements);
     addCharityMarkers(i, charity_data, charity_info);
-  };
+  }
 };
 
-fillInfoWindow = function(i, charity_data, requirements){
+var fillInfoWindow = function(i, charity_data, requirements){
   var html = $('#charity-info-window').html();
   var data = {organisation: charity_data[i].organisation,
               food_requirements: requirements,
@@ -221,7 +221,7 @@ var styles = [
   }
 ];
 
-styleMap = function() {
+var styleMap = function() {
   map.addStyle({
       styledMapName:"Styled Map",
       styles: styles,
@@ -229,17 +229,24 @@ styleMap = function() {
   });
 };
 
-applyMapStyle = function() {
+var applyMapStyle = function() {
   map.setStyle("map_style");
 };
 
-assembleMap = function(postcode) {
+var postcodeError = function(){
+  $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
+  $('input:text').click(function() {
+    $(this).val('');
+  });
+};
+
+var assembleMap = function(postcode) {
   GMaps.geocode({
     address: postcode,
     callback: function(results, status) {
-      if (status == 'OK') {
+      if (status === 'OK') {
         var latlng = results[0].geometry.location;
-        setUserPosition(latlng.lat(), latlng.lng())
+        setUserPosition(latlng.lat(), latlng.lng());
         hideSplashImages();
         returnSearchBoxToBottom();
         generateMap(latlng.lat(), latlng.lng());
@@ -250,10 +257,7 @@ assembleMap = function(postcode) {
         getCharityData();
       }
       else {
-        $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
-        $('input:text').click(function() {
-          $(this).val('');
-        });
+        postcodeError();
       }
     }
   });

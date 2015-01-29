@@ -16,59 +16,38 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  attr_accessor :these
+
   def configure_permitted_parameters
-  	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(
-                                                          :organisation,
-                                                          :description,
-                                                          :website_url,
-                                                          :logo,
-                                                          :contact_name,
-                                                          :full_address,
-                                                          :postcode,
-                                                          :email,
-                                                          :password,
-                                                          :password_confirmation,
-                                                          :weekday_opening_hours,
-                                                          :weekend_opening_hours,
-                                                          :tins,
-                                                          :dried_goods,
-                                                          :coffee_and_tea,
-                                                          :fresh_fruit_and_veg,
-                                                          :fresh_meat_and_fish,
-                                                          :snacks,
-                                                          :jars_and_condiments,
-                                                          :cereals,
-                                                          :cooking_ingredients,
-                                                          :drinks,
-                                                          :uht_milk,
-                                                          :none
-                                                        ) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(
-                                                          :organisation,
-                                                          :description,
-                                                          :logo,
-                                                          :contact_name,
-                                                          :full_address,
-                                                          :postcode,
-                                                          :email,
-                                                          :password,
-                                                          :password_confirmation,
-                                                          :current_password,
-                                                          :weekday_opening_hours,
-                                                          :weekend_opening_hours,
-                                                          :tins,
-                                                          :dried_goods,
-                                                          :coffee_and_tea,
-                                                          :fresh_fruit_and_veg,
-                                                          :fresh_meat_and_fish,
-                                                          :snacks,
-                                                          :jars_and_condiments,
-                                                          :cereals,
-                                                          :cooking_ingredients,
-                                                          :drinks,
-                                                          :uht_milk,
-                                                          :none
-                                                        ) }
+    these = ([
+      :current_password,
+      :organisation,
+      :description,
+      :website_url,
+      :logo,
+      :contact_name,
+      :full_address,
+      :postcode,
+      :email,
+      :password,
+      :password_confirmation,
+      :weekday_opening_hours,
+      :weekend_opening_hours,
+      :tins,
+      :dried_goods,
+      :coffee_and_tea,
+      :fresh_fruit_and_veg,
+      :fresh_meat_and_fish,
+      :snacks,
+      :jars_and_condiments,
+      :cereals,
+      :cooking_ingredients,
+      :drinks,
+      :uht_milk,
+      :none
+    ])
+  	devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(these) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(these) }
   end
 
   def after_sign_in_path_for(resource_or_scope)
