@@ -232,6 +232,13 @@ var applyMapStyle = function() {
   map.setStyle("map_style");
 };
 
+var postcodeError = function(){
+  $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
+  $('input:text').click(function() {
+    $(this).val('');
+  });
+};
+
 var assembleMap = function(postcode) {
   GMaps.geocode({
     address: postcode,
@@ -249,10 +256,7 @@ var assembleMap = function(postcode) {
         getCharityData();
       }
       else {
-        $("#postcode").notify("Please enter a valid address", "error",  { position:"top" });
-        $('input:text').click(function() {
-          $(this).val('');
-        });
+        postcodeError();
       }
     }
   });
