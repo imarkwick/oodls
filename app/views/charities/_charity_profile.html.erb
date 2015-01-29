@@ -32,7 +32,7 @@
     <div class="row">
       <h3>Food accepted:</h3>
       <ul class="no-bullet">
-        <% if @charity.none %>
+        <% if @charity.requirements_array.empty? %>
           <li>We are currently not accepting donations</li>
         <% else %>
           <% @charity.requirements_array.each do |key, value| %>

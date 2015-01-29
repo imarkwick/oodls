@@ -59,13 +59,4 @@ class Charity < ActiveRecord::Base
     # where("soundex(organisation) like soundex(?)", "%#{query.downcase}%")
   end
 
-  def self.none
-    charity = Charity.new
-    if charity.none == 1
-      @food_reqs.inject do |none|
-        1
-      end
-    end
-  end
-
 end

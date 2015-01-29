@@ -56,15 +56,15 @@
         <div class="small-12 columns">
           <h3>Food accepted:</h3>
           <ul class="no-bullet">
-              <% if charity.none %>
-                <li>We are currently not accepting donations</li>
-              <% else %>
-                <li>
-                <% charity.requirements_array.each do |key, value| %>
-                    <%= link_to image_tag("icons/#{key[:heading]}.svg", class: "large-icon"), controller: "charities", "#{key[:heading]}" => "1" %><%= link_to "#{key[:label]}", controller: "charities", "#{key[:heading]}" => "1" %>
-                  </li>
-                <% end %>
+            <% if charity.requirements_array.empty? %>
+              <li>We are currently not accepting donations</li>
+            <% else %>
+              <% charity.requirements_array.each do |key, value| %>
+              <li>
+                <%= link_to image_tag("icons/#{key[:heading]}.svg", class: "large-icon"), controller: "charities", "#{key[:heading]}" => "1" %><%= link_to "#{key[:label]}", controller: "charities", "#{key[:heading]}" => "1" %>
+              </li>
               <% end %>
+            <% end %>
           </ul>
         </div>
       </div>
