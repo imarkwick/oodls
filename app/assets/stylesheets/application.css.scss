@@ -164,9 +164,9 @@ FOOTER
 FOOD ICONS
 ----------------------------------------*/
 
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 64em) {
   .small-icon {
-    width: 25px;
+    width: 20px;
     height: auto;
     transition: 1s all ease;
   }
@@ -177,11 +177,21 @@ FOOD ICONS
   }
 }
 
-@media only screen and (min-width: 40.063em) {
+@media only screen and (min-width: 64.063em) {
   .small-icon {
-    width: 35px;
+    width: 34px;
   }
   .large-icon {
     width: 45px;
   }
+}
+
+.small-icon, .large-icon {
+  background-color: #F9F9F9;
+  transition: 1s all ease;
+  margin-top: 2px;
+}
+
+.small-icon:hover, .large-icon:hover {
+  background-color: #62a905;
 }
