@@ -16,8 +16,6 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  attr_accessor :these
-
   def configure_permitted_parameters
     these = ([
       :current_password,
