@@ -81,9 +81,9 @@ TWEET BUTTON
 ----------------------------------------*/
 
 .twitter {
-  position: absolute;
-  top: calc(100% - 80px);
-  left: calc(100% - 80px);
+  position: fixed;
+  top: calc(100% - 60px);
+  left: calc(100% - 60px);
   z-index: 110;
   background: #62a905;
   border-radius: 100%;
