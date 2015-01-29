@@ -146,8 +146,10 @@ feature 'Charities:' do
 
 		scenario 'should be able to find out if they qualify' do
 			visit '/'
-			click_link 'Do I Qualify?'
-			expect(page).to have_content 'Does my Charity or Organisation Qualify to Receive Donations?'
+			expect(page).to have_link 'Do I Qualify?'
+			accept_alert do
+			  click_link('Do I Qualify?')
+			end
 		end
 
 	end
