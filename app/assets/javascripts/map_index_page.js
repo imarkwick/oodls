@@ -4,10 +4,10 @@ var map;
 
 if (!navigator.geolocation) {
   $("#user-geolocation").hide();
-};
+}
 
 returnSearchBoxToBottom = function () {
-  $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic")
+  $(".search-box").addClass("align-search-box", 1000, "easeInOutCubic");
 };
 
 hideSplashImages = function () {
@@ -28,7 +28,7 @@ $("#user-geolocation").on("click", function() {
 $(window).on('resize', function(){
   if (map) {
     map.setCenter(userLatitude, userLongitude);
-  };
+  }
 });
 
 generateMap = function(latitude, longitude) {
@@ -45,17 +45,17 @@ spinner = function() {
   $('.spinner').css("opacity", "1");
   $('body').css("background-color", "#E5E3DF");
   $('#splash').hide();
-}
+};
 
 spinnerFadeOut = function() {
   $('.spinner').css("opacity", "0");
-}
+};
 
 fetchLocation = function() {
   spinner();
   navigator.geolocation.getCurrentPosition(function(position) {
-    setUserPosition(position.coords.latitude, position.coords.longitude)
-    var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude
+    setUserPosition(position.coords.latitude, position.coords.longitude);
+    var browserCoordinates = position.coords.latitude + ", " + position.coords.longitude;
     assembleMap(browserCoordinates);
     spinnerFadeOut();
   });
@@ -88,7 +88,7 @@ infoWindowDisplay = function(windowContent){
     closeclick: function(event){
       $('.search-box').fadeIn(1000);
     }
-  }
+  };
 };
 
 addTescoMarkers = function(tesco_info){
@@ -105,7 +105,7 @@ addTescoMarkers = function(tesco_info){
           $('.search-box').fadeIn(1000);
         }
       });
-    };
+    }
   });
 };
 
@@ -139,7 +139,7 @@ assembleCharityMarkers = function(charity_data){
     var requirements = processCharityRequirements(i, charity_data).join('');
     var charity_info = fillInfoWindow(i, charity_data, requirements);
     addCharityMarkers(i, charity_data, charity_info);
-  };
+  }
 };
 
 fillInfoWindow = function(i, charity_data, requirements){
@@ -236,9 +236,9 @@ assembleMap = function(postcode) {
   GMaps.geocode({
     address: postcode,
     callback: function(results, status) {
-      if (status == 'OK') {
+      if (status === 'OK') {
         var latlng = results[0].geometry.location;
-        setUserPosition(latlng.lat(), latlng.lng())
+        setUserPosition(latlng.lat(), latlng.lng());
         hideSplashImages();
         returnSearchBoxToBottom();
         generateMap(latlng.lat(), latlng.lng());

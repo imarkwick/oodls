@@ -48,10 +48,10 @@ feature 'Donors:' do
 
 		before do
 			multi_sign_up
+			visit '/charities'
 		end
 
 		scenario 'sould be able to search by case insensitive organisation' do
-			visit '/charities'
 			expect(page).to have_css '#search-form'
 			expect(page).to have_button 'Search'
 			fill_in :search, with: 'crisis'
@@ -59,6 +59,13 @@ feature 'Donors:' do
 			expect(page).to have_content 'Crisis'
 			expect(page).not_to have_content 'Second Charity'
 		end
+
+		# scenario 'should be able to filter by food type' do
+		# 	expect(page).to have_css '.small-icon'
+		# 	expect(page).to have_link	'Cereals'
+		# 	click_link 'Cereals'
+		# 	expect(page).to have_content 'Second Charity'
+		# end
 
 	end
 
