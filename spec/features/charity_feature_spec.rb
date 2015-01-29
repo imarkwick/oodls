@@ -138,17 +138,18 @@ feature 'Charities:' do
 
 	context 'getting help and info' do
 
-		scenario 'should be able to contact site admin' do
+		scenario 'should be able to contact site admin', :js => true do
 			visit '/'
 			expect(page).to have_link 'Contact Us'
+		  click_link('Contact Us')
+	 		expect(page).to have_content 'team@oodls.io'
 		end
 
 		scenario 'should be able to find out if they qualify', :js => true do
 			visit '/'
 			expect(page).to have_link 'Do I Qualify?'
-			accept_alert do
-			  click_link('Do I Qualify?')
-			end
+		  click_link('Do I Qualify?')
+	 		expect(page).to have_content 'Content coming soon...'
 		end
 
 	end
