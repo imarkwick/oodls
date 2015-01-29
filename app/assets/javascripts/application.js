@@ -16,6 +16,7 @@
 //= require notify
 //= require foundation
 //= require owl.carousel
+//= require checkboxes
 //= require_tree .
 
 $(function() {
