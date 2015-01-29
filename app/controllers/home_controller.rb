@@ -4,7 +4,4 @@ class HomeController < ApplicationController
 		@charities_for_map = Charity.format_for_map
 	end
 
-  def contact
-  end
-
 end

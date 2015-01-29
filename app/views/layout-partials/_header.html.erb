@@ -46,7 +46,6 @@
             <li><%= link_to "Where to give?", charities_path %></li>
             <li><%= link_to "How to give?", "#", "data-reveal-id" => "how-to-modal" %></li>
             <li><%= link_to "What more can I do?", "#", "data-reveal-id" => "what-else-modal" %></li>
-            <li><%= link_to "Contact", "/contact" %></li>
           </ul>
         </li>
         <li class="has-dropdown">
@@ -60,7 +59,6 @@
               <li><%= link_to "Do I Qualify?", "#", "data-reveal-id" => "qualifications-modal" %></li>
               <li><%= link_to "Sign In", new_charity_session_path %></li>
             <% end %>
-            <li><%= link_to "Contact us", "/contact" %></li>
           </ul>
         </li>
         <% if charity_signed_in? %>
@@ -68,6 +66,7 @@
             <%= link_to "Sign Out", destroy_charity_session_path, method: :delete %>
           </li>
         <% end %>
+        <li><%= link_to "Contact Us", "#", "data-reveal-id" => "contact-us-modal" %></li>
       </ul>
     </section>
   </nav>
