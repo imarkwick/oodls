@@ -26,14 +26,12 @@ feature 'Donors:' do
 
 		scenario 'should be able to find out donation guidelines' do
 			visit '/'
-			click_link 'How to give?'
-			expect(page).to have_content 'Donation Guidelines'
+			expect(page).to have_link 'Donation Guidelines'
 		end
 
 		scenario 'should be able to see if there is more they can do' do
 			visit '/'
-			click_link 'What more can I do?'
-			expect(page).to have_content 'What else can I do?'
+			expect(page).to have_link 'What more can I do?'
 		end
 
 		scenario 'should be able to contact site admin' do
