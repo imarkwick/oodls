@@ -450,13 +450,7 @@
         null,
         null,
         1,
-<<<<<<< HEAD
-=======
         null,
-        null,
-        null,
->>>>>>> master
-        1,
         null,
         null,
         1,
@@ -622,9 +616,6 @@
         31,
         null,
         null,
-        1,
-        null,
-        null,
         null
       ],
       "/Users/claudiadonovan/Code/projects/oodls/app/controllers/application_controller.rb": [
@@ -637,7 +628,7 @@
         1,
         null,
         1,
-        95,
+        93,
         32,
         null,
         null,
@@ -718,10 +709,6 @@
         null
       ]
     },
-<<<<<<< HEAD
-    "timestamp": 1422537063
-=======
-    "timestamp": 1422535073
->>>>>>> master
+    "timestamp": 1422542819
   }
 }
