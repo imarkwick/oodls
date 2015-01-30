@@ -30,6 +30,22 @@ module CharityHelper
 		click_button 'Sign Up'
 	end
 
+	def sign_up_and_uncheck_all_reqs
+		visit '/'
+		click_link 'Add a Charity'
+		fill_in 'Organisation Name', with: 'Crisis'
+		fill_in 'Organisation Description (max 140 characters)', with: 'We are crisis and we help the homeless'
+		fill_in 'Contact Name', with: 'contact'
+		fill_in 'Contact\'s Email Address', with: 'contact@email.com'
+		fill_in 'Donation Center Address', with: 'i live here'
+		fill_in 'Postcode', with: 'SW15 7HH'
+		page.check('selectAll')
+		page.check('selectAll')
+		fill_in 'Password', with: 'testtest'
+		fill_in 'Password Confirmation', with: 'testtest'
+		click_button 'Sign Up'
+	end
+
 	def sign_up_with_website
 		visit '/'
 		click_link 'Add a Charity'

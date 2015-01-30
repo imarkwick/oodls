@@ -31,9 +31,14 @@ feature 'Charities:' do
 			expect(page).to have_link 'Visit the website'
 		end
 
-		scenario 'when signing up they add donor requirements' do
+		scenario 'should be able to add donor requirements' do
 			sign_up_with_reqs
 			expect(page).to have_content 'Tins'
+		end
+
+		scenario 'should be able to deselect all if not receiving donations atm' do
+			sign_up_and_uncheck_all_reqs
+			expect(page).to have_content 'We are currently not accepting donations'
 		end
 
 		scenario 'when signing up they add opening hours' do
