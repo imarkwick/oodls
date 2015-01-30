@@ -31,10 +31,30 @@ feature 'Charities:' do
 			expect(page).to have_link 'Visit the website'
 		end
 
-		scenario 'when signing up they add donor requirements' do
+		scenario 'should be able to add donor requirements' do
 			sign_up_with_reqs
 			expect(page).to have_content 'Tins'
 		end
+
+		scenario 'should be able to deselect all if not receiving donations atm' do
+			sign_up_and_uncheck_all_reqs
+			expect(page).to have_content 'We are currently not accepting donations'
+		end
+
+		# scenario 'should be able to select all if very hungry', :js => true do
+		# 	sign_up_and_select_all_reqs
+		# 	expect(page).to have_content 'Tins'
+		# 	expect(page).to have_content 'Dried Goods'
+		# 	expect(page).to have_content 'Coffee & Tea'
+		# 	expect(page).to have_content 'Fresh Fruit & Vegetables'
+		# 	expect(page).to have_content 'Fresh Meat & Fish'
+		# 	expect(page).to have_content 'Snacks'
+		# 	expect(page).to have_content 'Jars & Condiments'
+		# 	expect(page).to have_content 'Cereals'
+		# 	expect(page).to have_content 'Cooking Ingredients'
+		# 	expect(page).to have_content 'Drinks'
+		# 	expect(page).to have_content 'UHT Milk'
+		# end
 
 		scenario 'when signing up they add opening hours' do
 			sign_up_with_opening_hours
